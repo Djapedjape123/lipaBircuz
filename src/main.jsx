@@ -14,6 +14,7 @@ import './i18n'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './pages/About.jsx'
 import NajavePage from './pages/NajavePage.jsx'
+import Fudbal from './pages/Fudbal.jsx'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: '/najave',
         element: <NajavePage />
+      },
+      {
+        path: '/mali-fudbal',
+        element: <Fudbal />
       },
 
 

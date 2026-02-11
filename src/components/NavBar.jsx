@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom' 
 import { TiThMenu } from "react-icons/ti";
 import { IoMdClose } from "react-icons/io";
 import { FaChevronDown } from "react-icons/fa";
@@ -9,6 +9,10 @@ import logoPlaceholder from '../assets/lipalogo.png'
 
 function NavBar() {
     const { t, i18n } = useTranslation(); 
+    const location = useLocation(); 
+
+    // Proveravamo da li smo na početnoj stranici
+    const isHomePage = location.pathname === '/';
 
     // --- STATE PROMENLJIVE ---
     const [isOpen, setIsOpen] = useState(false)            
@@ -19,13 +23,12 @@ function NavBar() {
     // --- DETEKCIJA SKROLOVANJA ---
     useEffect(() => {
         const onScroll = () => {
-            setIsScrolled(window.scrollY > 10)
+            setIsScrolled(window.scrollY > 50)
         }
         window.addEventListener('scroll', onScroll)
         return () => window.removeEventListener('scroll', onScroll)
     }, [])
 
-    // --- FUNKCIJA ZA ZATVARANJE SVEGA ---
     const closeAll = () => {
         setIsOpen(false)
         setLipadzijeOpen(false)
@@ -33,13 +36,11 @@ function NavBar() {
         window.scrollTo(0, 0)
     }
 
-    // --- PROMENA JEZIKA ---
     const changeLanguage = (lang) => {
         i18n.changeLanguage(lang); 
         setIsOpen(false); 
     }
 
-    // --- STILOVI ---
     const navLinkStyle = ({ isActive }) =>
         `text-sm font-bold uppercase tracking-wider transition-colors duration-300 flex items-center gap-1 ${
             isActive ? 'text-emerald-400' : 'text-white hover:text-emerald-400'
@@ -48,21 +49,27 @@ function NavBar() {
     const dropdownLinkStyle = 
         'block px-4 py-3 text-sm text-gray-200 hover:text-emerald-400 hover:bg-emerald-900/50 transition-colors border-l-2 border-transparent hover:border-emerald-500'
 
+    // --- LOGIKA ZA BOJU ---
+    // Taman ako je skrolovano ILI ako NIJE početna stranica
+    const shouldBeDark = isScrolled || !isHomePage;
+
     return (
         <>
-            {/* 1. HEADER (Samo navigacija i logo) */}
+            {/* 1. HEADER */}
             <header
-                className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                    isScrolled 
-                    ? 'bg-emerald-950/95 backdrop-blur-md shadow-lg py-2' 
-                    : 'bg-emerald-950 py-4'
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${
+                    shouldBeDark 
+                    ? 'bg-emerald-950/95 backdrop-blur-md shadow-2xl py-2' 
+                    : 'bg-transparent py-6'
                 }`}
             >
                 <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
-                    {/* LOGO - POPRAVLJENO DA SE BOLJE VIDI */}
+                    {/* LOGO */}
                     <Link to="/" onClick={closeAll} className="flex items-center gap-3 group z-50">
-                        <div className="relative w-14 h-14 md:w-20 md:h-20 overflow-hidden rounded-full border-2 border-emerald-500/50 group-hover:border-emerald-400 transition-all shadow-lg shadow-black/30 bg-white">
+                        <div className={`relative overflow-hidden rounded-full border-2 border-emerald-500/50 group-hover:border-emerald-400 transition-all duration-500 shadow-lg shadow-black/30 bg-white ${
+                            shouldBeDark ? 'w-14 h-14 md:w-16 md:h-16' : 'w-16 h-16 md:w-24 md:h-24'
+                        }`}>
                             <img 
                                 src={logoPlaceholder} 
                                 alt="Lipa Logo" 
@@ -89,7 +96,7 @@ function NavBar() {
                         </div>
 
                         {/* Dropdown: Saradnje */}
-                        <div className="relative group py-4 cursor-pointer">
+                        {/* <div className="relative group py-4 cursor-pointer">
                             <span className="text-white group-hover:text-emerald-400 text-sm font-bold uppercase tracking-wider flex items-center gap-1 transition">
                                 {t('nav.collab')} <FaChevronDown className="text-xs transition-transform group-hover:-rotate-180"/>
                             </span>
@@ -98,12 +105,13 @@ function NavBar() {
                                 <Link to="/rubin-krusevac" className={dropdownLinkStyle}>{t('nav.collab_sub.rubin')}</Link>
                                 <Link to="/nektar" className={dropdownLinkStyle}>{t('nav.collab_sub.nektar')}</Link>
                             </div>
-                        </div>
+                        </div> */}
+                        <NavLink to="/saradnje" className={navLinkStyle}>{t('nav.collab')}</NavLink>
 
                         <NavLink to="/cene" className={navLinkStyle}>{t('nav.prices')}</NavLink>
                         <NavLink to="/shop" className={navLinkStyle}>{t('nav.shop')}</NavLink>
 
-                        {/* JEZIK (DESKTOP) */}
+                        {/* JEZIK */}
                         <div className="flex items-center gap-2 border-l border-emerald-800 pl-4 ml-2">
                             <button onClick={() => changeLanguage('sr')} className={`text-sm font-bold transition-colors ${i18n.language === 'sr' ? 'text-emerald-400' : 'text-white hover:text-emerald-400'}`}>SRB</button>
                             <span className="text-emerald-700 text-xs">|</span>
@@ -125,9 +133,9 @@ function NavBar() {
                 </div>
             </header>
 
-            {/* 2. MOBILNI MENI */}
+            {/* 2. MOBILNI MENI - KOMPLETNO VRAĆEN */}
             <div 
-                className={`lg:hidden fixed inset-0 z-40 transition-transform duration-300 ease-in-out ${
+                className={`lg:hidden fixed inset-0 z-40 transition-transform duration-500 ease-in-out ${
                     isOpen ? 'translate-x-0' : 'translate-x-full'
                 } bg-gradient-to-b from-emerald-950 via-emerald-900 to-black`} 
             >
@@ -153,7 +161,7 @@ function NavBar() {
                         </div>
 
                         {/* Mobile Dropdown: Saradnje */}
-                        <div className="border-b border-white/5 py-2">
+                        {/* <div className="border-b border-white/5 py-2">
                             <div onClick={() => setSaradnjeOpen(!saradnjeOpen)} className={`flex justify-between items-center py-3 px-2 cursor-pointer rounded-lg transition-colors ${saradnjeOpen ? 'bg-white/5 text-emerald-400' : 'text-white'}`}>
                                 <span className="text-xl font-bold">{t('nav.collab')}</span>
                                 <FaChevronDown className={`transition-transform duration-300 ${saradnjeOpen ? 'rotate-180 text-emerald-400' : 'text-gray-400'}`}/>
@@ -163,7 +171,10 @@ function NavBar() {
                                 <Link to="/rubin-krusevac" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.collab_sub.rubin')}</Link>
                                 <Link to="/nektar" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.collab_sub.nektar')}</Link>
                             </div>
-                        </div>
+                        </div> */}
+                        <NavLink to="/saradnje" onClick={closeAll} className={({isActive}) => `text-xl font-bold py-4 border-b border-white/5 flex items-center justify-between ${isActive ? 'text-emerald-400 pl-4 border-l-4 border-emerald-400 bg-white/5' : 'text-white'}`}>
+                            {t('nav.collab')}
+                        </NavLink>
 
                         <NavLink to="/cene" onClick={closeAll} className={({isActive}) => `text-xl font-bold py-4 border-b border-white/5 flex items-center justify-between ${isActive ? 'text-emerald-400 pl-4 border-l-4 border-emerald-400 bg-white/5' : 'text-white'}`}>
                             {t('nav.prices')}

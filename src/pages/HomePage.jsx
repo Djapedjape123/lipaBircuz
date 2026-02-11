@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { FaPhoneAlt } from 'react-icons/fa' 
+import { FaPhoneAlt, FaChevronDown } from 'react-icons/fa' 
 import bgImage from '../assets/lipaPozadina.jpeg' 
 
 import KakoDoNas from '../components/KakoDoNas' 
@@ -11,23 +11,23 @@ function HomePage() {
   const { t } = useTranslation()
 
   return (
-    // Koristimo React Fragment (<> ... </>) da grupišemo sekcije jednu ispod druge
     <>
-      
-      {/* --- 1. HERO SEKCIJA (PRVI EKRAN) --- */}
-      <div className='relative min-h-screen flex items-center justify-center overflow-hidden'>
+      {/* --- 1. HERO SEKCIJA --- */}
+      {/* min-h-screen osigurava da slika pokrije ceo ekran. Nema margin-top, da bi Navbar bio preko slike. */}
+      <div className='relative min-h-screen w-full flex items-center justify-center overflow-hidden'>
         
-        {/* Pozadinska slika */}
+        {/* Pozadinska slika sa Parallax efektom */}
         <div 
           className='absolute inset-0 z-0'
           style={{
             backgroundImage: `url(${bgImage})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundAttachment: 'fixed' 
+            backgroundAttachment: 'fixed' // Ovo čini da slika stoji u mestu dok tekst ide preko
           }}
         >
-          <div className='absolute inset-0 bg-black/60'></div>
+          {/* Crni overlay - pojačan na 50% da bi se beli Navbar i tekst jasno videli */}
+          <div className='absolute inset-0 bg-black/50'></div>
         </div>
 
         {/* Glavni sadržaj Hero sekcije */}
@@ -37,7 +37,7 @@ function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className='text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-lg'
+            className='text-5xl md:text-7xl lg:text-8xl font-serif text-white mb-6 drop-shadow-2xl'
           >
               Dobrodošli u Lipu
           </motion.h1>
@@ -46,7 +46,7 @@ function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className='text-lg md:text-2xl text-gray-200 mb-10 font-light leading-relaxed drop-shadow-md'
+            className='text-lg md:text-2xl text-gray-100 mb-10 font-light leading-relaxed drop-shadow-lg'
           >
               Mesto gde se tradicija sreće sa dobrim društvom. <br className="hidden md:block" />
               Opustite se uz najbolja pića i autentičnu atmosferu.
@@ -59,7 +59,7 @@ function HomePage() {
           >
             <a 
               href="tel:0654613359" 
-              className='inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-widest transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(5,150,105,0.5)] border border-emerald-400/30'
+              className='inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-10 rounded-full text-lg uppercase tracking-widest transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(5,150,105,0.4)] border border-emerald-400/30'
             >
               <FaPhoneAlt />
               Rezerviši Sto
@@ -67,16 +67,30 @@ function HomePage() {
           </motion.div>
 
         </div>
+
+        {/* Animirana strelica na dnu koja pokazuje da ima još sadržaja */}
+        <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 z-10 cursor-pointer"
+        >
+            <FaChevronDown size={32} />
+        </motion.div>
       </div>
 
-      <div className="relative z-20">
-          <Najave />
-      </div>
+      {/* --- OSTATAK SAJTA --- */}
+      {/* relative z-20 i bg-white su bitni da prekriju hero sliku kad skroluješ dole */}
+      <div className="relative z-20 bg-white shadow-2xl">
+          
+          <div className="">
+            <Najave />
+          </div>
 
-      {/* --- 2. KAKO DO NAS SEKCIJA (ISPOD) --- */}
-      {/* Sada je ovo potpuno odvojena sekcija koja ide ispod gornjeg dela */}
-      <div className="relative z-20">
-          <KakoDoNas />
+          <div className="bg-gray-50">
+            <KakoDoNas />
+          </div>
+
       </div>
 
     </>
