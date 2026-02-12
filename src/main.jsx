@@ -15,6 +15,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import About from './pages/About.jsx'
 import NajavePage from './pages/NajavePage.jsx'
 import Fudbal from './pages/Fudbal.jsx'
+import Kviz from './pages/Kviz.jsx'
+import PoznateLipadzije from './pages/PoznateLipadzije.jsx'
+import LipaSvuda from './pages/LipaSvuda.jsx'
 
 const router = createBrowserRouter([
   {
@@ -35,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/o-kafani',
-        element: <About/>
+        element: <About />
       },
       {
         path: '/najave',
@@ -44,6 +47,18 @@ const router = createBrowserRouter([
       {
         path: '/mali-fudbal',
         element: <Fudbal />
+      },
+      {
+        path: '/lipa-kviz',
+        element: <Kviz />
+      },
+      {
+        path: '/poznate-lipadzije',
+        element: <PoznateLipadzije />
+      },
+      {
+        path: '/lipa-svuda',
+        element: <LipaSvuda />
       },
 
 

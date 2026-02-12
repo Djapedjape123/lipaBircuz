@@ -36,10 +36,10 @@ function About() {
     <div className="min-h-screen bg-[#fdfbf7] pt-36 pb-24 px-6 md:px-12 relative overflow-hidden">
       
       {/* Dekorativni detalji */}
-      <div className="absolute top-20 left-10 text-[20rem] text-emerald-900/5 rotate-12 select-none pointer-events-none">
+      <div className="absolute top-20 left-10 text-[20rem] text-emerald-900/20 rotate-12 select-none pointer-events-none">
           <FaLeaf />
       </div>
-      <div className="absolute bottom-20 right-10 text-[15rem] text-amber-700/5 -rotate-12 select-none pointer-events-none">
+      <div className="absolute bottom-20 right-10 text-[15rem] text-amber-700/20 -rotate-12 select-none pointer-events-none">
           <FaHistory />
       </div>
 
@@ -59,7 +59,7 @@ function About() {
             >
                 {/* Header Teksta */}
                 <div>
-                    <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-xs mb-3 block">Od 1890. godine</span>
+                    <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-lg mb-2 block">Od 1890. godine</span>
                     <h1 className="text-4xl md:text-6xl font-serif font-medium text-emerald-950 mb-6 mt-5 leading-tight">
                         Kafana „Lipa” <br/>
                         <span className="text-2xl md:text-3xl text-emerald-800/60 italic font-light block mt-2">Duša starog Novog Sada</span>

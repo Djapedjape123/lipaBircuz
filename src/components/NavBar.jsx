@@ -88,7 +88,7 @@ function NavBar() {
                                 {t('nav.lipadzije')} <FaChevronDown className="text-xs transition-transform group-hover:-rotate-180"/>
                             </span>
                             <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 bg-emerald-950 border border-emerald-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 overflow-hidden">
-                                <Link to="/poznate-lipadzije" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.famous')}</Link>
+                                
                                 <Link to="/mali-fudbal" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.football')}</Link>
                                 <Link to="/lipa-kviz" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.quiz')}</Link>
                                 <Link to="/lipa-svuda" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.everywhere')}</Link>
@@ -153,7 +153,7 @@ function NavBar() {
                                 <FaChevronDown className={`transition-transform duration-300 ${lipadzijeOpen ? 'rotate-180 text-emerald-400' : 'text-gray-400'}`}/>
                             </div>
                             <div className={`flex flex-col gap-2 pl-4 overflow-hidden transition-all duration-300 ease-in-out ${lipadzijeOpen ? 'max-h-80 opacity-100 mt-2 pb-2' : 'max-h-0 opacity-0'}`}>
-                                <Link to="/poznate-lipadzije" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.famous')}</Link>
+                                
                                 <Link to="/mali-fudbal" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.football')}</Link>
                                 <Link to="/lipa-kviz" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.quiz')}</Link>
                                 <Link to="/lipa-svuda" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.everywhere')}</Link>
