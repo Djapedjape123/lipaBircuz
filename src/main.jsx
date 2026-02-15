@@ -18,6 +18,8 @@ import Fudbal from './pages/Fudbal.jsx'
 import Kviz from './pages/Kviz.jsx'
 import PoznateLipadzije from './pages/PoznateLipadzije.jsx'
 import LipaSvuda from './pages/LipaSvuda.jsx'
+import Saradnje from './pages/Saradnje.jsx'
+import Kontakt from './pages/Kontakt.jsx'
 
 const router = createBrowserRouter([
   {
@@ -53,12 +55,16 @@ const router = createBrowserRouter([
         element: <Kviz />
       },
       {
-        path: '/poznate-lipadzije',
-        element: <PoznateLipadzije />
-      },
-      {
         path: '/lipa-svuda',
         element: <LipaSvuda />
+      },
+      {
+        path: '/saradnje',
+        element: <Saradnje />
+      },
+      {
+        path: '/kontakt',
+        element: <Kontakt />
       },
 
 

@@ -98,7 +98,7 @@ function KakoDoNas() {
                         allowFullScreen 
                         referrerPolicy="no-referrer-when-downgrade"
                         // Ovde sam stavio link ka Miletićevoj 18
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.566848378432!2d19.846683799999997!3d45.256551099999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b106887a72093%3A0xf2b05ed369fc58a7!2z0KHQstC10YLQvtC30LDRgNCwINCc0LjQu9C10YLQuNGb0LAgOSwg0J3QvtCy0Lgg0KHQsNC0IDIxMDAw!5e0!3m2!1ssr!2srs!4v1770803188448!5m2!1ssr!2srs"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2808.561380739269!2d19.844149075086133!3d45.256661647263954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475b106887a72093%3A0xff7d906f9addbb1e!2z0JHQuNGA0YbRg9C3INCb0LjQv9Cw!5e0!3m2!1ssr!2srs!4v1771002704780!5m2!1ssr!2srs"
                         className=" transition-all duration-700"
                     ></iframe>
 

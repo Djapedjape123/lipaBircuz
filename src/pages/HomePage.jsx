@@ -81,13 +81,13 @@ function HomePage() {
 
       {/* --- OSTATAK SAJTA --- */}
       {/* relative z-20 i bg-white su bitni da prekriju hero sliku kad skroluješ dole */}
-      <div className="relative z-20 bg-white shadow-2xl">
+      <div className="relative z-20  shadow-2xl">
           
           <div className="">
             <Najave />
           </div>
 
-          <div className="bg-gray-50">
+          <div className="">
             <KakoDoNas />
           </div>
 
