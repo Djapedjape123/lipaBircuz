@@ -9,23 +9,24 @@ function Kontakt() {
     const [fileName, setFileName] = useState('');
 
     // --- LOGIKA ZA SLANJE FORME (BEZ TVOG BACKENDA) ---
+   // --- LOGIKA ZA SLANJE FORME ---
     const handleSubmit = async (e, tipForme) => {
         e.preventDefault();
         setIsSubmitting(true);
         setStatusMessage('');
 
-        // Skupljamo sve podatke iz forme (uključujući fajl ako ga ima)
         const formData = new FormData(e.target);
-
-        // Dodajemo skriveno polje da znamo sa koje forme stiže mejl
         formData.append('_subject', tipForme === 'saradnja' ? 'Novi upit za saradnju!' : 'Nova prijava za posao sa CV-jem!');
-        // Isključujemo captcha kako ne bi odvodio korisnika sa sajta
         formData.append('_captcha', 'false');
 
         try {
-            // Šaljemo direktno na FormSubmit API
-            const response = await fetch("https://formsubmit.co/ajax/lipadzije@gmail.com", {
+            // PROMENA 1: Uklonjeno "/ajax" iz linka
+            const response = await fetch("https://formsubmit.co/lipadzije@gmail.com", {
                 method: "POST",
+                // PROMENA 2: Dodat Accept header kako nas ne bi prebacio na drugu stranicu
+                headers: {
+                    'Accept': 'application/json'
+                },
                 body: formData
             });
 
@@ -41,7 +42,6 @@ function Kontakt() {
             setStatusMessage('greska');
         } finally {
             setIsSubmitting(false);
-            // Sklanjamo poruku o uspehu posle 5 sekundi
             setTimeout(() => setStatusMessage(''), 5000);
         }
     };
@@ -59,7 +59,7 @@ function Kontakt() {
                     <span className="text-amber-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 flex items-center justify-center gap-2">
                         Otvoreni za sve
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-sm">
+                    <h1 className="text-4xl md:text-7xl font-serif p-2 font-bold text-white mb-6 drop-shadow-sm">
                         Kontaktirajte Nas
                     </h1>
                 </div>
@@ -81,7 +81,7 @@ function Kontakt() {
                                 </div>
                                 <div>
                                     <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">Lokacija</p>
-                                    <p className="text-white text-lg font-medium">Miletićeva 18</p>
+                                    <p className="text-white text-lg font-medium">Miletićeva 9</p>
                                     <p className="text-gray-500">21000 Novi Sad, Srbija</p>
                                 </div>
                             </div>
@@ -234,7 +234,7 @@ function Kontakt() {
                                         
                                         {/* Polje za CV fajl */}
                                         <div className="space-y-2">
-                                            <label className="text-emerald-50 text-sm font-medium ml-1">Zakačite Vaš CV (PDF ili Word)</label>
+                                            <label className="text-emerald-50 text-sm font-medium ml-1">Zakačite Vaš CV (Nije obavezno)</label>
                                             <div className="relative">
                                                 <input 
                                                     type="file" 

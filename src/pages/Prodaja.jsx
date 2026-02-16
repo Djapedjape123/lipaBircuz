@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Prodaja() {
   return (
     // pt-32 je tu zbog fiksnog navbara!
-    <div className="min-h-screen pt-32 px-6 bg-gray-50 flex flex-col items-center justify-center text-center overflow-hidden relative">
+    <div className="min-h-screen pt-32 px-6 mb-10 bg-gray-50 flex flex-col items-center justify-center text-center overflow-hidden relative">
       
       {/* Pozadinski dekorativni krugovi (zamućeni) */}
       <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>

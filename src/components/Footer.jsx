@@ -59,32 +59,32 @@ function Footer() {
                     </h3>
                     <ul className="space-y-4">
                         <li>
-                            <Link to="/" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block">
+                            <Link to="/" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
                                 Početna
                             </Link>
                         </li>
                         <li>
-                            <Link to="/o-kafani" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block">
+                            <Link to="/o-kafani" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
                                 O Kafani
                             </Link>
                         </li>
                         <li>
-                            <Link to="/cene" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block">
+                            <Link to="/cene" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
                                 Karta Pića
                             </Link>
                         </li>
                         <li>
-                            <Link to="/najave" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block">
+                            <Link to="/najave" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
                                 Događaji
                             </Link>
                         </li>
                         <li>
-                            <Link to="/kontakt" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block">
+                            <Link to="/kontakt" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
                                 Kontakt
                             </Link>
                         </li>
                          <li>
-                            <Link to="/lipa-svuda" className="text-gray-300 hover:text-white hover:translate-x-2 transition-all duration-300 inline-block">
+                            <Link to="/lipa-svuda" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
                                 Lipa svuda
                             </Link>
                         </li>

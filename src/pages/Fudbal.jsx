@@ -49,7 +49,7 @@ function Fudbal() {
                 {/* --- LEVA STRANA: SLAJDER --- */}
                 {/* Na mobilnom je DRUGI (order-2), na desktopu PRVI */}
                 <div className="lg:col-span-6 order-2 lg:order-1 lg:sticky lg:top-32 h-fit">
-                    <div className="relative w-full aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white bg-white group">
+                    <div className="relative w-full aspect-square lg:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white bg-white group">
 
                         {/* Glavna slika */}
                         <AnimatePresence mode='wait'>

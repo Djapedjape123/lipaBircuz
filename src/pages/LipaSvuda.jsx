@@ -142,14 +142,14 @@ function LipaSvuda() {
                             
                             <div className="w-full h-[40%] md:h-auto md:w-1/2 bg-white flex flex-col overflow-y-auto">
 
-                                <div className="p-6 md:p-12 flex flex-col h-full">
+                                <div className="p-8 md:p-12 flex flex-col h-full w-full">
 
                                     {/* Naslov */}
                                     <div className="mb-6 shrink-0">
                                         <span className="text-amber-600 font-bold uppercase tracking-wider text-xs mb-2 block">
                                             Lokacija
                                         </span>
-                                        <h2 className="text-2xl md:text-3xl font-serif font-bold text-emerald-950 flex items-center gap-2 leading-tight">
+                                        <h2 className="text-lg md:text-3xl font-serif w-full font-bold text-emerald-950 flex items-center gap-2 leading-tight">
                                             <FaMapMarkerAlt className="text-emerald-600 shrink-0" />
                                             {selectedLocation.title}
                                         </h2>

@@ -9,19 +9,19 @@ import bgImage from '../assets/lipa3.png'
 function NajavePage() {
 
   // --- KADA BUDEŠ IMAO DOGAĐAJE, OVDE ĆEŠ IH UBACITI ---
-//   const events = []; 
+  const events = []; 
   
 //    PRIMER KAKO ĆE IZGLEDATI PODACI KASNIJE:
-  const events = [
-      {
-          id: 1,
-          date: "14. FEB",
-          day: "PETAK",
-          title: "Zvezda-Partizan",
-          desc: "Veciti derbi uz najbolje navijanje i atmosferu.",
-          image: "putanja/do/slike.jpg" // Slika za samu karticu događaja
-      }
-    ]
+//   const events = [
+//       {
+//           id: 1,
+//           date: "14. FEB",
+//           day: "PETAK",
+//           title: "Zvezda-Partizan",
+//           desc: "Veciti derbi uz najbolje navijanje i atmosferu.",
+//           image: "putanja/do/slike.jpg" // Slika za samu karticu događaja
+//       }
+//     ]
   
 
   return (

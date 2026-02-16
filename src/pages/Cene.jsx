@@ -144,7 +144,7 @@ function Cene() {
         <div className="min-h-screen bg-[#e5e7eb] pt-36 pb-20 px-4 md:px-10 relative">
 
             {/* Tekstura buke (noise) za rustični izgled */}
-            
+
 
             <div className="max-w-5xl mx-auto relative z-10">
 
@@ -210,18 +210,24 @@ function Cene() {
                                     className="flex items-end justify-between py-2 group cursor-default"
                                 >
                                     {/* Naziv pića */}
-                                    <div className="w-full flex items-baseline overflow-hidden">
-                                        <span className="text-lg font-bold text-gray-800 group-hover:text-emerald-700 transition-colors whitespace-nowrap">
-                                            {item.isTranslatable ? t(item.name) : item.name}
-                                        </span>
-                                        {/* Tačkice */}
-                                        <span className="flex-grow border-b-2 border-dotted border-gray-300 mx-3 mb-1 group-hover:border-emerald-300 transition-colors"></span>
-                                    </div>
+                                    <div className="w-full flex items-end justify-between py-2 group cursor-default">
+                                        {/* Kontejner za Ime i Tačkice */}
+                                        <div className="flex-1 flex items-end mr-4 min-w-0">
+                                            {/* Naziv pića - DOZVOLJEN prelazak u novi red (sklonjen whitespace-nowrap, dodata linija visine) */}
+                                            <span className="text-lg font-bold text-gray-800 group-hover:text-emerald-700 transition-colors leading-tight">
+                                                {item.isTranslatable ? t(item.name) : item.name}
+                                            </span>
+                                            {/* Tačkice - samo ako ime ne zauzme ceo prostor */}
+                                            <span className="flex-grow border-b-2 border-dotted border-gray-300 mx-2 mb-1 group-hover:border-emerald-300 transition-colors hidden sm:block"></span>
+                                        </div>
 
-                                    {/* Cena */}
-                                    <span className="text-xl font-extrabold text-emerald-700 whitespace-nowrap">
-                                        {item.price} <span className="text-xs font-bold text-gray-400 uppercase ml-1">{t('menu.currency')}</span>
-                                    </span>
+                                        {/* Cena - ZAKUCANA desno */}
+                                        <div className="flex-shrink-0 mb-0.5">
+                                            <span className="text-xl font-extrabold text-emerald-700 whitespace-nowrap">
+                                                {item.price} <span className="text-xs font-bold text-gray-400 uppercase ml-1">{t('menu.currency')}</span>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </motion.div>
                             ))}
                         </AnimatePresence>
