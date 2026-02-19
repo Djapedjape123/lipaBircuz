@@ -96,17 +96,7 @@ function NavBar() {
                             </div>
                         </div>
 
-                        {/* Dropdown: Saradnje */}
-                        {/* <div className="relative group py-4 cursor-pointer">
-                            <span className="text-white group-hover:text-emerald-400 text-sm font-bold uppercase tracking-wider flex items-center gap-1 transition">
-                                {t('nav.collab')} <FaChevronDown className="text-xs transition-transform group-hover:-rotate-180"/>
-                            </span>
-                            <div className="absolute top-full left-1/2 -translate-x-1/2 w-56 bg-emerald-950 border border-emerald-800 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-4 group-hover:translate-y-0 overflow-hidden">
-                                <Link to="/vinarija-vojnovic" className={dropdownLinkStyle}>{t('nav.collab_sub.vojnovic')}</Link>
-                                <Link to="/rubin-krusevac" className={dropdownLinkStyle}>{t('nav.collab_sub.rubin')}</Link>
-                                <Link to="/nektar" className={dropdownLinkStyle}>{t('nav.collab_sub.nektar')}</Link>
-                            </div>
-                        </div> */}
+                        
                         <NavLink to="/saradnje" className={navLinkStyle}>{t('nav.collab')}</NavLink>
 
                         <NavLink to="/cene" className={navLinkStyle}>{t('nav.prices')}</NavLink>

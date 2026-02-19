@@ -36,6 +36,24 @@ const resources = {
                 shop: "Prodavnica",
                 contact: "Kontakt"
             },
+            events: {
+                gallery_badge: "Galerija Uspomena",
+                title_prefix: "Hronika",
+                title_suffix: "Dobrog Provoda",
+                subtitle: "Neke noći se pamte po pesmama, neke po razgovorima, a neke po osmesima koji su ostali zabeleženi. Zavirite u naš album.",
+                cta_title: "Želite da budete deo naše priče?",
+                cta_button: "Pratite nas za najave sledećih svirki!",
+                modal_footer: "Zabeleženo u Lipi",
+                items: {
+                    "1": { title: "Branimir i neprijatelji", category: "Muzika uživo", desc: "Snažan rokenrol vizual koji slavi bunt, slobodu i sirovu energiju domaće ex-YU rock scene, uz poruku da je rock’n’roll i dalje živ i neprilagođen." },
+                    "2": { title: "Lipa Trio", category: "Muzika uživo", desc: "Povodom Dana grada, u Lipi slavimo Novi Sad uz jutarnji rokenrol i dobru energiju.U četvrtak od 11h, Trio Lipa donosi svirku koja budi grad i čuva tradiciju 🎸🍻" },
+                    "3": { title: "Doček", category: "Druženje", desc: "Ulicu je ispunila vesela energija dok su ulićni svirači u Bircuz Lipa dočekivali prolaznike toplim, razigranim melodijama." },
+                    "4": { title: "Jutarnje razgibavanje", category: "Atmosfera", desc: "Idealno mesto za prvu (i svaku sledeću) turu pića." },
+                    "5": { title: "Trio Lipa", category: "Rock’n’Roll", desc: "Jutarnja kafa uz najbolji zvuk u gradu! ☕🎸 Trio Lipa podiže atmosferu u Bircuzu Lipa. Ko kaže da je rano za rokenrol." },
+                    "6": { title: "Pozoriste u kući", category: "Gluma", desc: "Uživajte u snažnoj interpretaciji priča Antonija Tabukija u predstavi 'Žena iz Porto Pima', koju u saradnji sa SNP-om u okviru projekta 'Pozorište u kući' maestralno donosi glumac Jugoslav Krajnov." },
+                    "7": { title: "Ulični svirači", category: "Duh grada", desc: "Muzika koja ima dušu. Dobrodošli na još jedan poseban doček ispred Lipe! 🎶🥂" }
+                }
+            },
             menu: {
                 title: "Karta Pića",
                 subtitle: "Najbolje cene u srcu Novog Sada",
@@ -231,6 +249,24 @@ const resources = {
                 prices: "Prices",
                 shop: "Shop",
                 contact: "Contact"
+            },
+            events: {
+                gallery_badge: "Gallery of Memories",
+                title_prefix: "Chronicle of a",
+                title_suffix: "Good Time",
+                subtitle: "Some nights are remembered by songs, some by conversations, and some by smiles that were captured. Peek into our album.",
+                cta_title: "Want to be part of our story?",
+                cta_button: "Follow us for upcoming gig announcements!",
+                modal_footer: "Captured at Lipa",
+                items: {
+                    "1": { title: "Branimir and Enemies", category: "Live Music", desc: "A strong rock'n'roll visual celebrating rebellion, freedom, and the raw energy of the domestic ex-YU rock scene, with the message that rock'n'roll is still alive and unadapted." },
+                    "2": { title: "Lipa Trio", category: "Live Music", desc: "On the occasion of City Day, we celebrate Novi Sad at Lipa with morning rock'n'roll and good energy. On Thursday from 11 AM, Trio Lipa brings a gig that wakes up the city and preserves tradition 🎸🍻" },
+                    "3": { title: "Welcome", category: "Gathering", desc: "The street was filled with joyful energy as street musicians at Bircuz Lipa welcomed passers-by with warm, playful melodies." },
+                    "4": { title: "Morning Warm-up", category: "Atmosphere", desc: "An ideal place for the first (and every subsequent) round of drinks." },
+                    "5": { title: "Trio Lipa", category: "Rock’n’Roll", desc: "Morning coffee with the best sound in town! ☕🎸 Trio Lipa raises the atmosphere at Bircuz Lipa. Who says it's too early for rock'n'roll." },
+                    "6": { title: "Theater in the House", category: "Acting", desc: "Enjoy a powerful interpretation of Antonio Tabucchi's stories in the play 'The Woman of Porto Pim', masterfully delivered by actor Jugoslav Krajnov in collaboration with SNP within the 'Theater in the House' project." },
+                    "7": { title: "Street Musicians", category: "Spirit of the city", desc: "Music with soul. Welcome to another special gathering in front of Lipa! 🎶🥂" }
+                }
             },
             menu: {
                 title: "Drink Menu",
