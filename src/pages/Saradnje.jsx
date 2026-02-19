@@ -1,61 +1,56 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { FaHandshake, FaWineBottle, FaBeer, FaGlassWhiskey, FaGlassCheers, FaStar } from 'react-icons/fa'
 
-// --- PODACI O SARADNICIMA (DODATI LINKOVI) ---
-const PARTNERS = [
+// --- STATIČKI PODACI O SARADNICIMA (STRUKTURA) ---
+// Imena i Tipovi su prebačeni u i18n.js
+const PARTNERS_DATA = [
     { 
         id: 1, 
-        name: "Pevac Destilerija", 
-        type: "Premium Rakije", 
         icon: <FaGlassWhiskey />,
-        link: "https://podrumpevac.rs/" // Primer linka, promeni ako je drugačiji
+        link: "https://podrumpevac.rs/" 
     },
     { 
         id: 2, 
-        name: "Rubin Kruševac", 
-        type: "Vina i Žestina", 
         icon: <FaWineBottle />,
         link: "https://www.rubin.rs/" 
     },
     { 
         id: 3, 
-        name: "Vinarija Vojnović", 
-        type: "Vrhunska Vina", 
         icon: <FaGlassCheers />,
         link: "https://novisad.travel/vinarije-single/vinarija-vojnovic/" 
     },
     { 
         id: 4, 
-        name: "Valjevska pivara", 
-        type: "Zanatski duh", 
         icon: <FaBeer />,
         link: "https://valjevskapivara.rs/" 
     },
     { 
         id: 5, 
-        name: "Apatinska pivara", 
-        type: "Tradicija piva", 
         icon: <FaBeer />,
         link: "https://apatinskapivara.rs/" 
     },
     { 
         id: 6, 
-        name: "Banjalučka pivara", 
-        type: "Nektar Pivo", 
         icon: <FaBeer />,
         link: "https://banjaluckapivara.com/" 
     },
     { 
         id: 7, 
-        name: "Coca Cola Srbija", 
-        type: "Bezalkoholna pića", 
         icon: <FaStar />,
         link: "https://rs.coca-colahellenic.com/" 
+    },
+    { 
+        id: 8, 
+        icon: <FaBeer />,
+        link: "https://www.carlsbergsrbija.rs/" 
     },
 ];
 
 function Saradnje() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-emerald-950 pt-32 pb-24 px-6 relative overflow-hidden flex flex-col items-center justify-center">
         
@@ -93,12 +88,12 @@ function Saradnje() {
                     transition={{ duration: 0.8 }}
                 >
                     <span className="text-amber-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 flex items-center justify-center gap-2">
-                        <FaHandshake className="text-lg" /> Mreža poverenja
+                        <FaHandshake className="text-lg" /> {t('partners_page.badge')}
                     </span>
                     
                     {/* Zlatni gradijent za naslov */}
                     <h1 className="text-5xl md:text-7xl font-serif font-bold mb-10 bg-gradient-to-r from-amber-100 via-amber-400 to-amber-200 text-transparent bg-clip-text drop-shadow-sm">
-                        Naši Partneri
+                        {t('partners_page.title')}
                     </h1>
                     
                     {/* Tražena rečenica - Premium Glassmorphism Kartica */}
@@ -106,7 +101,7 @@ function Saradnje() {
                         <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-amber-500 rounded-3xl blur-xl opacity-20"></div>
                         <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl">
                             <p className="text-emerald-50 text-xl md:text-2xl font-light leading-relaxed">
-                                "Ponosni smo na dugogodišnju i stabilnu saradnju sa našim istaknutim partnerima, jer zajedno gradimo kvalitet koji naši gosti prepoznaju i vole."
+                                {t('partners_page.quote')}
                             </p>
                         </div>
                     </div>
@@ -115,18 +110,17 @@ function Saradnje() {
 
             {/* --- KARTICE SARADNIKA --- */}
             <div className="flex flex-wrap justify-center gap-6 md:gap-8">
-                {PARTNERS.map((partner, index) => (
+                {PARTNERS_DATA.map((partner, index) => (
                     <motion.a 
                         key={partner.id}
-                        href={partner.link}          // OVDE JE DODAT LINK
-                        target="_blank"              // OTVARA U NOVOM TABU
-                        rel="noopener noreferrer"    // BEZBEDNOST ZA SPOLJNE LINKOVE
+                        href={partner.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: index * 0.1, type: "spring", stiffness: 100, damping: 15 }}
                         whileHover={{ y: -10 }}
-                        // Dodato 'block cursor-pointer' da bude očigledno da je link
                         className="group relative block cursor-pointer w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] xl:w-[calc(25%-24px)]"
                     >
                         {/* Efekat svetljenja iza kartice na hover */}
@@ -143,13 +137,13 @@ function Saradnje() {
                                 {partner.icon}
                             </div>
 
-                            {/* Ime i tip */}
+                            {/* Ime i tip - PREVOD SE UZIMA OVDE */}
                             <div className="relative z-10">
                                 <h3 className="font-bold text-white text-xl mb-2 group-hover:text-amber-300 transition-colors duration-300">
-                                    {partner.name}
+                                    {t(`partners_page.items.${partner.id}.name`)}
                                 </h3>
                                 <span className="text-emerald-400/80 text-xs font-bold uppercase tracking-widest">
-                                    {partner.type}
+                                    {t(`partners_page.items.${partner.id}.type`)}
                                 </span>
                             </div>
                         </div>

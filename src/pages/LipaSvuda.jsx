@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaMapMarkerAlt, FaTimes, FaGlobeAmericas, FaPlane, FaQuoteRight } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
+import { FaMapMarkerAlt, FaTimes, FaGlobeAmericas, FaPlane, FaQuoteRight, FaPlayCircle } from 'react-icons/fa'
 
 // --- UVOZ SLIKA ---
 import img1 from '../assets/svuda1.jpeg'
@@ -11,19 +12,23 @@ import img5 from '../assets/svuda5.jpeg'
 import img6 from '../assets/svuda6.jpeg'
 import img7 from '../assets/svuda7.jpeg'
 import img8 from '../assets/svuda9.jpeg'
+import img9 from '../assets/deki1.webp'
+import video1 from '../assets/deki.mp4'
 
 const LOCATIONS = [
-    { id: 1, image: img1, title: "Beograd, Silosi", desc: "Silosi je nekadašnja industrijska zona na Dorćolu u Beogradu koja je danas jedinstven kulturni i zabavni prostor sa barom, umetničkim programima i pogledom na Dunav." },
-    { id: 2, image: img2, title: "Budimpešta,Madjarska", desc: "Budimpešta je glav­ni grad Mađarske i jedna od najvažnijih kulturnih, političkih i turističkih metropola u srednjoj Evropi, poznata po delu grada na obali Dunava, istorijskim termalnim kupatilima i impresivnoj arhitekturi" },
-    { id: 3, image: img3, title: "Giza,Egipat", desc: "Piramide u Gizi su tri monumentalne drevne egipatske grobnice sagrađene pre više od 4 000 godina na platou kod Kaira, među kojima je Keopsova piramida — najveća i najpoznatija — i koje su postale simbol stare civilizacije i svetskog kulturnog nasleđa." },
-    { id: 4, image: img4, title: "Rim,Italija", desc: "Trevi fontana u Rimu je veličanstvena barokna fontana iz 18. veka, najpoznatija u gradu i poznata po legendi da bacanje novčića u vodu znači da ćeš se vratiti u Rim." },
-    { id: 5, image: img5, title: "Amsterdam,Holandija", desc: "Amsterdam je glavni grad Holandije, poznat po svojim slikovitim kanalima i liberalnoj kulturi, a njegov Red Light District (De Wallen) je istorijska centralna četvrt poznata po mreži uskih ulica sa crvenim svetlima u izlozima gde je legalizovana prostitucija i koja je i danas jedna od najpoznatijih turističkih atrakcija u gradu." },
-    { id: 6, image: img6, title: "Minhen,Nemačka", desc: "Evropsko prvenstvo u fudbalu 2024. u Nemačkoj bilo je 17. izdanje UEFA Evropskog prvenstva, održano od 14. juna do 14. jula sa 24 reprezentacije i utakmicama na deset različitih stadiona u velikim nemačkim gradovima kao što su Berlin, Minhen, Dortmund i Frankfurt, čime je Nemačka po prvi put bila domaćin takvog turnira nakon ponovnog ujedinjenja." },
-    { id: 7, image: img7, title: "Fruška Gora", desc: "Fruška gora je prelepa planina i nacionalni park u Srbiji poznat po gustim šumama, vinogradima, brojnim pravoslavnim manastirima i mnogim stazama za šetnju i rekreaciju" },
-    { id: 8, image: img8, title: "Barselona,Španija", desc: "Barselona je poznata po spektakularnoj bazilici Sagrada Família, remek-delu arhitekte Antonija Gaudija koje se gradi još od 1882. godine i koje će — kada bude završena — biti jedno od najviših verskih zdanja na svetu, a svojim zamršenim oblicima inspirisanim prirodom privlači milione posetilaca svake godine." },
+    { id: 9, type: 'video', image: img9, videoUrl: video1 },
+    { id: 1, type: 'image', image: img1 },
+    { id: 2, type: 'image', image: img2 },
+    { id: 3, type: 'image', image: img3 },
+    { id: 4, type: 'image', image: img4 },
+    { id: 5, type: 'image', image: img5 },
+    { id: 6, type: 'image', image: img6 },
+    { id: 7, type: 'image', image: img7 },
+    { id: 8, type: 'image', image: img8 },
 ];
 
 function LipaSvuda() {
+    const { t } = useTranslation();
     const [selectedLocation, setSelectedLocation] = useState(null);
 
     // Blokiranje skrola pozadine kada je modal otvoren
@@ -51,14 +56,13 @@ function LipaSvuda() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-xs mb-3 flex items-center justify-center gap-2">
-                            <FaPlane className="animate-pulse" /> Putujemo svetom
+                            <FaPlane className="animate-pulse" /> {t('everywhere.badge')}
                         </span>
                         <h1 className="text-4xl md:text-6xl font-serif font-medium text-emerald-950 mb-6">
-                            Lipa Svuda
+                            {t('everywhere.title')}
                         </h1>
                         <p className="text-gray-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-                            Gde god da krenu, naši gosti nose delić Lipe sa sobom.
-                            Kliknite na sliku da pročitate priču sa putovanja.
+                            {t('everywhere.subtitle')}
                         </p>
                     </motion.div>
                 </div>
@@ -74,22 +78,28 @@ function LipaSvuda() {
                             onClick={() => setSelectedLocation(loc)}
                             className="group cursor-pointer bg-white p-3 rounded-2xl shadow-xl hover:shadow-5xl hover:shadow-green-500 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
                         >
-                            <div className="aspect-[4/5] overflow-hidden rounded-xl relative">
+                            <div className="aspect-[4/5] overflow-hidden rounded-xl relative flex items-center justify-center">
                                 <img
                                     src={loc.image}
-                                    alt={loc.title}
+                                    alt={t(`everywhere.locations.${loc.id}.title`)}
                                     loading="lazy"
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                {loc.type === 'video' && (
+                                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center z-10 transition-opacity duration-300 group-hover:bg-black/50">
+                                         <FaPlayCircle className="text-white text-5xl opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all" />
+                                    </div>
+                                )}
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
                                     <span className="bg-white/90 text-emerald-900 px-4 py-2 rounded-full text-sm font-bold backdrop-blur-sm">
-                                        Pročitaj priču
+                                        {t('everywhere.read_story')}
                                     </span>
                                 </div>
                             </div>
                             <div className="pt-4 px-2">
                                 <h3 className="font-bold text-emerald-950 text-lg flex items-center gap-2">
-                                    <FaMapMarkerAlt className="text-amber-500" /> {loc.title}
+                                    <FaMapMarkerAlt className="text-amber-500 shrink-0" /> 
+                                    <span className="truncate">{t(`everywhere.locations.${loc.id}.title`)}</span>
                                 </h3>
                             </div>
                         </motion.div>
@@ -100,16 +110,19 @@ function LipaSvuda() {
             {/* --- OPTIMIZOVAN MODAL --- */}
             <AnimatePresence>
                 {selectedLocation && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+                    <motion.div 
+                        key="modal-backdrop" // OBAVEZAN KEY ZA ANIMATE PRESENCE
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+                    >
 
                         {/* Overlay */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                        <div
                             className="absolute inset-0 bg-black/95 backdrop-blur-md"
                             onClick={() => setSelectedLocation(null)}
-                        ></motion.div>
+                        ></div>
 
                         {/* Sadržaj Modala */}
                         <motion.div
@@ -118,6 +131,7 @@ function LipaSvuda() {
                             exit={{ opacity: 0, scale: 0.95 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
                             className="bg-white w-full max-w-5xl rounded-3xl overflow-hidden shadow-2xl relative z-10 flex flex-col md:flex-row h-[85vh] md:h-auto md:max-h-[90vh]"
+                            onClick={(e) => e.stopPropagation()} // Sprečava zatvaranje kad klikneš na sam modal
                         >
                             {/* Dugme za zatvaranje */}
                             <button
@@ -127,31 +141,37 @@ function LipaSvuda() {
                                 <FaTimes size={20} />
                             </button>
 
-                            {/* 1. DEO ZA SLIKU 
-                            - Mobile: h-[40%] (fiksna visina, gornji deo)
-                            - Desktop: md:h-full (leva polovina)
-                        */}
+                            {/* DEO ZA SLIKU ILI VIDEO */}
                             <div className="w-full h-[60%] md:h-auto md:w-1/2 relative bg-black shrink-0 flex items-center justify-center">
-                                <img
-                                    src={selectedLocation.image}
-                                    alt={selectedLocation.title}
-                                    className="w-full h-full object-contain md:object-cover"
-                                />
+                                {selectedLocation.type === 'video' ? (
+                                    <video
+                                        src={selectedLocation.videoUrl}
+                                        controls
+                                        autoPlay
+                                        loop
+                                        muted
+                                        className="w-full h-full object-contain"
+                                    />
+                                ) : (
+                                    <img
+                                        src={selectedLocation.image}
+                                        alt={t(`everywhere.locations.${selectedLocation.id}.title`)}
+                                        className="w-full h-full object-contain md:object-cover"
+                                    />
+                                )}
                             </div>
 
-                            
                             <div className="w-full h-[40%] md:h-auto md:w-1/2 bg-white flex flex-col overflow-y-auto">
-
                                 <div className="p-8 md:p-12 flex flex-col h-full w-full">
 
                                     {/* Naslov */}
                                     <div className="mb-6 shrink-0">
                                         <span className="text-amber-600 font-bold uppercase tracking-wider text-xs mb-2 block">
-                                            Lokacija
+                                            {t('everywhere.location_label')}
                                         </span>
                                         <h2 className="text-lg md:text-3xl font-serif w-full font-bold text-emerald-950 flex items-center gap-2 leading-tight">
                                             <FaMapMarkerAlt className="text-emerald-600 shrink-0" />
-                                            {selectedLocation.title}
+                                            {t(`everywhere.locations.${selectedLocation.id}.title`)}
                                         </h2>
                                     </div>
 
@@ -159,25 +179,23 @@ function LipaSvuda() {
                                     <div className="relative mb-6 grow">
                                         <FaQuoteRight className="text-5xl text-emerald-50 absolute -top-4 -left-2 z-0" />
                                         <p className="text-gray-700 leading-relaxed text-lg relative z-10 font-light">
-                                            {selectedLocation.desc}
+                                            {t(`everywhere.locations.${selectedLocation.id}.desc`)}
                                         </p>
                                     </div>
 
-                                    {/* Footer (Plane Icon) */}
+                                    {/* Footer */}
                                     <div className="mt-auto pt-6 border-t border-gray-100 flex items-center gap-3 shrink-0">
                                         <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
                                             <FaPlane />
                                         </div>
                                         <p className="text-sm text-gray-500 italic">
-                                            Zabeleženo na putovanju Lipadžija.
+                                            {t('everywhere.footer_note')}
                                         </p>
                                     </div>
                                 </div>
-
                             </div>
-
                         </motion.div>
-                    </div>
+                    </motion.div>
                 )}
             </AnimatePresence>
         </div>

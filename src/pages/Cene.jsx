@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next'
 import { FaChevronDown, FaWineGlassAlt } from 'react-icons/fa'
 import { BiDrink } from "react-icons/bi";
 
-import backgroundImage from '../assets/cene.jpeg'
+// Uvozimo našeg SEO agenta
+import SEO from '../components/SEO'
+
 // --- KATEGORIJE (KLJUČEVI ZA PREVOD) ---
 const CATEGORIES = [
     "draft_beer", "wines", "snacks", "bottled_beer",
@@ -139,116 +141,121 @@ function Cene() {
     const filteredItems = MENU_ITEMS.filter(item => item.category === selectedCategory);
 
     return (
-        // POZADINA: Svetla sa suptilnim paternom i gradijentom
-        // ZAMENI PRVI DIV OVIM:
-        <div className="min-h-screen bg-[#e5e7eb] pt-36 pb-20 px-4 md:px-10 relative">
+        <>
+            {/* --- SEO SEKCIJA ZA KARTU PIĆA --- */}
+            <SEO 
+                title="Karta Pića i Cene | Bircuz Lipa 1880 Novi Sad"
+                description="Pogledajte našu kartu pića i cene. Veliki izbor piva, domaćih vina, premium rakija i bezalkoholnih napitaka u centru Novog Sada. Živeli!"
+            />
 
-            {/* Tekstura buke (noise) za rustični izgled */}
+            <div className="min-h-screen bg-[#e5e7eb] pt-36 pb-20 px-4 md:px-10 relative">
 
+                {/* Tekstura buke (noise) za rustični izgled */}
 
-            <div className="max-w-5xl mx-auto relative z-10">
+                <div className="max-w-5xl mx-auto relative z-10">
 
-                {/* --- HEADER SEKCIJA --- */}
-                <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-16 gap-6">
+                    {/* --- HEADER SEKCIJA --- */}
+                    <div className="flex flex-col md:flex-row justify-between items-end mb-10 md:mb-16 gap-6">
 
-                    {/* Naslov */}
-                    <div className="text-center md:text-left w-full md:w-auto">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
-                            <BiDrink className="text-lg" /> {t('menu.title')}
+                        {/* Naslov */}
+                        <div className="text-center md:text-left w-full md:w-auto">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">
+                                <BiDrink className="text-lg" /> {t('menu.title')}
+                            </div>
+                            <h1 className="text-5xl md:text-6xl font-extrabold text-emerald-950 mb-3 tracking-tight">
+                                {t('menu.title')}
+                            </h1>
+                            <p className="text-gray-500 text-lg font-medium">
+                                {t('menu.subtitle')}
+                            </p>
                         </div>
-                        <h1 className="text-5xl md:text-6xl font-extrabold text-emerald-950 mb-3 tracking-tight">
-                            {t('menu.title')}
-                        </h1>
-                        <p className="text-gray-500 text-lg font-medium">
-                            {t('menu.subtitle')}
-                        </p>
-                    </div>
 
-                    {/* --- SELECT MENI (MODERAN STIL) --- */}
-                    <div className="w-full md:w-auto relative group">
-                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1">
-                            {t('menu.select_label')}
-                        </label>
-                        <div className="relative overflow-hidden rounded-2xl shadow-xl shadow-emerald-900/10 transition-transform transform group-hover:-translate-y-1">
-                            <select
-                                value={selectedCategory}
-                                onChange={(e) => setSelectedCategory(e.target.value)}
-                                className="w-full md:min-w-[350px] appearance-none bg-white border-0 text-emerald-950 font-bold text-lg py-5 px-8 pr-16 cursor-pointer focus:outline-none focus:ring-4 focus:ring-emerald-500/20"
-                            >
-                                {CATEGORIES.map((catKey) => (
-                                    <option key={catKey} value={catKey}>
-                                        {t(`menu.categories.${catKey}`)}
-                                    </option>
-                                ))}
-                            </select>
-                            {/* Dekorativna desna strana selecta */}
-                            <div className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-emerald-600 flex items-center justify-center text-white">
-                                <FaChevronDown />
+                        {/* --- SELECT MENI (MODERAN STIL) --- */}
+                        <div className="w-full md:w-auto relative group">
+                            <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 ml-1">
+                                {t('menu.select_label')}
+                            </label>
+                            <div className="relative overflow-hidden rounded-2xl shadow-xl shadow-emerald-900/10 transition-transform transform group-hover:-translate-y-1">
+                                <select
+                                    value={selectedCategory}
+                                    onChange={(e) => setSelectedCategory(e.target.value)}
+                                    className="w-full md:min-w-[350px] appearance-none bg-white border-0 text-emerald-950 font-bold text-lg py-5 px-8 pr-16 cursor-pointer focus:outline-none focus:ring-4 focus:ring-emerald-500/20"
+                                >
+                                    {CATEGORIES.map((catKey) => (
+                                        <option key={catKey} value={catKey}>
+                                            {t(`menu.categories.${catKey}`)}
+                                        </option>
+                                    ))}
+                                </select>
+                                {/* Dekorativna desna strana selecta */}
+                                <div className="pointer-events-none absolute inset-y-0 right-0 w-14 bg-emerald-600 flex items-center justify-center text-white">
+                                    <FaChevronDown />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* --- LISTA PIĆA (PAPIR KARTICA EFEKAT) --- */}
-                <div className="bg-white rounded-[2rem] shadow-2xl border border-emerald-900/5 p-8 md:p-12 min-h-100% relative overflow-hidden">
+                    {/* --- LISTA PIĆA (PAPIR KARTICA EFEKAT) --- */}
+                    <div className="bg-white rounded-[2rem] shadow-2xl border border-emerald-900/5 p-8 md:p-12 min-h-100% relative overflow-hidden">
 
-                    {/* Dekorativni rub na vrhu kartice */}
-                    <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 via-emerald-600 to-emerald-400"></div>
+                        {/* Dekorativni rub na vrhu kartice */}
+                        <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-400 via-emerald-600 to-emerald-400"></div>
 
-                    <motion.div
-                        layout
-                        className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6"
-                    >
-                        <AnimatePresence mode='popLayout'>
-                            {filteredItems.map((item, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, x: -10 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, scale: 0.95 }}
-                                    transition={{ duration: 0.2, delay: index * 0.03 }}
-                                    className="flex items-end justify-between py-2 group cursor-default"
-                                >
-                                    {/* Naziv pića */}
-                                    <div className="w-full flex items-end justify-between py-2 group cursor-default">
-                                        {/* Kontejner za Ime i Tačkice */}
-                                        <div className="flex-1 flex items-end mr-4 min-w-0">
-                                            {/* Naziv pića - DOZVOLJEN prelazak u novi red (sklonjen whitespace-nowrap, dodata linija visine) */}
-                                            <span className="text-lg font-bold text-gray-800 group-hover:text-emerald-700 transition-colors leading-tight">
-                                                {item.isTranslatable ? t(item.name) : item.name}
-                                            </span>
-                                            {/* Tačkice - samo ako ime ne zauzme ceo prostor */}
-                                            <span className="flex-grow border-b-2 border-dotted border-gray-300 mx-2 mb-1 group-hover:border-emerald-300 transition-colors hidden sm:block"></span>
+                        <motion.div
+                            layout
+                            className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6"
+                        >
+                            <AnimatePresence mode='popLayout'>
+                                {filteredItems.map((item, index) => (
+                                    <motion.div
+                                        key={index}
+                                        initial={{ opacity: 0, x: -10 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, scale: 0.95 }}
+                                        transition={{ duration: 0.2, delay: index * 0.03 }}
+                                        className="flex items-end justify-between py-2 group cursor-default"
+                                    >
+                                        {/* Naziv pića */}
+                                        <div className="w-full flex items-end justify-between py-2 group cursor-default">
+                                            {/* Kontejner za Ime i Tačkice */}
+                                            <div className="flex-1 flex items-end mr-4 min-w-0">
+                                                {/* Naziv pića - DOZVOLJEN prelazak u novi red (sklonjen whitespace-nowrap, dodata linija visine) */}
+                                                <span className="text-lg font-bold text-gray-800 group-hover:text-emerald-700 transition-colors leading-tight">
+                                                    {item.isTranslatable ? t(item.name) : item.name}
+                                                </span>
+                                                {/* Tačkice - samo ako ime ne zauzme ceo prostor */}
+                                                <span className="flex-grow border-b-2 border-dotted border-gray-300 mx-2 mb-1 group-hover:border-emerald-300 transition-colors hidden sm:block"></span>
+                                            </div>
+
+                                            {/* Cena - ZAKUCANA desno */}
+                                            <div className="flex-shrink-0 mb-0.5">
+                                                <span className="text-xl font-extrabold text-emerald-700 whitespace-nowrap">
+                                                    {item.price} <span className="text-xs font-bold text-gray-400 uppercase ml-1">{t('menu.currency')}</span>
+                                                </span>
+                                            </div>
                                         </div>
+                                    </motion.div>
+                                ))}
+                            </AnimatePresence>
+                        </motion.div>
 
-                                        {/* Cena - ZAKUCANA desno */}
-                                        <div className="flex-shrink-0 mb-0.5">
-                                            <span className="text-xl font-extrabold text-emerald-700 whitespace-nowrap">
-                                                {item.price} <span className="text-xs font-bold text-gray-400 uppercase ml-1">{t('menu.currency')}</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </AnimatePresence>
-                    </motion.div>
+                        {/* Prazno stanje */}
+                        {filteredItems.length === 0 && (
+                            <div className="text-center py-32 text-gray-400 flex flex-col items-center justify-center opacity-60">
+                                <FaWineGlassAlt className="text-6xl mb-4 text-gray-300" />
+                                <p className="text-xl font-medium">{t('menu.empty_state')}</p>
+                            </div>
+                        )}
+                    </div>
 
-                    {/* Prazno stanje */}
-                    {filteredItems.length === 0 && (
-                        <div className="text-center py-32 text-gray-400 flex flex-col items-center justify-center opacity-60">
-                            <FaWineGlassAlt className="text-6xl mb-4 text-gray-300" />
-                            <p className="text-xl font-medium">{t('menu.empty_state')}</p>
-                        </div>
-                    )}
+                    {/* Footer napomena */}
+                    <div className="text-center mt-12 text-sm text-gray-400 font-medium">
+                        {t('menu.footer_note')}
+                    </div>
+
                 </div>
-
-                {/* Footer napomena */}
-                <div className="text-center mt-12 text-sm text-gray-400 font-medium">
-                    {t('menu.footer_note')}
-                </div>
-
             </div>
-        </div>
+        </>
     )
 }
 

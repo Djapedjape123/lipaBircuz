@@ -16,7 +16,7 @@ function Kontakt() {
         setStatusMessage('');
 
         const formData = new FormData(e.target);
-        formData.append('_subject', tipForme === 'saradnja' ? 'Novi upit za saradnju!' : 'Nova prijava za posao sa CV-jem!');
+        formData.append('_subject', tipForme === 'saradnja' ? 'Novi upit za saradnju!' : 'Nova prijava za posao!');
         formData.append('_captcha', 'false');
 
         try {
@@ -241,7 +241,7 @@ function Kontakt() {
                                                     name="CV_Dokument" // Ovaj fajl će ti stići kao attachment u mejlu
                                                     id="cv-upload"
                                                     accept=".pdf,.doc,.docx"
-                                                    required
+                                                    
                                                     className="hidden"
                                                     onChange={(e) => setFileName(e.target.files[0]?.name || '')}
                                                 />

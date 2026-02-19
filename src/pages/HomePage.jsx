@@ -2,7 +2,10 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { FaPhoneAlt, FaChevronDown } from 'react-icons/fa'
-import bgImage from '../assets/lipaPozadina.jpeg'
+import bgImage from '../assets/lipaPozadina.webp'
+
+// Uvozimo našeg SEO agenta
+import SEO from '../components/SEO'
 
 import KakoDoNas from '../components/KakoDoNas'
 import Najave from '../components/Najave'
@@ -12,6 +15,13 @@ function HomePage() {
 
   return (
     <>
+      {/* --- SEO SEKCIJA ZA POČETNU STRANU --- */}
+      <SEO 
+        title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
+        description="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića, sjajna atmosfera i uspomene koje traju. Posetite nas u Miletićevoj 9!"
+        type="website"
+      />
+
       {/* --- 1. HERO SEKCIJA --- */}
       {/* min-h-screen osigurava da slika pokrije ceo ekran. Nema margin-top, da bi Navbar bio preko slike. */}
       <div className='relative min-h-screen w-full flex items-center justify-center overflow-hidden'>
@@ -23,7 +33,7 @@ function HomePage() {
             backgroundImage: `url(${bgImage})`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
-            backgroundAttachment: 'fixed' // Ovo čini da slika stoji u mestu dok tekst ide preko
+            backgroundAttachment: 'fixed' 
           }}
         >
           {/* Crni overlay - pojačan na 50% da bi se beli Navbar i tekst jasno videli */}
@@ -39,7 +49,7 @@ function HomePage() {
             transition={{ duration: 0.8 }}
             className='text-5xl md:text-7xl lg:text-8xl font-serif mt-9 text-white mb-6 drop-shadow-2xl'
           >
-            Dobrodošli u Lipu
+            {t('home.title')}
           </motion.h1>
 
           <motion.p
@@ -48,26 +58,22 @@ function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className='text-lg md:text-2xl text-gray-100 mb-10 font-light leading-relaxed drop-shadow-lg'
           >
-            Mesto gde se tradicija sreće sa dobrim društvom. <br className="hidden md:block" />
-            Opustite se uz najbolja pića i autentičnu atmosferu.
+            {t('home.subtitle_part1')} <br className="hidden md:block" />
+            {t('home.subtitle_part2')}
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            /* DODATO: flex centriranje i blago guranje udesno (ml-2) zbog ikonice */
             className="flex justify-center w-full ml-1 md:ml-2"
           >
             <a
               href="tel:0654613359"
-              // PROMENJENO:
-              // px-6 py-3 text-sm gap-2 (za mobilni)
-              // md:px-10 md:py-4 md:text-lg md:gap-3 (za veće ekrane)
-              className='inline-flex items-center gap-2 md:gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full text-sm md:text-lg uppercase tracking-widest transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(5,150,105,0.4)] border border-emerald-400/30'
+              className='inline-flex items-center gap-1 md:gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-6 md:py-4 md:px-10 rounded-full text-sm md:text-lg uppercase tracking-widest transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(5,150,105,0.4)] border border-emerald-400/30'
             >
               <FaPhoneAlt />
-              Rezerviši Sto
+              {t('home.cta_button')}
             </a>
           </motion.div>
 

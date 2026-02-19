@@ -92,6 +92,7 @@ function NavBar() {
                                 <Link to="/mali-fudbal" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.football')}</Link>
                                 <Link to="/lipa-kviz" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.quiz')}</Link>
                                 <Link to="/lipa-svuda" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.everywhere')}</Link>
+                                <Link to="/dogadjaj" className={dropdownLinkStyle}>{t('nav.lipadzije_sub.famous')}</Link>
                             </div>
                         </div>
 
@@ -157,6 +158,7 @@ function NavBar() {
                                 <Link to="/mali-fudbal" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.football')}</Link>
                                 <Link to="/lipa-kviz" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.quiz')}</Link>
                                 <Link to="/lipa-svuda" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.everywhere')}</Link>
+                                <Link to="/dogadjaj" onClick={closeAll} className="py-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg pl-4 text-base font-medium">{t('nav.lipadzije_sub.famous')}</Link>
                             </div>
                         </div>
 

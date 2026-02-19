@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaChevronLeft, FaChevronRight, FaTimes, FaHistory, FaLeaf, FaPenNib, FaCoffee, FaQuoteLeft } from 'react-icons/fa'
 
 // --- UVOZ SLIKA ---
-import img1 from '../assets/cene.jpeg' 
+import img1 from '../assets/cene.webp' 
 import img2 from '../assets/lipaIstorija.jpg'
 import img3 from '../assets/lipaIstorija2.jpg'
 import img4 from '../assets/lipa3.png'
@@ -59,7 +59,7 @@ function About() {
             >
                 {/* Header Teksta */}
                 <div>
-                    <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-lg mb-2 block">Od 1890. godine</span>
+                    <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-lg mb-2 block">Od 1880. godine</span>
                     <h1 className="text-4xl md:text-6xl font-serif font-medium text-emerald-950 mb-6 mt-5 leading-tight">
                         Kafana „Lipa” <br/>
                         <span className="text-2xl md:text-3xl text-emerald-800/60 italic font-light block mt-2">Duša starog Novog Sada</span>
