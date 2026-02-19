@@ -1,0 +1,6 @@
+# Dozvola za sve pretraživače
+User-agent: *
+Allow: /
+
+# Putanja do tvoje mape sajta (ZAMENI SA SVOJIM DOMENOM!)
+Sitemap: https://tvojdomen.rs/sitemap.xml

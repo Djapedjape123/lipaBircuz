@@ -4,9 +4,9 @@ import { FaChevronLeft, FaChevronRight, FaTimes, FaHistory, FaLeaf, FaPenNib, Fa
 
 // --- UVOZ SLIKA ---
 import img1 from '../assets/cene.webp' 
-import img2 from '../assets/lipaIstorija.jpg'
-import img3 from '../assets/lipaIstorija2.jpg'
-import img4 from '../assets/lipa3.png'
+import img2 from '../assets/lipaIstorija.webp'
+import img3 from '../assets/lipaIstorija22.webp'
+import img4 from '../assets/lipa33.webp'
 
 const IMAGES = [img1, img2, img3,img4];
 

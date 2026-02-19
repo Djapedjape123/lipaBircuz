@@ -9,7 +9,7 @@ import img2 from '../assets/svuda2.jpeg'
 import img3 from '../assets/svuda3.jpeg'
 import img4 from '../assets/svuda4.jpeg'
 import img5 from '../assets/svuda5.jpeg'
-import img6 from '../assets/svuda6.jpeg'
+import img6 from '../assets/svuda6.webp'
 import img7 from '../assets/svuda7.jpeg'
 import img8 from '../assets/svuda9.jpeg'
 import img9 from '../assets/deki1.webp'
@@ -149,6 +149,7 @@ function LipaSvuda() {
                                         controls
                                         autoPlay
                                         loop
+                                        playsInline
                                         muted
                                         className="w-full h-full object-contain"
                                     />

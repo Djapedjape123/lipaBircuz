@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaMusic, FaCalendarCheck, FaInstagram, FaPhoneAlt } from 'react-icons/fa'
 
-import bgImage from '../assets/lipa3.png' 
+import bgImage from '../assets/lipa33.webp' 
 
 function NajavePage() {
     const { t } = useTranslation();
