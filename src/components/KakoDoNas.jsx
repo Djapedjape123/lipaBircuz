@@ -22,7 +22,7 @@ function KakoDoNas() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-xs mb-3 block">
+                        <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-lg mb-3 block">
                             {t('location.badge')}
                         </span>
                         <h2 className="text-4xl md:text-5xl font-serif font-medium text-emerald-950 mb-8">

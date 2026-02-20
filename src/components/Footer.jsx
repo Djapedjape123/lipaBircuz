@@ -90,7 +90,7 @@ function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/dogadaj" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
+                                <Link to="/dogadjaj" className="text-gray-300 hover:text-white hover:translate-x-6 transition-all duration-300 inline-block">
                                     {t('footer.links.happenings')}
                                 </Link>
                             </li>

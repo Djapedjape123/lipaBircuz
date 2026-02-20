@@ -36,6 +36,20 @@ const resources = {
                 shop: "Prodavnica",
                 contact: "Kontakt"
             },
+            about_page: {
+                badge: "Od 1880. godine",
+                title_main: "Kafana „Lipa”",
+                title_sub: "Duša starog Novog Sada",
+                quote: "\"Mesto gde se tradicija sreće sa dobrim društvom, a vreme teče malo sporije.\"",
+                section1_title: "Tradicija duža od veka",
+                section1_text: "Smeštena u samom srcu Novog Sada, u Miletićevoj ulici (nekadašnjem Lebarskom sokaku), kafana „Lipa” već više od 135 godina predstavlja utočište za sve one koji tragaju za autentičnim gradskim duhom. Od svog osnivanja 1890. godine, ovo mesto je bilo i ostalo nezvanični centar kulturnog i društvenog života vojvođanske Atine.",
+                section2_title: "Od „Linde” do „Lipe”",
+                section2_text: "Sve je počelo sa gostioničarem češkog porekla, Jozefom Obernigom, koji je u dvorištu kuće pod starim stablom lipe otvorio pivnicu „Linda” (nem. Zur Linde). Bila je to prava kafana u kojoj se točio najbolji češki pilzner. Kasnije, pod zakupcem Savom Popovićem – Golubicom, ime dobija svoj prepoznatljivi srpski prevod koji nosimo i danas – Lipa.",
+                section3_title: "Gde su sedeli velikani",
+                section3_text: "„Lipa” je imala svoj čuveni „štantiš” (stalni astal), za kojim su istoriju ispisivali:",
+                section4_title: "Ukus tradicije u modernom ruhu",
+                section4_text: "Danas, „Lipa” spaja najbolje iz prošlosti sa modernim gostoprimstvom. Bilo da dolazite na jutarnju kafu, čuveni „hercegovački krš” ili laganu domaću kafu, u „Lipi” ćete osetiti onaj mirniji, gospodski Novi Sad."
+            },
             events: {
                 gallery_badge: "Galerija Uspomena",
                 title_prefix: "Hronika",
@@ -249,6 +263,20 @@ const resources = {
                 prices: "Prices",
                 shop: "Shop",
                 contact: "Contact"
+            },
+            about_page: {
+                badge: "Since 1880",
+                title_main: "Kafana \"Lipa\"",
+                title_sub: "The Soul of Old Novi Sad",
+                quote: "\"A place where tradition meets good company, and time flows a little slower.\"",
+                section1_title: "A Tradition Longer Than a Century",
+                section1_text: "Located in the very heart of Novi Sad, in Miletićeva Street (formerly Baker's Alley), Kafana \"Lipa\" has been a sanctuary for over 135 years for all those seeking the authentic city spirit. Since its establishment in 1890, this place has been and remains the unofficial center of the cultural and social life of the Vojvodina's Athens.",
+                section2_title: "From \"Linda\" to \"Lipa\"",
+                section2_text: "It all started with a tavern keeper of Czech origin, Jozef Obernig, who opened a pub \"Linda\" (Ger. Zur Linde) in the courtyard under an old linden tree. It was a real tavern where the best Czech Pilsner was poured. Later, under the tenant Sava Popović – Golubica, the name got its recognizable Serbian translation that we bear today – Lipa.",
+                section3_title: "Where the Greats Sat",
+                section3_text: "\"Lipa\" had its famous \"štantiš\" (regular table), where history was written by:",
+                section4_title: "The Taste of Tradition in a Modern Guise",
+                section4_text: "Today, \"Lipa\" combines the best of the past with modern hospitality. Whether you come for a morning coffee, the famous \"Herzegovinian karst\" or a light homemade coffee, in \"Lipa\" you will feel that calmer, gentlemanly Novi Sad."
             },
             events: {
                 gallery_badge: "Gallery of Memories",
