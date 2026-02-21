@@ -66,6 +66,7 @@ function KakoDoNas() {
                                     <h4 className="font-bold text-emerald-950">{t('location.hours_label')}</h4>
                                     <p className="text-gray-600">{t('location.hours_week')}</p>
                                     <p className="text-gray-600">{t('location.hours_weekend')}</p>
+                                    <p className="text-gray-600">{t('location.hours_weekend1')}</p>
                                 </div>
                             </div>
 

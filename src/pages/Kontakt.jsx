@@ -81,7 +81,7 @@ function Kontakt() {
                                 </div>
                                 <div>
                                     <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">Lokacija</p>
-                                    <p className="text-white text-lg font-medium">Miletićeva 9</p>
+                                    <p className="text-white text-lg font-medium">Svetozara Miletiće 9</p>
                                     <p className="text-gray-500">21000 Novi Sad, Srbija</p>
                                 </div>
                             </div>
@@ -92,8 +92,8 @@ function Kontakt() {
                                 </div>
                                 <div>
                                     <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">Telefon</p>
-                                    <a href="tel:0654613359" className="text-white text-lg font-medium hover:text-amber-400 transition-colors">
-                                        065 461 3359
+                                    <a href="tel:0642110102" className="text-white text-lg font-medium hover:text-amber-400 transition-colors">
+                                        +381 64 2110102
                                     </a>
                                 </div>
                             </div>
