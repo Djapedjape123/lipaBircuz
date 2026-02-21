@@ -78,10 +78,10 @@ const MENU_ITEMS = [
     { category: "brandy", name: "Viljamovka Takovo 0.05", price: "370" },
     { category: "brandy", name: "Šurlan jabuka 0.05", price: "190" },
     { category: "brandy", name: "Pevac kruska 0.05", price: "270" },
-    { category: "brandy", name: "Pevac dunja 0.05", price: "3700" },
+    { category: "brandy", name: "Pevac dunja 0.05", price: "270" },
     { category: "brandy", name: "Pevac kajsija 0.05", price: "270" },
     { category: "brandy", name: "Pevac šljiva 0.05", price: "170" },
-    { category: "brandy", name: "Pevac medovača 0.05", price: "170" },
+    { category: "brandy", name: "Pevac medovača 0.05", price: "270" },
     { category: "brandy", name: "Stomakljija 0.05", price: "190" },
     { category: "brandy", name: "Vesić malina 0.05", price: "250" },
 
@@ -123,6 +123,7 @@ const MENU_ITEMS = [
     // 10. hot_drinks
     { category: "hot_drinks", name: "menu.items.domestic_coffee", isTranslatable: true, price: "120" },
     { category: "hot_drinks", name: "Espresso", price: "200" },
+     { category: "hot_drinks", name: "Nes", price: "200" },
     { category: "hot_drinks", name: "Čaj", isTranslatable: true, price: "140" },
     { category: "hot_drinks", name: "Med", isTranslatable: true, price: "50" },
     { category: "hot_drinks", name: "Mleko za kafu", isTranslatable: true, price: "20" },
@@ -131,7 +132,7 @@ const MENU_ITEMS = [
     { category: "liqueurs", name: "Gorki List 0.05", price: "270" },
     { category: "liqueurs", name: "Jagermeister 0.05", price: "370" },
     { category: "liqueurs", name: "Gorka tajna 0.05", price: "170" },
-    { category: "liqueurs", name: "Kruskovac 0.05", price: "370" },
+    { category: "liqueurs", name: "Kruskovac 0.05", price: "190" },
 ];
 
 function Cene() {
