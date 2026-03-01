@@ -7,12 +7,12 @@ import { FaChevronLeft, FaChevronRight, FaTimes, FaFutbol, FaTrophy, FaMedal, Fa
 import SEO from '../components/SEO'
 
 // --- UVOZ SLIKA ---
-import img1 from '../assets/fudbal1.jpeg'
-import img2 from '../assets/fudbal2.jpeg'
-import img3 from '../assets/fudbal3.jpeg'
-import img4 from '../assets/fudbal4.jpeg'
-import img5 from '../assets/fudbal5.jpeg'
-import img6 from '../assets/fudbal6.jpeg'
+import img1 from '../assets/fudbal1.webp'
+import img2 from '../assets/fudbal2.webp'
+import img3 from '../assets/fudbal3.webp'
+import img4 from '../assets/fudbal4.webp'
+import img5 from '../assets/fudbal5.webp'
+import img6 from '../assets/fudbal6.webp'
 
 const IMAGES = [img1, img2, img3, img4, img5, img6];
 

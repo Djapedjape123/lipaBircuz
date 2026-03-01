@@ -119,7 +119,7 @@ function Saradnje() {
                 </div>
 
                 {/* --- KARTICE SARADNIKA --- */}
-                <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+                <div className="flex flex-wrap justify-center gap-4 md:gap-8">
                     {PARTNERS_DATA.map((partner, index) => (
                         <motion.a 
                             key={partner.id}
