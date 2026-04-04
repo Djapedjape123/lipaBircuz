@@ -29,11 +29,7 @@ const PARTNERS_DATA = [
         icon: <FaBeer />,
         link: "https://valjevskapivara.rs/" 
     },
-    { 
-        id: 5, 
-        icon: <FaBeer />,
-        link: "https://apatinskapivara.rs/" 
-    },
+   
     { 
         id: 6, 
         icon: <FaBeer />,
