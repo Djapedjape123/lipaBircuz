@@ -17,10 +17,10 @@ const CATEGORIES = [
 // --- PODACI (ISTI KAO PRE) ---
 const MENU_ITEMS = [
     // 1. draft_beer
-    { category: "draft_beer", name: "Jelen 0.30", price: "250" },
-    { category: "draft_beer", name: "Jelen 0.50", price: "300" },
-    { category: "draft_beer", name: "Nikšićko tamno 0.50", price: "350" },
-    { category: "draft_beer", name: "Nikšićko tamno 0.30", price: "300" },
+    { category: "draft_beer", name: "Nektar 0.30", price: "200" },
+    { category: "draft_beer", name: "Nektar 0.50", price: "270" },
+    { category: "draft_beer", name: "Nektar 1L", price: "480" },
+   
 
     // 2. wines
     { category: "wines", name: "Smederevka Tikveš 1L", price: "1400" },
@@ -29,13 +29,13 @@ const MENU_ITEMS = [
     { category: "wines", name: "Vojnović Roze 1L", price: "1400" },
     { category: "wines", name: "Vojnović Cuvee 1L", price: "1400" },
     { category: "wines", name: "Tikveš Roze 1l", price: "1400" },
-    { category: "wines", name: "Medveđa krv Rubin 1L", price: "1400" },
+    // { category: "wines", name: "Medveđa krv Rubin 1L", price: "1400" },
     { category: "wines", name: "Rubin roze 1L", price: "1400" },
     { category: "wines", name: "Čaša vina 0.20", price: "280" },
     { category: "wines", name: "Špricer 0.20", price: "200" },
     { category: "wines", name: "Veliki špricer 0.40", price: "300" },
     { category: "wines", name: "Aspall 0.33", price: "370" },
-    { category: "wines", name: "Somersby 0.33", price: "370" },
+    // { category: "wines", name: "Somersby 0.33", price: "370" },
 
     // 3. snacks
     { category: "snacks", name: "menu.items.peanuts", isTranslatable: true, price: "350" },
@@ -44,25 +44,25 @@ const MENU_ITEMS = [
     // 4. bottled_beer
     { category: "bottled_beer", name: "Zaječarsko 0.50", price: "220" },
     { category: "bottled_beer", name: "Laško 0.50", price: "270" },
-    { category: "bottled_beer", name: "Bavaria 0%alc 0.50", price: "290" },
+    // { category: "bottled_beer", name: "Bavaria 0%alc 0.50", price: "290" },
     { category: "bottled_beer", name: "Lav 0.50", price: "220" },
     { category: "bottled_beer", name: "Lav Premium 0.50", price: "220" },
     { category: "bottled_beer", name: "Jelen 0.50", price: "220" },
     { category: "bottled_beer", name: "Jelen 0.33", price: "270" },
     { category: "bottled_beer", name: "Nikšićko svetlo 0.50", price: "220" },
-    { category: "bottled_beer", name: "Staropramen 0.50", price: "270" },
+    // { category: "bottled_beer", name: "Staropramen 0.50", price: "270" },
     { category: "bottled_beer", name: "Tuborg 0.50", price: "270" },
     { category: "bottled_beer", name: "Carlsberg 0.40", price: "290" },
     { category: "bottled_beer", name: "Valjevsko 0.50", price: "220" },
-    { category: "bottled_beer", name: "Valjevsko nefiltrirano 0.50", price: "270" },
+    // { category: "bottled_beer", name: "Valjevsko nefiltrirano 0.50", price: "270" },
     { category: "bottled_beer", name: "Jagodinsko 0.50", price: "220" },
     { category: "bottled_beer", name: "Nektar 0.50", price: "220" },
     { category: "bottled_beer", name: "Banjalučko 0.50", price: "220" },
     { category: "bottled_beer", name: "Amstel", price: "270" },
     { category: "bottled_beer", name: "Heineken 0.40", price: "290" },
-    { category: "bottled_beer", name: "Jelen Fresh 0.50", price: "270" },
-    { category: "bottled_beer", name: "Corona 0.33", price: "550" },
-    { category: "bottled_beer", name: "Stella Artois 0.33", price: "380" },
+    // { category: "bottled_beer", name: "Jelen Fresh 0.50", price: "270" },
+    // { category: "bottled_beer", name: "Corona 0.33", price: "550" },
+    // { category: "bottled_beer", name: "Stella Artois 0.33", price: "380" },
     { category: "bottled_beer", name: "Birra Morretti 0.40", price: "290" },
     { category: "bottled_beer", name: "Blanc 0.33", price: "290" },
     { category: "bottled_beer", name: "Tuborg 0%alc 0.33", price: "290" },
@@ -77,7 +77,7 @@ const MENU_ITEMS = [
     { category: "brandy", name: "Loza 13. Jul 0.05", price: "270" },
     { category: "brandy", name: "Viljamovka Takovo 0.05", price: "370" },
     { category: "brandy", name: "Šurlan jabuka 0.05", price: "190" },
-    { category: "brandy", name: "Pevac kruska 0.05", price: "270" },
+    { category: "brandy", name: "Šurlan kruska 0.05", price: "270" },
     { category: "brandy", name: "Pevac dunja 0.05", price: "270" },
     { category: "brandy", name: "Pevac kajsija 0.05", price: "270" },
     { category: "brandy", name: "Pevac šljiva 0.05", price: "170" },
@@ -109,7 +109,9 @@ const MENU_ITEMS = [
 
     // 9. soft_drinks
     { category: "soft_drinks", name: "Coca Cola 0.25", price: "250" },
+    { category: "soft_drinks", name: "Coca Cola Zero 0.25", price: "250" },
     { category: "soft_drinks", name: "Schweppes Tonic 0.25", price: "250" },
+    { category: "soft_drinks", name: "Schweppes Purple 0.25", price: "250" },
     { category: "soft_drinks", name: "Limunada 0.20", price: "200" },
     { category: "soft_drinks", name: "Bitter Lemon 0.25", price: "250" },
     { category: "soft_drinks", name: "Fanta 0.25", price: "250" },
@@ -132,7 +134,7 @@ const MENU_ITEMS = [
     { category: "liqueurs", name: "Gorki List 0.05", price: "270" },
     { category: "liqueurs", name: "Jagermeister 0.05", price: "370" },
     { category: "liqueurs", name: "Gorka tajna 0.05", price: "170" },
-    { category: "liqueurs", name: "Kruskovac 0.05", price: "190" },
+    { category: "liqueurs", name: "Pelinkovac Rubin 0.05", price: "190" },
 ];
 
 function Cene() {

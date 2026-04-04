@@ -150,7 +150,7 @@ function Footer() {
                     </p>
                     <div className="flex gap-6">
                         
-                        <span className="hover:text-gray-400 cursor-pointer">{t('footer.terms')}</span>
+                        {/* <span className="hover:text-gray-400 cursor-pointer">{t('footer.terms')}</span> */}
                         {/* <span className="hover:text-gray-400 cursor-pointer">Development by <a className='font-bold text-white hover:text-blue-500' href="https://www.pedjadev.com/">prWeb</a></span> */}
                         <a href="https://www.pedjadev.com/" className='hover:text-gray-400 cursor-pointer'>{t('footer.dev')} <span className='font-bold text-white hover:text-blue-500'>prWeb</span></a>
                     </div>
