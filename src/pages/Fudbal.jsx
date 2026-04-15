@@ -224,7 +224,7 @@ function Fudbal() {
                 </motion.div>
 
 
-                {/* --- MODAL (LIGHTBOX) SA SLAJDEROM --- */}
+                {/* --- MODAL (LIGHTBOX) SA SLAJDEROM I SWIPE FUNKCIJOM --- */}
                 <AnimatePresence>
                     {isModalOpen && (
                         <motion.div
@@ -264,7 +264,7 @@ function Fudbal() {
                                 <FaChevronRight size={24} />
                             </button>
 
-                            {/* Slika u modalu sa animacijom promene */}
+                            {/* Slika u modalu sa animacijom promene i swipe funkcijom */}
                             <AnimatePresence mode='wait'>
                                 <motion.img
                                     key={currentIndex} // Ključno za animaciju promene slike
@@ -274,13 +274,25 @@ function Fudbal() {
                                     transition={{ duration: 0.3 }}
                                     src={IMAGES[currentIndex]}
                                     alt="Full screen"
-                                    className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain select-none relative z-10"
+                                    // Dodate klase za kursor prsta/hvatanja
+                                    className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain select-none relative z-10 cursor-grab active:cursor-grabbing"
                                     onClick={(e) => e.stopPropagation()}
+                                    // Logika za povlačenje (swipe) na dodir i miš
+                                    drag="x"
+                                    dragConstraints={{ left: 0, right: 0 }}
+                                    dragElastic={0.4}
+                                    onDragEnd={(e, { offset }) => {
+                                        if (offset.x > 50) {
+                                            prevSlide();
+                                        } else if (offset.x < -50) {
+                                            nextSlide();
+                                        }
+                                    }}
                                 />
                             </AnimatePresence>
 
                             {/* Brojač slika - OBRATI PAŽNJU NA PROSLEĐIVANJE VARIJABLI! */}
-                            <div className="absolute bottom-6 text-white/60 text-sm font-light tracking-widest z-20">
+                            <div className="absolute bottom-6 text-white/60 text-sm font-light tracking-widest z-20 pointer-events-none">
                                 {t('football.slider_counter', { current: currentIndex + 1, total: IMAGES.length })}
                             </div>
                         </motion.div>

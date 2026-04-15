@@ -221,7 +221,7 @@ function Kviz() {
                             <FaChevronRight size={24} />
                         </button>
 
-                        {/* Slika u modalu */}
+                        {/* Slika u modalu sa swipe funkcijom */}
                         <AnimatePresence mode='wait'>
                             <motion.img
                                 key={currentIndex}
@@ -231,12 +231,24 @@ function Kviz() {
                                 transition={{ duration: 0.3 }}
                                 src={IMAGES[currentIndex]}
                                 alt="Full screen"
-                                className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain select-none relative z-10"
+                                // Dodate klase za kursor
+                                className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain select-none relative z-10 cursor-grab active:cursor-grabbing"
                                 onClick={(e) => e.stopPropagation()}
+                                // Logika za prevlačenje prstom (swipe)
+                                drag="x"
+                                dragConstraints={{ left: 0, right: 0 }}
+                                dragElastic={0.4}
+                                onDragEnd={(e, { offset }) => {
+                                    if (offset.x > 50) {
+                                        prevSlide();
+                                    } else if (offset.x < -50) {
+                                        nextSlide();
+                                    }
+                                }}
                             />
                         </AnimatePresence>
 
-                        <div className="absolute bottom-6 text-white/60 text-sm font-light tracking-widest z-20">
+                        <div className="absolute bottom-6 text-white/60 text-sm font-light tracking-widest z-20 pointer-events-none">
                             {t('quiz.slider_counter', { current: currentIndex + 1, total: IMAGES.length })}
                         </div>
                     </motion.div>

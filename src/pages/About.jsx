@@ -207,25 +207,57 @@ function About() {
                     className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
                     onClick={() => setIsModalOpen(false)}
                 >
+                    {/* Zatvaranje modala */}
                     <button 
-                        className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2"
+                        className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-50"
                         onClick={() => setIsModalOpen(false)}
                     >
                         <FaTimes size={32} />
                     </button>
 
+                    {/* Leva strelica */}
+                    <button 
+                        className="absolute left-2 md:left-10 text-white/50 hover:text-white transition-colors p-2 z-50"
+                        onClick={(e) => { e.stopPropagation(); prevSlide(); }}
+                    >
+                        <FaChevronLeft size={40} />
+                    </button>
+
+                    {/* Slika sa swiperom */}
                     <motion.img 
+                        key={currentIndex}
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
                         src={IMAGES[currentIndex]} 
                         alt="Full screen" 
-                        className="max-w-full max-h-full rounded shadow-2xl object-contain select-none"
+                        // cursor-grab klasa daje onaj "ručica" efekat mišu
+                        className="max-w-full max-h-full rounded shadow-2xl object-contain select-none cursor-grab active:cursor-grabbing z-40"
                         onClick={(e) => e.stopPropagation()} 
+                        // Logika za povlačenje (swipe)
+                        drag="x"
+                        dragConstraints={{ left: 0, right: 0 }}
+                        dragElastic={0.4}
+                        onDragEnd={(e, { offset }) => {
+                            if (offset.x > 50) {
+                                prevSlide();
+                            } else if (offset.x < -50) {
+                                nextSlide();
+                            }
+                        }}
                     />
                     
-                    <div className="absolute bottom-6 text-white/60 text-sm font-light tracking-widest">
+                    {/* Desna strelica */}
+                    <button 
+                        className="absolute right-2 md:right-10 text-white/50 hover:text-white transition-colors p-2 z-50"
+                        onClick={(e) => { e.stopPropagation(); nextSlide(); }}
+                    >
+                        <FaChevronRight size={40} />
+                    </button>
+
+                    {/* Brojač */}
+                    <div className="absolute bottom-6 text-white/60 text-sm font-light tracking-widest pointer-events-none">
                         {currentIndex + 1} / {IMAGES.length}
                     </div>
                 </motion.div>
