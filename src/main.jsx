@@ -7,8 +7,7 @@ import './i18n'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 
-// --- OVO JE TAJNA: LAZY LOADING ---
-// Umesto klasičnog importa, React će ove fajlove "povući" tek kada zatrebaju
+
 const HomePage = lazy(() => import('./pages/HomePage'));
 const Prodaja = lazy(() => import('./pages/Prodaja.jsx'));
 const Cene = lazy(() => import('./pages/Cene.jsx'));
@@ -21,7 +20,8 @@ const Saradnje = lazy(() => import('./pages/Saradnje.jsx'));
 const Kontakt = lazy(() => import('./pages/Kontakt.jsx'));
 const Dogadjaj = lazy(() => import('./pages/Dogadjaj.jsx'));
 
-// Rute ostaju potpuno iste!
+
+
 const router = createBrowserRouter([
   {
     path: '/',

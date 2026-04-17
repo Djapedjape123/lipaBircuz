@@ -22,8 +22,7 @@ function HomePage() {
         type="website"
       />
 
-      {/* --- 1. HERO SEKCIJA --- */}
-      {/* min-h-screen osigurava da slika pokrije ceo ekran. Nema margin-top, da bi Navbar bio preko slike. */}
+      
       <div className='relative min-h-screen w-full flex items-center justify-center overflow-hidden'>
 
         {/* Pozadinska slika sa Parallax efektom */}
@@ -91,7 +90,7 @@ function HomePage() {
       </div>
 
       {/* --- OSTATAK SAJTA --- */}
-      {/* relative z-20 i bg-white su bitni da prekriju hero sliku kad skroluješ dole */}
+      
       <div className="relative z-20  shadow-2xl">
 
         <div className="">

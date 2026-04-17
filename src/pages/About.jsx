@@ -46,7 +46,7 @@ function About() {
         {/* POZADINA */}
         <div className="min-h-screen bg-[#fdfbf7] pt-36 pb-24 px-6 md:px-12 relative overflow-hidden">
           
-          {/* Dekorativni detalji */}
+          
           <div className="absolute top-20 left-10 text-[20rem] text-emerald-900/20 rotate-12 select-none pointer-events-none">
               <FaLeaf />
           </div>
@@ -58,7 +58,7 @@ function About() {
             
             {/* --- LEVA STRANA: TEKST --- */}
             <div className="lg:col-span-7 order-1 lg:order-1 relative">
-                {/* Vertikalna linija dekoracije */}
+                
                 <div className="absolute left-0 top-4 bottom-4 w-px bg-gradient-to-b from-transparent via-emerald-800/30 to-transparent hidden md:block -ml-8"></div>
 
                 <motion.div 
@@ -197,7 +197,7 @@ function About() {
 
           </div>
 
-          {/* --- MODAL --- */}
+          {/* --- MODEL --- */}
           <AnimatePresence>
             {isModalOpen && (
                 <motion.div 
