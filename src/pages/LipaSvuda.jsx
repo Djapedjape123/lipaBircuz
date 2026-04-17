@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaMapMarkerAlt, FaTimes, FaGlobeAmericas, FaPlane, FaQuoteRight, FaPlayCircle } from 'react-icons/fa'
 
-// --- UVOZ SLIKA ---
+
 import img1 from '../assets/svuda1.jpeg'
 import img2 from '../assets/svuda2.jpeg'
 import img3 from '../assets/svuda3.jpeg'
@@ -118,7 +118,7 @@ function LipaSvuda() {
                         className="fixed inset-0 z-[100] flex items-center justify-center p-4"
                     >
 
-                        {/* Overlay */}
+                        
                         <div
                             className="absolute inset-0 bg-black/95 backdrop-blur-md"
                             onClick={() => setSelectedLocation(null)}
@@ -184,7 +184,7 @@ function LipaSvuda() {
                                         </p>
                                     </div>
 
-                                    {/* Footer */}
+                                    
                                     <div className="mt-auto pt-6 border-t border-gray-100 flex items-center gap-3 shrink-0">
                                         <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
                                             <FaPlane />

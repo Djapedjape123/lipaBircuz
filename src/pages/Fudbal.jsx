@@ -6,7 +6,7 @@ import { FaChevronLeft, FaChevronRight, FaTimes, FaFutbol, FaTrophy, FaMedal, Fa
 // Uvozimo našeg SEO agenta
 import SEO from '../components/SEO'
 
-// --- UVOZ SLIKA ---
+
 import img1 from '../assets/fudbal1.webp'
 import img2 from '../assets/fudbal2.webp'
 import img3 from '../assets/fudbal3.webp'
@@ -40,7 +40,7 @@ function Fudbal() {
 
     return (
         <>
-            {/* --- SEO SEKCIJA ZA FUDBAL --- */}
+           
             <SEO 
                 title="Ekipa Malog Fudbala Lipadžije | Bircuz Lipa 1880 Novi Sad"
                 description="Upoznajte 'Lipadžije', tim malog fudbala koji ponosno predstavlja Bircuz Lipa. Osvajači Kupa grada Novog Sada, pobednici na terenu i za šankom!"
@@ -181,7 +181,7 @@ function Fudbal() {
                                     </div>
                                 </div>
 
-                                {/* 4. DEO: ZAKLJUČAK */}
+                               
                                 <div className="pt-4 border-t border-gray-100">
                                     <p className="mb-4 text-gray-600 italic">
                                         {t('football.conclusion')}
