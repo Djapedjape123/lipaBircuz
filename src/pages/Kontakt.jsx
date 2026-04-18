@@ -8,8 +8,7 @@ function Kontakt() {
     const [statusMessage, setStatusMessage] = useState('');
     const [fileName, setFileName] = useState('');
 
-    // --- LOGIKA ZA SLANJE FORME (BEZ TVOG BACKENDA) ---
-   // --- LOGIKA ZA SLANJE FORME ---
+   //LOGIKA ZA SLANJE OBA TIPA FORMULARA (SARADNJA I POSAO) NA FORM SUBMIT
     const handleSubmit = async (e, tipForme) => {
         e.preventDefault();
         setIsSubmitting(true);
