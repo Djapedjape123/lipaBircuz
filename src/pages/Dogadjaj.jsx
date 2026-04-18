@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaMusic, FaGlassCheers, FaCamera, FaTimes, FaCalendarAlt, FaStar } from 'react-icons/fa'
 
-// Uvozimo SEO komponentu
+
 import SEO from '../components/SEO'
 
-// --- UVOZ SLIKA ---
+
 import img1 from '../assets/dog1.webp'
 import img2 from '../assets/dog2.webp'
 import img3 from '../assets/dog3.webp'
@@ -44,7 +44,7 @@ function Dogadjaj() {
             {/* --- SEO SEKCIJA ZA GALERIJU DOGAĐAJA --- */}
             <SEO 
                 title="Galerija Događaja | Bircuz Lipa 1880 Novi Sad"
-                description="Hronika dobrog provoda. Pogledajte atmosferu sa živih svirki, pozorišnih predstava i svakodnevnih druženja u autentičnom ambijentu kafane Lipa."
+                description="Hronika dobrog provoda. Pogledajte atmosferu sa živih svirki, pozorišnih predstava i svakodnevnih druženja u autentičnom ambijentu novosadske kafane Lipa."
             />
 
             <div className="min-h-screen bg-[#f8f5f2] pt-32 pb-20 px-6 relative overflow-hidden">

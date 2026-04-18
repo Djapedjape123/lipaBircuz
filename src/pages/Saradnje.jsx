@@ -6,8 +6,7 @@ import { FaHandshake, FaWineBottle, FaBeer, FaGlassWhiskey, FaGlassCheers, FaSta
 // Uvozimo našeg SEO agenta
 import SEO from '../components/SEO'
 
-// --- STATIČKI PODACI O SARADNICIMA (STRUKTURA) ---
-// Imena i Tipovi su prebačeni u i18n.js
+
 const PARTNERS_DATA = [
     { 
         id: 1, 
@@ -60,8 +59,7 @@ function Saradnje() {
 
         <div className="min-h-screen bg-emerald-950 pt-32 pb-24 px-6 relative overflow-hidden flex flex-col items-center justify-center">
             
-            {/* --- ULTRA MODERNA POZADINA --- */}
-            {/* 1. Mreža (Tačkice) */}
+            
             <div 
                 className="absolute inset-0 opacity-20 pointer-events-none z-0"
                 style={{
