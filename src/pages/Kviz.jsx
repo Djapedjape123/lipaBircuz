@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next' // DODAT IMPORT ZA PREVOD
 import { FaChevronLeft, FaChevronRight, FaTimes, FaBrain, FaQuestionCircle, FaLightbulb, FaBeer, FaComments, FaMedal } from 'react-icons/fa'
 
-// --- UVOZ SLIKA ---
+
 import img1 from '../assets/kviz1.webp'
 import img2 from '../assets/kviz2.jpeg'
 import img3 from '../assets/kviz3.jpeg'
@@ -98,7 +98,7 @@ function Kviz() {
                 </div>
                 
 
-                {/* --- DESNA STRANA: TEKST --- */}
+                {/* --- DESNA STRANA --- */}
                 <div className="lg:col-span-6 order-1 lg:order-2 relative">
 
                     <motion.div
@@ -183,7 +183,7 @@ function Kviz() {
 
             </div>
 
-            {/* --- MODAL (LIGHTBOX) SA SLAJDEROM --- */}
+            {/* --- MODAL SA SLAJDEROM --- */}
             <AnimatePresence>
                 {isModalOpen && (
                     <motion.div

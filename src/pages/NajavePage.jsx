@@ -25,7 +25,7 @@ function NajavePage() {
     return (
         <div className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center py-32 px-6">
             
-            {/* --- 1. POZADINSKA SLIKA SA CRNIM OVERLAY-OM --- */}
+            
             <div className="absolute inset-0 z-0">
                 <img 
                     src={bgImage} 
@@ -56,7 +56,7 @@ function NajavePage() {
                     <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full mx-auto mt-6"></div>
                 </motion.div>
 
-                {/* --- PRIKAZ: AKO NEMA DOGAĐAJA (CURRENT STATE) --- */}
+                {/* --- PRIKAZ: AKO NEMA DOGAĐAJA --- */}
                 {events.length === 0 && (
                     <motion.div 
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -98,7 +98,7 @@ function NajavePage() {
                                     <FaInstagram size={20} /> {t('events_page.follow_btn')}
                                 </a>
 
-                                {/* Dugme za Rezervaciju */}
+                                {/* Dugme za rezervaciju */}
                                 <a 
                                     href="tel:0654613359" 
                                     className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-emerald-600 text-white font-bold shadow-lg shadow-emerald-500/30 hover:bg-emerald-500 hover:scale-105 transition-all border border-white/10"
@@ -111,7 +111,7 @@ function NajavePage() {
                 )}
 
 
-                {/* --- PRIKAZ: KADA BUDEŠ IMAO DOGAĐAJE (FUTURE STATE) --- */}
+                {/* --- PRIKAZ: Kada bude dogadjaja --- */}
                 {events.length > 0 && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {events.map((event) => (
@@ -123,7 +123,7 @@ function NajavePage() {
                             >
                                 {/* Slika Događaja */}
                                 <div className="h-56 bg-gray-900 relative overflow-hidden">
-                                    {/* <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" /> */}
+                                {/* <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" /> */}
                                     
                                     {/* Placeholder dok nema slike */}
                                     <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black"></div>

@@ -127,21 +127,21 @@ function Saradnje() {
                             whileHover={{ y: -10 }}
                             className="group relative block cursor-pointer w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-22px)] xl:w-[calc(25%-24px)]"
                         >
-                            {/* Efekat svetljenja iza kartice na hover */}
+                            
                             <div className="absolute inset-0 bg-amber-500/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             
-                            {/* Sama kartica (Tamno staklo) */}
+                            {/* Sama kartica*/}
                             <div className="relative h-full bg-white/5 backdrop-blur-md p-8 rounded-[2rem] border border-white/10 group-hover:border-amber-400/50 transition-all duration-500 flex flex-col items-center text-center overflow-hidden">
                                 
                                 {/* Unutrašnji odsjaj */}
                                 <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                                {/* Ikonica sa zlatnim sjajem */}
+                               
                                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-800 to-emerald-950 text-amber-400 flex items-center justify-center text-4xl mb-6 border border-emerald-700/50 group-hover:scale-110 group-hover:shadow-[0_0_30px_rgba(251,191,36,0.3)] transition-all duration-500 relative z-10">
                                     {partner.icon}
                                 </div>
 
-                                {/* Ime i tip - PREVOD SE UZIMA OVDE */}
+                                {/* IME I PREVOD */}
                                 <div className="relative z-10">
                                     <h3 className="font-bold text-white text-xl mb-2 group-hover:text-amber-300 transition-colors duration-300">
                                         {t(`partners_page.items.${partner.id}.name`)}
