@@ -13,11 +13,13 @@ import img6 from '../assets/svuda6.webp'
 import img7 from '../assets/svuda7.jpeg'
 import img8 from '../assets/svuda9.jpeg'
 import img9 from '../assets/deki1.webp'
+import img10 from '../assets/sici.webp'
 import video1 from '../assets/deki.mp4'
 
 const LOCATIONS = [
     { id: 9, type: 'video', image: img9, videoUrl: video1 },
-    { id: 1, type: 'image', image: img1 },
+     { id: 10, type: 'image', image: img10 },
+    
     { id: 2, type: 'image', image: img2 },
     { id: 3, type: 'image', image: img3 },
     { id: 4, type: 'image', image: img4 },
@@ -25,6 +27,8 @@ const LOCATIONS = [
     { id: 6, type: 'image', image: img6 },
     { id: 7, type: 'image', image: img7 },
     { id: 8, type: 'image', image: img8 },
+    { id: 1, type: 'image', image: img1 },
+   
 ];
 
 function LipaSvuda() {

@@ -149,6 +149,7 @@ const resources = {
                 location_label: "Lokacija",
                 footer_note: "Zabeleženo na putovanju Lipadžija.",
                 locations: {
+                    "10": { title: "Palermo,Sicilija", desc: "Palermo, srce Sicilija, je grad gde se arapski, normanski i italijanski uticaji sudaraju u haotičnoj, ali očaravajućoj energiji Mediterana." },
                     "9": { title: "Peia, Kipar", desc: "Peyia (takođe pisana Pegeia) je slikovito selo i opština u oblasti Pafosa na zapadu Kipra, poznato po prelepim pogledima na Sredozemno more, tradicionalnoj kiparskoj arhitekturi i kao gateway ka popularnim plažama poput Coral Bay-a." },
                     "1": { title: "Beograd, Silosi", desc: "Silosi je nekadašnja industrijska zona na Dorćolu u Beogradu koja je danas jedinstven kulturni i zabavni prostor sa barom, umetničkim programima i pogledom na Dunav." },
                     "2": { title: "Budimpešta, Mađarska", desc: "Budimpešta je glav­ni grad Mađarske i jedna od najvažnijih kulturnih, političkih i turističkih metropola u srednjoj Evropi, poznata po delu grada na obali Dunava, istorijskim termalnim kupatilima i impresivnoj arhitekturi." },

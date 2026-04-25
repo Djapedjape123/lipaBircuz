@@ -31,6 +31,7 @@ const MENU_ITEMS = [
     { category: "wines", name: "Tikveš Roze 1l", price: "1400" },
     // { category: "wines", name: "Medveđa krv Rubin 1L", price: "1400" },
     { category: "wines", name: "Rubin roze 1L", price: "1400" },
+    { category: "wines", name: "Rubin Tamjanika 0.7L", price: "1500" },
     { category: "wines", name: "Čaša vina 0.20", price: "280" },
     { category: "wines", name: "Špricer 0.20", price: "200" },
     { category: "wines", name: "Veliki špricer 0.40", price: "300" },
