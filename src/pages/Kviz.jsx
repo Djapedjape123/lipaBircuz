@@ -5,14 +5,14 @@ import { FaChevronLeft, FaChevronRight, FaTimes, FaBrain, FaQuestionCircle, FaLi
 
 
 import img1 from '../assets/kviz1.webp'
-import img2 from '../assets/kviz2.jpeg'
-import img3 from '../assets/kviz3.jpeg'
+// import img2 from '../assets/kviz2.jpeg'
+// import img3 from '../assets/kviz3.jpeg'
 import img4 from '../assets/kviz4.webp'
 import img5 from '../assets/kviz5.webp'
 import img6 from '../assets/kviz6.webp'
 import img7 from '../assets/kviz7.webp'
 
-const IMAGES = [img1, img2, img3, img4, img5, img6, img7];
+const IMAGES = [img1, 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777887328/kviz2_hoa0iu.jpg', 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777887363/kviz3_ue0xwr.jpg', img4, img5, img6, img7];
 
 function Kviz() {
     const { t } = useTranslation(); // INICIJALIZACIJA PREVODA

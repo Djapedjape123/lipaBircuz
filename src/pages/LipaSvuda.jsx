@@ -6,14 +6,8 @@ import { FaMapMarkerAlt, FaTimes, FaGlobeAmericas, FaPlane, FaQuoteRight, FaPlay
 // Uvozimo našeg SEO agenta
 import SEO from '../components/SEO'
 
-import img1 from '../assets/svuda1.jpeg'
-import img2 from '../assets/svuda2.jpeg'
-import img3 from '../assets/svuda3.jpeg'
-import img4 from '../assets/svuda4.jpeg'
-import img5 from '../assets/svuda5.jpeg'
+
 import img6 from '../assets/svuda6.webp'
-import img7 from '../assets/svuda7.jpeg'
-import img8 from '../assets/svuda9.jpeg'
 import img9 from '../assets/deki1.webp'
 import img10 from '../assets/sici.webp'
 import video1 from '../assets/deki.mp4'
@@ -21,14 +15,14 @@ import video1 from '../assets/deki.mp4'
 const LOCATIONS = [
     { id: 9, type: 'video', image: img9, videoUrl: video1 },
     { id: 10, type: 'image', image: img10 },
-    { id: 2, type: 'image', image: img2 },
-    { id: 3, type: 'image', image: img3 },
-    { id: 4, type: 'image', image: img4 },
-    { id: 5, type: 'image', image: img5 },
+    { id: 2, type: 'image', image: 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777886304/svuda2_rwycek.jpg' },
+    { id: 3, type: 'image', image: 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777886434/svuda3_d0sip6.jpg' },
+    { id: 4, type: 'image', image: 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777886661/svuda4_bxno6m.jpg' },
+    { id: 5, type: 'image', image: 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777886740/svuda5_red6gz.jpg' },
     { id: 6, type: 'image', image: img6 },
-    { id: 7, type: 'image', image: img7 },
-    { id: 8, type: 'image', image: img8 },
-    { id: 1, type: 'image', image: img1 },
+    { id: 7, type: 'image', image: 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777886806/svuda7_z5u0qb.jpg' },
+    { id: 8, type: 'image', image: 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777886900/svuda9_gdncwi.jpg' },
+    { id: 1, type: 'image', image: 'https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777886070/svuda1_flgqfg.jpg' },
 ];
 
 function LipaSvuda() {
