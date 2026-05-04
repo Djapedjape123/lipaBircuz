@@ -5,7 +5,7 @@ export default function SEO({
   title, 
   description, 
   type = "website",
-  image = "/lipa3.webp", // Tvoja glavna slika kao podrazumevana
+  image = "https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg", // Tvoja glavna slika kao podrazumevana
   url = "TBD" // Zamenićemo kad kupiš domen
 }) {
   return (

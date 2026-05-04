@@ -20,6 +20,7 @@ function HomePage() {
         title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
         description="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića, sjajna atmosfera i uspomene koje traju. Posetite nas u Miletićevoj 9!"
         type="website"
+        image='https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg'
       />
 
       

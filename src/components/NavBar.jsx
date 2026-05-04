@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import { FaChevronDown } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 
-import logoPlaceholder from '../assets/lipalogo.png'
+// import logoPlaceholder from '../assets/lipalogo.png'
 
 function NavBar() {
     const { t, i18n } = useTranslation();
@@ -66,7 +66,7 @@ function NavBar() {
                         <div className={`relative overflow-hidden rounded-full border-2 border-emerald-500/50 group-hover:border-emerald-400 transition-all duration-500 shadow-lg shadow-black/30 bg-white ${shouldBeDark ? 'w-14 h-14 md:w-16 md:h-16' : 'w-16 h-16 md:w-24 md:h-24'
                             }`}>
                             <img
-                                src={logoPlaceholder}
+                                src='https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg'
                                 alt="Lipa Logo"
                                 className="w-full h-full object-cover"
                             />

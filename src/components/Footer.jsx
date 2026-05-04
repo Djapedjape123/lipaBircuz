@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebookF, FaEnvelope, FaTripadvisor } from 'react-icons/fa'
 
 // LOGO
-import logo from '../assets/lipalogo.png'
+// import logo from '../assets/lipalogo.png'
 
 function Footer() {
     const { t } = useTranslation();
@@ -26,7 +26,7 @@ function Footer() {
                         <Link to="/" className="flex items-center gap-3 mb-6 group">
                             {/* Slika Logoa */}
                             <img 
-                                src={logo} 
+                                src='https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg' 
                                 alt="Lipa Logo" 
                                 className="w-20 h-20 rounded-full object-contain group-hover:scale-105 transition-transform"
                                  

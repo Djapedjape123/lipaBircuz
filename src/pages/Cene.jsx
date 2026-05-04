@@ -149,7 +149,7 @@ function Cene() {
             {/* --- SEO SEKCIJA ZA KARTU PIĆA --- */}
             <SEO 
                 title="Karta Pića i Cene | Bircuz Lipa 1880 Novi Sad"
-                description="Pogledajte našu kartu pića i cene. Veliki izbor piva, domaćih vina, premium rakija i bezalkoholnih napitaka u centru Novog Sada. Živeli!"
+                description="Pogledajte našu kartu pića i cene. Veliki izbor piva, vina, premium rakija i bezalkoholnih napitaka u centru Novog Sada. Živeli!"
             />
 
             <div className="min-h-screen bg-[#e5e7eb] pt-36 pb-20 px-4 md:px-10 relative">
