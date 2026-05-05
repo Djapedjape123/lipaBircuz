@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FaMapMarkerAlt, FaPhoneAlt, FaInstagram, FaFacebookF, FaEnvelope, FaTripadvisor } from 'react-icons/fa'
 
-// LOGO
-// import logo from '../assets/lipalogo.png'
+
 
 function Footer() {
     const { t } = useTranslation();

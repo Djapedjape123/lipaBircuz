@@ -8,7 +8,7 @@ function Najave() {
   const { t } = useTranslation()
 
   return (
-    // py-12 je visina (dovoljno mala da bude uzana, dovoljno velika da stane tekst)
+    
     <section className="bg-emerald-950 py-12 px-6 relative overflow-hidden border-t border-emerald-900">
       
       {/* Suptilna tekstura u pozadini - može da se doda ako želiš */}
