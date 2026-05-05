@@ -14,7 +14,7 @@ const CATEGORIES = [
     "water", "soft_drinks", "hot_drinks", "liqueurs"
 ];
 
-// --- PODACI (ISTI KAO PRE) ---
+// --- PODACI  ---
 const MENU_ITEMS = [
     // 1. draft_beer
     { category: "draft_beer", name: "Nektar 0.30", price: "200" },

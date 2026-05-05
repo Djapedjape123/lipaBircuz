@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next' // DODAT IMPORT ZA PREVOD
 import { FaChevronLeft, FaChevronRight, FaTimes, FaFutbol, FaTrophy, FaMedal, FaMapMarkerAlt, FaUsers, FaHeart, FaPlayCircle } from 'react-icons/fa'
 
-// Uvozimo našeg SEO agenta
+
 import SEO from '../components/SEO'
 
 

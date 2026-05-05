@@ -5,7 +5,6 @@ import { IoMdClose } from "react-icons/io";
 import { FaChevronDown } from "react-icons/fa";
 import { useTranslation } from 'react-i18next';
 
-// import logoPlaceholder from '../assets/lipalogo.png'
 
 function NavBar() {
     const { t, i18n } = useTranslation();
