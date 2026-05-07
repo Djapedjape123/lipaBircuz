@@ -9,6 +9,7 @@ import SEO from '../components/SEO'
 
 import KakoDoNas from '../components/KakoDoNas'
 import Najave from '../components/Najave'
+import Uspomena from '../components/Uspomena'
 
 function HomePage() {
   const { t } = useTranslation()
@@ -100,6 +101,10 @@ function HomePage() {
 
         <div className="">
           <KakoDoNas />
+        </div>
+        {/* lilja */}
+        <div className="">
+          <Uspomena />
         </div>
 
       </div>
