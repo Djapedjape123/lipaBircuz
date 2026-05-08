@@ -45,8 +45,7 @@ function NavBar() {
     const dropdownLinkStyle =
         'block px-4 py-3 text-sm text-gray-200 hover:text-emerald-400 hover:bg-emerald-900/50 transition-colors border-l-2 border-transparent hover:border-emerald-500'
 
-    // --- LOGIKA ZA BOJU ---
-    // Taman ako je skrolovano ILI ako NIJE početna stranica
+    
     const shouldBeDark = isScrolled || !isHomePage;
 
     return (
