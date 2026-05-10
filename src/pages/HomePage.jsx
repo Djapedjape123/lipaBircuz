@@ -15,10 +15,23 @@ function HomePage() {
   const { t } = useTranslation()
 
   // Funkcija za glatki skrol do prve sekcije
+  // Funkcija za precizan glatki skrol sa odstojanjem
   const scrollToContent = () => {
     const nextSection = document.getElementById('najave-sekcija');
     if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
+      // 1. Nalazimo gde se tačno nalazi sekcija na stranici
+      const elementPosition = nextSection.getBoundingClientRect().top + window.scrollY;
+      
+      // 2. Definišemo "offset" (koliko piksela iznad sekcije želimo da se zaustavimo)
+      // Ako ti je NavBar visok npr. 80px, stavi 100 da bi imao malo lufta.
+      // *Slobodno smanji ili povećaj ovaj broj (npr. na 80 ili 120) dok ne bude savršeno!*
+      const offset = 100; 
+
+      // 3. Skrolujemo na tu izračunatu poziciju
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: 'smooth'
+      });
     }
   }
 
