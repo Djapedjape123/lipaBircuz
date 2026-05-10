@@ -4,7 +4,6 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import './App.css'
 import splashImage from "./assets/loder.png";
-
 import SEO from './components/SEO'
 
 function App() {
@@ -12,9 +11,7 @@ function App() {
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Posle 1.8 sekundi kreće da bledi
     const fadeTimer = setTimeout(() => setFadeOut(true), 1800);
-    // Posle 2.5 sekundi (kad skroz izbledi), brišemo loader iz HTML-a
     const hideTimer = setTimeout(() => setLoading(false), 2500);
     return () => {
       clearTimeout(fadeTimer);
@@ -24,32 +21,30 @@ function App() {
 
   return (
     <>
-      {/* 1. UVODNI EKRAN (ZAVESA PREKO SAJTA) */}
-      {/* Primećuješ da više nema onog 'if (loading)' koji blokira sve, već je loader ubačen iznad svega sa z-[9999] */}
+      {/* 1. GLAVNI SEO (Default za ceo sajt) */}
+      {/* Postavljamo ga ovde, izvan svih uslova, da bi bio odmah vidljiv botovima */}
+      <SEO 
+        title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
+        description="Dobrodošli u Bircuz Lipa, najstariju dušu Novog Sada. Tradicija duga od 1880. godine, vrhunska pića i boemska atmosfera. Posetite nas u Miletićevoj 9!"
+      />
+
+      {/* 2. UVODNI EKRAN (Samo vizuelni sloj) */}
       {loading && (
         <div
           className={`fixed inset-0 z-[9999] bg-white flex items-center justify-center transition-opacity duration-500 ${
             fadeOut ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
         >
-          <SEO 
-            title="Bircuz Lipa 1880 | Učitavanje..." 
-            description="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom."
-          />
+          {/* SEO tag je uklonjen odavde da ne bi zbunio Google botove sa naslovom "Učitavanje..." */}
           <img
             src={splashImage}
-            alt="Uvodna slika"
+            alt="Bircuz Lipa Logo"
             className="object-cover"
           />
         </div>
       )}
 
-      {/* 2. GLAVNI SAJT (Učitava se u pozadini ispod zavese) */}
-      <SEO 
-        title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
-        description="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića, sjajna atmosfera i uspomene koje traju. Posetite nas u Miletićevoj 9!"
-      />
-      
+      {/* 3. GLAVNI SADRŽAJ */}
       <NavBar />
 
       <Suspense fallback={<div className="min-h-screen bg-[#fdfbf7]"></div>}>
