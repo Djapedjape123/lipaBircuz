@@ -10,7 +10,9 @@ const resources = {
                 title: "Dobrodošli u Lipu",
                 subtitle_part1: "Mesto gde se tradicija sreće sa dobrim društvom.",
                 subtitle_part2: "Opustite se uz najbolja pića i autentičnu atmosferu.",
-                cta_button: "Rezerviši Sto"
+                cta_button: "Rezerviši Sto",
+                "tradition": "Tradicija od 1880. godine • Novi Sad",
+                "title": "Bircuz Lipa 1880",
             },
             home_announcements: {
                 badge: "Atmosfera & Druženje",
@@ -37,6 +39,7 @@ const resources = {
                 contact: "Kontakt"
             },
             about_page: {
+                menu: "Pogledajte kartu pića",
                 badge: "Od 1880. godine",
                 title_main: "Kafana „Lipa”",
                 title_sub: "Duša starog Novog Sada",
@@ -225,7 +228,7 @@ const resources = {
                 hours_label: "Radno Vreme",
                 hours_week: "Pon - Čet: 08:00 - 23:00",
                 hours_weekend: "Pet - Sub: 08:00 - 01:00",
-                 hours_weekend1: "Nedelja: 14:00 - 23:00",
+                hours_weekend1: "Nedelja: 14:00 - 23:00",
                 nav_button: "Pokreni Navigaciju",
                 pin_title: "Bircuz Lipa 1880",
                 pin_sub: "Miletićeva 9, 21000 Novi Sad"
@@ -240,7 +243,9 @@ const resources = {
                 title: "Welcome to Lipa",
                 subtitle_part1: "A place where tradition meets good company.",
                 subtitle_part2: "Relax with the best drinks and authentic atmosphere.",
-                cta_button: "Book a Table"
+                cta_button: "Book a Table",
+                "tradition": "Tradition since 1880 • Novi Sad",
+                "title": "Bircuz Lipa 1880",
             },
             home_announcements: {
                 badge: "Atmosphere & Gathering",
@@ -249,7 +254,7 @@ const resources = {
             },
             nav: {
                 about: "About Us",
-                lipadzije: "Lipadzije", 
+                lipadzije: "Lipadzije",
                 lipadzije_sub: {
                     famous: "Lipa Events",
                     football: "5-a-side Football",
@@ -267,6 +272,7 @@ const resources = {
                 contact: "Contact"
             },
             about_page: {
+                menu: "Look at the Menu",
                 badge: "Since 1880",
                 title_main: "Kafana \"Lipa\"",
                 title_sub: "The Soul of Old Novi Sad",
@@ -454,7 +460,7 @@ const resources = {
                 hours_label: "Working Hours",
                 hours_week: "Mon - Thu: 08:00 - 23:00",
                 hours_weekend: "Fri - Sat: 08:00 - 01:00",
-                 hours_weekend1: "Sun: 14:00 - 23:00",
+                hours_weekend1: "Sun: 14:00 - 23:00",
                 nav_button: "Start Navigation",
                 pin_title: "Bircuz Lipa 1880",
                 pin_sub: "Mileticeva 9, 21000 Novi Sad"

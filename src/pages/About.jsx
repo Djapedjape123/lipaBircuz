@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { FaChevronLeft, FaChevronRight, FaTimes, FaHistory, FaLeaf, FaPenNib, FaCoffee, FaQuoteLeft } from 'react-icons/fa'
+import { Link } from 'react-router-dom' // Dodato za interno povezivanje
 
 // Uvozimo SEO komponentu
 import SEO from '../components/SEO'
@@ -12,7 +13,12 @@ import img2 from '../assets/lipaIstorija.webp'
 import img3 from '../assets/lipaIstorija22.webp'
 import img4 from '../assets/lipa33.webp'
 
-const IMAGES = [img1, img2, img3,img4];
+const IMAGES = [
+  { src: img1, alt: "Enterijer kafane Lipa - tradicija i udobnost" },
+  { src: img2, alt: "Istorijski zapisi o Bircuzu Lipa iz 1880. godine" },
+  { src: img3, alt: "Stare fotografije Novog Sada i Miletićeve ulice" },
+  { src: img4, alt: "Atmosfera u Lipi uz kafu i razgovor" }
+];
 
 function About() {
   const { t } = useTranslation();
@@ -37,15 +43,14 @@ function About() {
   };
 
   return (
-    <>
+    <main> {/* SEO: Glavni kontejner mora biti <main> */}
         <SEO 
-            title="O nama | Istorija kafane Lipa 1880"
-            description="Kafana Lipa - Duša starog Novog Sada. Od 1880. godine mesto gde se tradicija sreće sa dobrim društvom. Saznajte više o našoj istoriji i velikanima koji su ovde sedeli."
+            title="O nama | Istorija kafane Lipa 1880 Novi Sad"
+            description="Upoznajte najstariju dušu Novog Sada. Od 1880. godine, Bircuz Lipa je utočište umetnika, pisaca i boema. Saznajte priču o Miletiću, Lazi Kostiću i tradiciji koja traje."
         />
 
         {/* POZADINA */}
         <div className="min-h-screen bg-[#fdfbf7] pt-36 pb-24 px-6 md:px-12 relative overflow-hidden">
-          
           
           <div className="absolute top-20 left-10 text-[20rem] text-emerald-900/20 rotate-12 select-none pointer-events-none">
               <FaLeaf />
@@ -57,7 +62,7 @@ function About() {
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
             {/* --- LEVA STRANA: TEKST --- */}
-            <div className="lg:col-span-7 order-1 lg:order-1 relative">
+            <article className="lg:col-span-7 order-1 lg:order-1 relative"> {/* SEO: Tekstualni sadržaj u <article> */}
                 
                 <div className="absolute left-0 top-4 bottom-4 w-px bg-gradient-to-b from-transparent via-emerald-800/30 to-transparent hidden md:block -ml-8"></div>
 
@@ -68,7 +73,7 @@ function About() {
                     className="flex flex-col gap-10"
                 >
                     {/* Header Teksta */}
-                    <div>
+                    <header>
                         <span className="text-amber-600 font-bold uppercase tracking-[0.2em] text-lg mb-2 block">
                             {t('about_page.badge')}
                         </span>
@@ -81,40 +86,40 @@ function About() {
                         <p className="text-xl text-gray-700 font-light leading-relaxed border-l-4 border-emerald-600 pl-6 italic bg-emerald-50/50 py-4 pr-4 rounded-r-lg">
                             {t('about_page.quote')}
                         </p>
-                    </div>
+                    </header>
 
                     {/* Sadržaj */}
                     <div className="space-y-10 text-gray-700 leading-relaxed text-lg font-light">
                         
-                        <div className="relative">
-                            <h3 className="text-xl font-bold text-emerald-900 mb-3 flex items-center gap-3">
+                        <section>
+                            <h2 className="text-2xl font-bold text-emerald-900 mb-3 flex items-center gap-3"> {/* SEO: Promenjeno u H2 */}
                                 <span className="p-2 bg-emerald-100 rounded-lg text-emerald-700"><FaHistory size={18} /></span>
                                 {t('about_page.section1_title')}
-                            </h3>
+                            </h2>
                             <p>
                                 {t('about_page.section1_text')}
                             </p>
-                        </div>
+                        </section>
 
-                        <div>
-                             <h3 className="text-xl font-bold text-emerald-900 mb-3 flex items-center gap-3">
+                        <section>
+                             <h2 className="text-2xl font-bold text-emerald-900 mb-3 flex items-center gap-3"> {/* SEO: Promenjeno u H2 */}
                                 <span className="p-2 bg-amber-100 rounded-lg text-amber-700"><FaLeaf size={18} /></span>
                                 {t('about_page.section2_title')}
-                            </h3>
+                            </h2>
                             <p>
                                 {t('about_page.section2_text')}
                             </p>
-                        </div>
+                        </section>
 
                         {/* Sekcija Velikani */}
-                        <div className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-emerald-600 relative overflow-hidden group hover:shadow-xl transition-shadow">
+                        <section className="bg-white p-8 rounded-xl shadow-lg border-t-4 border-emerald-600 relative overflow-hidden group hover:shadow-xl transition-shadow">
                             <div className="absolute top-0 right-0 p-4 text-gray-100 group-hover:text-emerald-50 transition-colors">
                                 <FaQuoteLeft size={80} />
                             </div>
                             
-                            <h3 className="text-xl font-bold text-emerald-950 mb-4 flex items-center gap-2 relative z-10">
+                            <h2 className="text-2xl font-bold text-emerald-950 mb-4 flex items-center gap-2 relative z-10"> {/* SEO: Promenjeno u H2 */}
                                  <FaPenNib className="text-emerald-600" /> {t('about_page.section3_title')}
-                            </h3>
+                            </h2>
                             <p className="mb-6 text-base relative z-10">
                                 {t('about_page.section3_text')}
                             </p>
@@ -130,39 +135,48 @@ function About() {
                                      </div>
                                  ))}
                             </div>
-                        </div>
+                        </section>
 
-                        <div>
-                             <h3 className="text-xl font-bold text-emerald-900 mb-3 flex items-center gap-3">
+                        <section>
+                             <h2 className="text-2xl font-bold text-emerald-900 mb-3 flex items-center gap-3"> {/* SEO: Promenjeno u H2 */}
                                 <span className="p-2 bg-emerald-100 rounded-lg text-emerald-700"><FaCoffee size={18} /></span>
                                 {t('about_page.section4_title')}
-                            </h3>
+                            </h2>
                             <p>
                                 {t('about_page.section4_text')}
                             </p>
-                        </div>
+                            
+                            {/* SEO: Interno povezivanje ka jelovniku/kontaktima */}
+                            <div className="mt-10 pt-10 border-t border-gray-100 flex flex-wrap gap-4">
+                                <Link to="/cene" className="text-emerald-700 font-bold hover:text-amber-600 transition-colors underline decoration-amber-500 decoration-2 underline-offset-4">
+                                    {t('about_page.menu')}
+                                </Link>
+                                
+                            </div>
+                        </section>
 
                     </div>
                 </motion.div>
-            </div>
+            </article>
 
 
             {/* --- DESNA STRANA: SLIKE --- */}
-            <div className="lg:col-span-5 order-2 lg:order-2 lg:sticky lg:top-32 h-fit">
+            <aside className="lg:col-span-5 order-2 lg:order-2 lg:sticky lg:top-32 h-fit"> {/* SEO: Pomoćni sadržaj u <aside> */}
                  <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white bg-white">
                     
                     {/* Glavna slika */}
                     <AnimatePresence mode='wait'>
                         <motion.img
                             key={currentIndex}
-                            src={IMAGES[currentIndex]}
-                            alt="Kafana Lipa"
+                            src={IMAGES[currentIndex].src}
+                            alt={IMAGES[currentIndex].alt} // SEO: Specifičan ALT tag za svaku sliku
                             initial={{ opacity: 0, scale: 1.15 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 1, ease: "easeOut" }}
                             onClick={() => setIsModalOpen(true)}
                             className="w-full h-full object-cover cursor-zoom-in"
+                            loading="lazy" // SEO: Optimizacija učitavanja
                         />
                     </AnimatePresence>
 
@@ -181,10 +195,10 @@ function About() {
                          </div>
                          
                          <div className="flex gap-2">
-                            <button onClick={prevSlide} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-emerald-900 transition-all">
+                            <button onClick={prevSlide} aria-label="Prethodna slika" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-emerald-900 transition-all">
                                 <FaChevronLeft size={14} />
                             </button>
-                            <button onClick={nextSlide} className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-emerald-900 transition-all">
+                            <button onClick={nextSlide} aria-label="Sledeća slika" className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white hover:bg-white hover:text-emerald-900 transition-all">
                                 <FaChevronRight size={14} />
                             </button>
                          </div>
@@ -193,7 +207,7 @@ function About() {
 
                 {/* Dekorativni okvir */}
                 <div className="absolute top-6 left-6 w-full h-full border-2 border-emerald-900/10 rounded-[2rem] -z-10 hidden lg:block"></div>
-            </div>
+            </aside>
 
           </div>
 
@@ -207,35 +221,32 @@ function About() {
                     className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-10"
                     onClick={() => setIsModalOpen(false)}
                 >
-                    {/* Zatvaranje modala */}
                     <button 
+                        aria-label="Zatvori"
                         className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors p-2 z-50"
                         onClick={() => setIsModalOpen(false)}
                     >
                         <FaTimes size={32} />
                     </button>
 
-                    {/* Leva strelica */}
                     <button 
+                        aria-label="Prethodna slika"
                         className="absolute left-2 md:left-10 text-white/50 hover:text-white transition-colors p-2 z-50"
                         onClick={(e) => { e.stopPropagation(); prevSlide(); }}
                     >
                         <FaChevronLeft size={40} />
                     </button>
 
-                    {/* Slika sa swiperom */}
                     <motion.img 
                         key={currentIndex}
                         initial={{ scale: 0.9, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.9, opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                        src={IMAGES[currentIndex]} 
-                        alt="Full screen" 
-                        // cursor-grab klasa daje onaj "ručica" efekat mišu
+                        src={IMAGES[currentIndex].src} 
+                        alt={IMAGES[currentIndex].alt} 
                         className="max-w-full max-h-full rounded shadow-2xl object-contain select-none cursor-grab active:cursor-grabbing z-40"
                         onClick={(e) => e.stopPropagation()} 
-                        // Logika za povlačenje (swipe)
                         drag="x"
                         dragConstraints={{ left: 0, right: 0 }}
                         dragElastic={0.4}
@@ -248,15 +259,14 @@ function About() {
                         }}
                     />
                     
-                    {/* Desna strelica */}
                     <button 
+                        aria-label="Sledeća slika"
                         className="absolute right-2 md:right-10 text-white/50 hover:text-white transition-colors p-2 z-50"
                         onClick={(e) => { e.stopPropagation(); nextSlide(); }}
                     >
                         <FaChevronRight size={40} />
                     </button>
 
-                    {/* Brojač */}
                     <div className="absolute bottom-6 text-white/60 text-sm font-light tracking-widest pointer-events-none">
                         {currentIndex + 1} / {IMAGES.length}
                     </div>
@@ -265,7 +275,7 @@ function About() {
           </AnimatePresence>
 
         </div>
-    </>
+    </main>
   )
 }
 
