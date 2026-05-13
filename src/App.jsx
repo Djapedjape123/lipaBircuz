@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       {/* 1. GLAVNI SEO (Default za ceo sajt) */}
-      {/* Postavljamo ga ovde, izvan svih uslova, da bi bio odmah vidljiv botovima */}
+      
       <SEO 
         title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
         description="Dobrodošli u Bircuz Lipa, najstariju dušu Novog Sada. Tradicija duga od 1880. godine, vrhunska pića i boemska atmosfera. Posetite nas u Miletićevoj 9!"
