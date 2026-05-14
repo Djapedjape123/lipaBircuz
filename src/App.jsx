@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import './App.css'
 import splashImage from "./assets/loder.png";
 import SEO from './components/SEO'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -50,7 +51,7 @@ function App() {
       <Suspense fallback={<div className="min-h-screen bg-[#fdfbf7]"></div>}>
         <Outlet/>
       </Suspense>
-
+       <WhatsAppButton />
       <Footer />
       <ScrollRestoration />
     </>
