@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
   useEffect(() => {
     // Dugme se pojavljuje 3 sekunde nakon što se komponenta mount-uje 
     // (taman kad tvoj loader nestane)
-    const timer = setTimeout(() => setIsVisible(true), 3000);
+    const timer = setTimeout(() => setIsVisible(true), 3500);
     return () => clearTimeout(timer);
   }, []);
 
