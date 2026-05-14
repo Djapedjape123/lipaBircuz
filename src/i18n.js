@@ -385,6 +385,7 @@ const resources = {
                 location_label: "Location",
                 footer_note: "Captured on a Lipadzije journey.",
                 locations: {
+                    "10": { title: "Palermo, Sicily", desc: "Palermo, the heart of Sicily, is a city where Arab, Norman, and Italian influences collide in the chaotic yet enchanting energy of the Mediterranean." },
                     "9": { title: "Peyia, Cyprus", desc: "Peyia (also spelled Pegeia) is a picturesque village and municipality in the Paphos District of western Cyprus, known for its beautiful views of the Mediterranean Sea, traditional Cypriot architecture, and as a gateway to popular beaches like Coral Bay." },
                     "1": { title: "Belgrade, Silosi", desc: "Silosi is a former industrial zone in Dorćol, Belgrade, which today is a unique cultural and entertainment space with a bar, art programs, and a view of the Danube." },
                     "2": { title: "Budapest, Hungary", desc: "Budapest is the capital of Hungary and one of the most important cultural, political, and tourist metropolises in Central Europe, known for its cityscape along the Danube, historical thermal baths, and impressive architecture." },
