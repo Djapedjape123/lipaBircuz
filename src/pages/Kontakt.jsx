@@ -11,35 +11,39 @@ function Kontakt() {
     const [statusMessage, setStatusMessage] = useState('');
     const [fileName, setFileName] = useState('');
 
-   //LOGIKA ZA SLANJE OBA TIPA FORMULARA (SARADNJA I POSAO) NA FORM SUBMIT
+    // --- NOVA LOGIKA PREKO WEB3FORMS ---
     const handleSubmit = async (e, tipForme) => {
         e.preventDefault();
         setIsSubmitting(true);
         setStatusMessage('');
 
         const formData = new FormData(e.target);
-        formData.append('_subject', tipForme === 'saradnja' ? 'Novi upit za saradnju!' : 'Nova prijava za posao!');
-        formData.append('_captcha', 'false');
+        
+        // OBAVEZNO: Ovde zalepi ključ koji ti je stigao na mejl!
+        formData.append("access_key", "6cc4e580-e618-4f3c-a660-32a7936126f2"); 
+        
+        // Predmet mejla
+        formData.append("subject", tipForme === 'saradnja' ? 'Novi upit za saradnju!' : 'Nova prijava za posao!');
 
         try {
-            const response = await fetch("https://formsubmit.co/lipadzije@gmail.com", {
+            // Web3Forms API
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                // PROMENA 2: Dodat Accept header kako nas ne bi prebacio na drugu stranicu
-                headers: {
-                    'Accept': 'application/json'
-                },
                 body: formData
             });
 
-            if (response.ok) {
+            const data = await response.json();
+
+            if (data.success) {
                 setStatusMessage('uspeh');
                 e.target.reset(); // Čistimo formu
                 setFileName('');
             } else {
+                console.log("Web3Forms greška:", data);
                 setStatusMessage('greska');
             }
         } catch (error) {
-            console.error(error);
+            console.error("Mrežna greška:", error);
             setStatusMessage('greska');
         } finally {
             setIsSubmitting(false);
@@ -49,7 +53,6 @@ function Kontakt() {
 
     return (
         <>
-            {/* --- SEO SEKCIJA ZA KONTAKT STRANICU --- */}
             <SEO 
                 title="Kontakt i Zaposlenje | Bircuz Lipa 1880 Novi Sad"
                 description="Otvoreni smo za saradnju i uvek tražimo pojačanje! Kontaktirajte kafanu Lipa u Novom Sadu. Adresa: Svetozara Miletića 9."
@@ -57,7 +60,6 @@ function Kontakt() {
 
             <div className="min-h-screen bg-emerald-950 pt-32 pb-24 px-6 relative overflow-hidden flex items-center justify-center">
 
-                {/* --- Pozadinski efekti --- */}
                 <div className="absolute top-[-10%] left-[-10%] w-[40rem] h-[40rem] bg-amber-500/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
                 <div className="absolute bottom-[-10%] right-[-10%] w-[35rem] h-[35rem] bg-emerald-500/20 rounded-full blur-[150px] pointer-events-none z-0"></div>
 
@@ -74,17 +76,16 @@ function Kontakt() {
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
                         
-                        {/* --- LEVA STRANA: KONTAKT INFORMACIJE --- */}
+                        {/* ... LEVA STRANA OSTAJE ISTA ... */}
                         <motion.div 
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
                             className="lg:col-span-4 bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2rem] shadow-2xl"
                         >
                             <h3 className="text-2xl font-serif font-bold text-amber-400 mb-8">Informacije</h3>
-                            
                             <div className="space-y-8">
                                 <div className="flex items-start gap-5 group">
-                                    <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl group-hover:bg-amber-500 group-hover:text-emerald-950 transition-colors">
+                                    <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl">
                                         <FaMapMarkerAlt />
                                     </div>
                                     <div>
@@ -93,9 +94,8 @@ function Kontakt() {
                                         <p className="text-gray-500">21000 Novi Sad, Srbija</p>
                                     </div>
                                 </div>
-
                                 <div className="flex items-start gap-5 group">
-                                    <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl group-hover:bg-amber-500 group-hover:text-emerald-950 transition-colors">
+                                    <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl">
                                         <FaPhoneAlt />
                                     </div>
                                     <div>
@@ -105,9 +105,8 @@ function Kontakt() {
                                         </a>
                                     </div>
                                 </div>
-
                                 <div className="flex items-start gap-5 group">
-                                    <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl group-hover:bg-amber-500 group-hover:text-emerald-950 transition-colors">
+                                    <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl">
                                         <FaEnvelope />
                                     </div>
                                     <div>
@@ -120,13 +119,12 @@ function Kontakt() {
                             </div>
                         </motion.div>
 
-                        {/* --- DESNA STRANA: FORME SA TABOVIMA --- */}
+                        {/* --- DESNA STRANA: FORME --- */}
                         <motion.div 
                             initial={{ opacity: 0, x: 30 }}
                             animate={{ opacity: 1, x: 0 }}
                             className="lg:col-span-8 bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden"
                         >
-                            {/* Tab Dugmići */}
                             <div className="flex flex-col sm:flex-row gap-4 mb-10 bg-emerald-950/50 p-2 rounded-2xl">
                                 <button 
                                     onClick={() => {setActiveTab('saradnja'); setStatusMessage('');}}
@@ -142,7 +140,6 @@ function Kontakt() {
                                 </button>
                             </div>
 
-                            {/* Status Poruke */}
                             {statusMessage === 'uspeh' && (
                                 <div className="mb-6 p-4 bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 rounded-xl flex items-center gap-3">
                                     <FaCheck /> Uspešno poslato! Javićemo se u najkraćem roku.
@@ -154,7 +151,6 @@ function Kontakt() {
                                 </div>
                             )}
 
-                            {/* Menjanje Formi */}
                             <div className="relative min-h-[350px]">
                                 <AnimatePresence mode="wait">
                                     
@@ -172,42 +168,24 @@ function Kontakt() {
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
                                                     <label className="text-emerald-50 text-sm font-medium ml-1">Ime Firme / Osobe</label>
-                                                    <input 
-                                                        type="text" 
-                                                        name="Ime_Firme" // BITNO: name atribut mora da postoji
-                                                        required
-                                                        className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all"
-                                                        placeholder="Unesite naziv firme"
-                                                    />
+                                                    <input type="text" name="Ime" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Unesite naziv firme" />
                                                 </div>
                                                 <div className="space-y-2">
                                                     <label className="text-emerald-50 text-sm font-medium ml-1">Email Adresa</label>
-                                                    <input 
-                                                        type="email" 
-                                                        name="Email"
-                                                        required
-                                                        className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all"
-                                                        placeholder="vas@email.com"
-                                                    />
+                                                    <input type="email" name="Email" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="vas@email.com" />
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="text-emerald-50 text-sm font-medium ml-1">Vaš predlog / Poruka</label>
-                                                <textarea 
-                                                    name="Poruka"
-                                                    required
-                                                    rows="4"
-                                                    className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none"
-                                                    placeholder="Napišite nam vaš predlog..."
-                                                ></textarea>
+                                                <textarea name="Poruka" required rows="4" className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none" placeholder="Napišite nam vaš predlog..."></textarea>
                                             </div>
-                                            <button disabled={isSubmitting} type="submit" className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-emerald-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                                            <button disabled={isSubmitting} type="submit" className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
                                                 {isSubmitting ? 'Šaljem...' : 'Pošalji Upit'}
                                             </button>
                                         </motion.form>
                                     )}
 
-                                    {/* FORMA 2: POSAO (SA FAJLOM) */}
+                                    {/* FORMA 2: POSAO */}
                                     {activeTab === 'posao' && (
                                         <motion.form 
                                             key="form-posao"
@@ -217,46 +195,28 @@ function Kontakt() {
                                             transition={{ duration: 0.3 }}
                                             onSubmit={(e) => handleSubmit(e, 'posao')}
                                             className="space-y-6"
-                                            encType="multipart/form-data" // BITNO ZA SLANJE FAJLOVA
                                         >
                                             <div className="space-y-2">
                                                 <label className="text-emerald-50 text-sm font-medium ml-1">Ime i Prezime</label>
-                                                <input 
-                                                    type="text" 
-                                                    name="Ime_i_Prezime"
-                                                    required
-                                                    className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all"
-                                                    placeholder="Unesite vaše ime i prezime"
-                                                />
+                                                <input type="text" name="Ime_i_Prezime" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Unesite vaše ime i prezime" />
                                             </div>
                                             <div className="space-y-2">
                                                 <label className="text-emerald-50 text-sm font-medium ml-1">Motivaciona Poruka</label>
-                                                <textarea 
-                                                    name="Motivaciono_pismo"
-                                                    required
-                                                    rows="3"
-                                                    className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none"
-                                                    placeholder="Napišite zašto želite da radite sa nama..."
-                                                ></textarea>
+                                                <textarea name="Poruka" required rows="3" className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none" placeholder="Napišite zašto želite da radite sa nama..."></textarea>
                                             </div>
                                             
-                                            {/* Polje za CV fajl */}
                                             <div className="space-y-2">
                                                 <label className="text-emerald-50 text-sm font-medium ml-1">Zakačite Vaš CV (Nije obavezno)</label>
                                                 <div className="relative">
                                                     <input 
                                                         type="file" 
-                                                        name="CV_Dokument" // Ovaj fajl će ti stići kao attachment u mejlu
+                                                        name="file" // Web3Forms traži da se ovo zove "file"
                                                         id="cv-upload"
                                                         accept=".pdf,.doc,.docx"
-                                                        
                                                         className="hidden"
                                                         onChange={(e) => setFileName(e.target.files[0]?.name || '')}
                                                     />
-                                                    <label 
-                                                        htmlFor="cv-upload"
-                                                        className={`w-full flex items-center justify-center gap-3 bg-emerald-900/20 border border-dashed rounded-xl px-5 py-6 cursor-pointer transition-all ${fileName ? 'border-amber-500 text-white' : 'border-white/10 text-gray-400 hover:text-white hover:border-amber-500 hover:bg-white/5'}`}
-                                                    >
+                                                    <label htmlFor="cv-upload" className={`w-full flex items-center justify-center gap-3 bg-emerald-900/20 border border-dashed rounded-xl px-5 py-6 cursor-pointer transition-all ${fileName ? 'border-amber-500 text-white' : 'border-white/10 text-gray-400 hover:text-white hover:border-amber-500 hover:bg-white/5'}`}>
                                                         <FaPaperclip className={`text-xl ${fileName ? 'text-amber-500' : ''}`} />
                                                         <span className="truncate max-w-[80%]">
                                                             {fileName ? `Izabran fajl: ${fileName}` : 'Kliknite da izaberete CV fajl'}
@@ -265,7 +225,7 @@ function Kontakt() {
                                                 </div>
                                             </div>
 
-                                            <button disabled={isSubmitting} type="submit" className="w-full bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-emerald-950 font-bold py-4 rounded-xl shadow-lg hover:shadow-amber-500/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
+                                            <button disabled={isSubmitting} type="submit" className="w-full bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-emerald-950 font-bold py-4 rounded-xl shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
                                                 {isSubmitting ? 'Šaljem prijavu...' : 'Pošalji Prijavu'}
                                             </button>
                                         </motion.form>
