@@ -34,7 +34,7 @@ function Uspomena() {
                     <div className="absolute inset-[-10px] rounded-full border border-white/20 animate-[spin_20s_linear_infinite]"></div>
                     
                     <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-[#1a1a1a] shadow-[0_0_40px_rgba(255,255,255,0.05)] bg-black relative">
-                        {/* OBRISANO je mode="wait" kako bi se slike pretapale JEDNA PREKO DRUGE */}
+                        
                         <AnimatePresence>
                             <motion.img
                                 key={currentIndex}
