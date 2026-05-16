@@ -13,7 +13,7 @@ function Kontakt() {
     const [statusMessage, setStatusMessage] = useState('')
     const [fileName, setFileName] = useState('')
 
-    // --- NOVA LOGIKA PREKO WEB3FORMS ---
+    // --- LOGIKA PREKO WEB3FORMS ---
     const handleSubmit = async (e, tipForme) => {
         e.preventDefault();
         setIsSubmitting(true);
@@ -21,31 +21,61 @@ function Kontakt() {
 
         const formData = new FormData(e.target);
         
-        // OBAVEZNO: Ovde zalepi ključ koji ti je stigao na mejl!
-        formData.append("access_key", "6cc4e580-e618-4f3c-a660-32a7936126f2"); 
+        // OBAVEZNA POLJA ZA WEB3FORMS
+        formData.append("access_key", "6cc4e580-e618-4f3c-a660-32a7936126f2");
         
-        // Predmet mejla
+        // Dodaj from_name i from_email - OVO MORA BITI
+        const nameField = tipForme === 'saradnja' ? 'Ime' : 'Ime_i_Prezime';
+        const nameValue = e.target.querySelector(`input[name="${nameField}"]`)?.value || '';
+        const emailValue = e.target.querySelector(`input[name="Email"]`)?.value || '';
+        
+        formData.append("from_name", nameValue);
+        formData.append("from_email", emailValue);
         formData.append("subject", tipForme === 'saradnja' ? 'Novi upit za saradnju!' : 'Nova prijava za posao!');
 
+        console.log('📋 FormData sadržaj:');
+        for (let [key, value] of formData.entries()) {
+            if (value instanceof File) {
+                console.log(`  ${key}: File(${value.name}, ${value.size} bytes)`);
+            } else {
+                console.log(`  ${key}: ${value}`);
+            }
+        }
+
+        // EKSPLICITNA PROVERA FAJLA
+        if (tipForme === 'posao') {
+            const fileInput = document.getElementById('cv-upload');
+            if (fileInput?.files?.[0]) {
+                console.log('📎 Fajl detektovan:', fileInput.files[0].name, fileInput.files[0].size, 'bytes');
+                formData.delete('file');
+                formData.append('file', fileInput.files[0]);
+            } else {
+                console.log('⚠️ Nema fajla selektovanog');
+            }
+        }
+
         try {
-            // Web3Forms API
+            console.log('🚀 Slanje na Web3Forms...');
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 body: formData
             });
 
             const data = await response.json();
+            console.log('📡 Odgovor iz Web3Forms:', data);
+            console.log('📡 Status:', response.status);
 
+            
             if (data.success) {
                 setStatusMessage('uspeh');
-                e.target.reset(); // Čistimo formu
+                e.target.reset();
                 setFileName('');
             } else {
-                console.log("Web3Forms greška:", data);
+                console.log("❌ Web3Forms greška:", data);
                 setStatusMessage('greska');
             }
         } catch (error) {
-            console.error("Mrežna greška:", error);
+            console.error("❌ Mrežna greška:", error);
             setStatusMessage('greska');
         } finally {
             setIsSubmitting(false);
@@ -78,7 +108,7 @@ function Kontakt() {
 
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
                         
-                        {/* ... LEVA STRANA OSTAJE ISTA ... */}
+                        {/* --- LEVA STRANA: KONTAKT INFORMACIJE --- */}
                         <motion.div 
                             initial={{ opacity: 0, x: -30 }}
                             animate={{ opacity: 1, x: 0 }}
@@ -197,6 +227,8 @@ function Kontakt() {
                                             transition={{ duration: 0.3 }}
                                             onSubmit={(e) => handleSubmit(e, 'posao')}
                                             className="space-y-6"
+                                            // BITNO ZA FAJLOVE: Govori pretraživaču da forma sadrži fajlove
+                                            encType="multipart/form-data" 
                                         >
                                             <div className="space-y-2">
                                                 <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.job.name_label')}</label>
@@ -207,25 +239,8 @@ function Kontakt() {
                                                 <textarea name="Poruka" required rows="3" className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none" placeholder={t('contact.form.job.message_placeholder')}></textarea>
                                             </div>
                                             
-                                            <div className="space-y-2">
-                                                <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.job.file_label')}</label>
-                                                <div className="relative">
-                                                    <input 
-                                                        type="file" 
-                                                        name="file" // Web3Forms traži da se ovo zove "file"
-                                                        id="cv-upload"
-                                                        accept=".pdf,.doc,.docx"
-                                                        className="hidden"
-                                                        onChange={(e) => setFileName(e.target.files[0]?.name || '')}
-                                                    />
-                                                    <label htmlFor="cv-upload" className={`w-full flex items-center justify-center gap-3 bg-emerald-900/20 border border-dashed rounded-xl px-5 py-6 cursor-pointer transition-all ${fileName ? 'border-amber-500 text-white' : 'border-white/10 text-gray-400 hover:text-white hover:border-amber-500 hover:bg-white/5'}`}>
-                                                        <FaPaperclip className={`text-xl ${fileName ? 'text-amber-500' : ''}`} />
-                                                        <span className="truncate max-w-[80%]">
-                                                            {fileName ? t('contact.form.job.selected_file', { file: fileName }) : t('contact.form.job.file_placeholder')}
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
+                                            
+                                           
 
                                             <button disabled={isSubmitting} type="submit" className="w-full bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-emerald-950 font-bold py-4 rounded-xl shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
                                                 {isSubmitting ? t('contact.form.job.sending') : t('contact.form.job.submit')}
