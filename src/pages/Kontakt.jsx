@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaBriefcase, FaHandshake, FaPaperclip, FaCheck } from 'react-icons/fa'
 
 // Uvozimo našu SEO komponentu
 import SEO from '../components/SEO'
 
 function Kontakt() {
-    const [activeTab, setActiveTab] = useState('saradnja');
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [statusMessage, setStatusMessage] = useState('');
-    const [fileName, setFileName] = useState('');
+    const { t } = useTranslation()
+    const [activeTab, setActiveTab] = useState('saradnja')
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [statusMessage, setStatusMessage] = useState('')
+    const [fileName, setFileName] = useState('')
 
     // --- NOVA LOGIKA PREKO WEB3FORMS ---
     const handleSubmit = async (e, tipForme) => {
@@ -54,8 +56,8 @@ function Kontakt() {
     return (
         <>
             <SEO 
-                title="Kontakt i Zaposlenje | Bircuz Lipa 1880 Novi Sad"
-                description="Otvoreni smo za saradnju i uvek tražimo pojačanje! Kontaktirajte kafanu Lipa u Novom Sadu. Adresa: Svetozara Miletića 9."
+                title={t('contact.seo_title')}
+                description={t('contact.seo_description')}
             />
 
             <div className="min-h-screen bg-emerald-950 pt-32 pb-24 px-6 relative overflow-hidden flex items-center justify-center">
@@ -67,10 +69,10 @@ function Kontakt() {
 
                     <div className="text-center mb-16">
                         <span className="text-amber-400 font-bold uppercase tracking-[0.3em] text-xs mb-4 flex items-center justify-center gap-2">
-                            Otvoreni za sve
+                            {t('contact.badge')}
                         </span>
                         <h1 className="text-4xl md:text-7xl font-serif p-2 font-bold text-white mb-6 drop-shadow-sm">
-                            Kontaktirajte Nas
+                            {t('contact.title')}
                         </h1>
                     </div>
 
@@ -82,16 +84,16 @@ function Kontakt() {
                             animate={{ opacity: 1, x: 0 }}
                             className="lg:col-span-4 bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2rem] shadow-2xl"
                         >
-                            <h3 className="text-2xl font-serif font-bold text-amber-400 mb-8">Informacije</h3>
+                            <h3 className="text-2xl font-serif font-bold text-amber-400 mb-8">{t('contact.info_title')}</h3>
                             <div className="space-y-8">
                                 <div className="flex items-start gap-5 group">
                                     <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl">
                                         <FaMapMarkerAlt />
                                     </div>
                                     <div>
-                                        <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">Lokacija</p>
-                                        <p className="text-white text-lg font-medium">Svetozara Miletiće 9</p>
-                                        <p className="text-gray-500">21000 Novi Sad, Srbija</p>
+                                        <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">{t('contact.location_label')}</p>
+                                        <p className="text-white text-lg font-medium">{t('contact.address_line1')}</p>
+                                        <p className="text-gray-500">{t('contact.address_line2')}</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-5 group">
@@ -99,9 +101,9 @@ function Kontakt() {
                                         <FaPhoneAlt />
                                     </div>
                                     <div>
-                                        <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">Telefon</p>
+                                        <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">{t('contact.phone_label')}</p>
                                         <a href="tel:0642110102" className="text-white text-lg font-medium hover:text-amber-400 transition-colors">
-                                            +381 64 2110102
+                                            {t('contact.phone_number')}
                                         </a>
                                     </div>
                                 </div>
@@ -110,9 +112,9 @@ function Kontakt() {
                                         <FaEnvelope />
                                     </div>
                                     <div>
-                                        <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">Email</p>
+                                        <p className="text-gray-400 text-sm mb-1 uppercase tracking-wider">{t('contact.email_label')}</p>
                                         <a href="mailto:lipadzije@gmail.com" className="text-white text-lg font-medium hover:text-amber-400 transition-colors">
-                                            lipadzije@gmail.com
+                                            {t('contact.email_value')}
                                         </a>
                                     </div>
                                 </div>
@@ -130,24 +132,24 @@ function Kontakt() {
                                     onClick={() => {setActiveTab('saradnja'); setStatusMessage('');}}
                                     className={`flex-1 flex items-center justify-center gap-3 py-4 px-6 rounded-xl font-bold transition-all duration-300 ${activeTab === 'saradnja' ? 'bg-amber-500 text-emerald-950 shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                                 >
-                                    <FaHandshake className="text-xl" /> Želim Saradnju
+                                    <FaHandshake className="text-xl" /> {t('contact.tabs.collab')}
                                 </button>
                                 <button 
                                     onClick={() => {setActiveTab('posao'); setStatusMessage('');}}
                                     className={`flex-1 flex items-center justify-center gap-3 py-4 px-6 rounded-xl font-bold transition-all duration-300 ${activeTab === 'posao' ? 'bg-amber-500 text-emerald-950 shadow-lg' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                                 >
-                                    <FaBriefcase className="text-xl" /> Tražim Posao
+                                    <FaBriefcase className="text-xl" /> {t('contact.tabs.job')}
                                 </button>
                             </div>
 
                             {statusMessage === 'uspeh' && (
                                 <div className="mb-6 p-4 bg-emerald-500/20 border border-emerald-500/50 text-emerald-400 rounded-xl flex items-center gap-3">
-                                    <FaCheck /> Uspešno poslato! Javićemo se u najkraćem roku.
+                                    <FaCheck /> {t('contact.status.success')}
                                 </div>
                             )}
                             {statusMessage === 'greska' && (
                                 <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 text-red-400 rounded-xl">
-                                    Došlo je do greške pri slanju. Molimo pokušajte ponovo kasnije.
+                                    {t('contact.status.error')}
                                 </div>
                             )}
 
@@ -167,20 +169,20 @@ function Kontakt() {
                                         >
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 <div className="space-y-2">
-                                                    <label className="text-emerald-50 text-sm font-medium ml-1">Ime Firme / Osobe</label>
-                                                    <input type="text" name="Ime" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Unesite naziv firme" />
+                                                    <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.collab.name_label')}</label>
+                                                    <input type="text" name="Ime" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder={t('contact.form.collab.name_placeholder')} />
                                                 </div>
                                                 <div className="space-y-2">
-                                                    <label className="text-emerald-50 text-sm font-medium ml-1">Email Adresa</label>
-                                                    <input type="email" name="Email" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="vas@email.com" />
+                                                    <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.collab.email_label')}</label>
+                                                    <input type="email" name="Email" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder={t('contact.form.collab.email_placeholder')} />
                                                 </div>
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-emerald-50 text-sm font-medium ml-1">Vaš predlog / Poruka</label>
-                                                <textarea name="Poruka" required rows="4" className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none" placeholder="Napišite nam vaš predlog..."></textarea>
+                                                <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.collab.message_label')}</label>
+                                                <textarea name="Poruka" required rows="4" className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none" placeholder={t('contact.form.collab.message_placeholder')}></textarea>
                                             </div>
                                             <button disabled={isSubmitting} type="submit" className="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold py-4 rounded-xl shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                                                {isSubmitting ? 'Šaljem...' : 'Pošalji Upit'}
+                                                {isSubmitting ? t('contact.form.collab.sending') : t('contact.form.collab.submit')}
                                             </button>
                                         </motion.form>
                                     )}
@@ -197,16 +199,16 @@ function Kontakt() {
                                             className="space-y-6"
                                         >
                                             <div className="space-y-2">
-                                                <label className="text-emerald-50 text-sm font-medium ml-1">Ime i Prezime</label>
-                                                <input type="text" name="Ime_i_Prezime" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Unesite vaše ime i prezime" />
+                                                <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.job.name_label')}</label>
+                                                <input type="text" name="Ime_i_Prezime" required className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder={t('contact.form.job.name_placeholder')} />
                                             </div>
                                             <div className="space-y-2">
-                                                <label className="text-emerald-50 text-sm font-medium ml-1">Motivaciona Poruka</label>
-                                                <textarea name="Poruka" required rows="3" className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none" placeholder="Napišite zašto želite da radite sa nama..."></textarea>
+                                                <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.job.message_label')}</label>
+                                                <textarea name="Poruka" required rows="3" className="w-full bg-emerald-900/20 border border-white/10 rounded-xl px-5 py-4 text-white placeholder-gray-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all resize-none" placeholder={t('contact.form.job.message_placeholder')}></textarea>
                                             </div>
                                             
                                             <div className="space-y-2">
-                                                <label className="text-emerald-50 text-sm font-medium ml-1">Zakačite Vaš CV (Nije obavezno)</label>
+                                                <label className="text-emerald-50 text-sm font-medium ml-1">{t('contact.form.job.file_label')}</label>
                                                 <div className="relative">
                                                     <input 
                                                         type="file" 
@@ -219,14 +221,14 @@ function Kontakt() {
                                                     <label htmlFor="cv-upload" className={`w-full flex items-center justify-center gap-3 bg-emerald-900/20 border border-dashed rounded-xl px-5 py-6 cursor-pointer transition-all ${fileName ? 'border-amber-500 text-white' : 'border-white/10 text-gray-400 hover:text-white hover:border-amber-500 hover:bg-white/5'}`}>
                                                         <FaPaperclip className={`text-xl ${fileName ? 'text-amber-500' : ''}`} />
                                                         <span className="truncate max-w-[80%]">
-                                                            {fileName ? `Izabran fajl: ${fileName}` : 'Kliknite da izaberete CV fajl'}
+                                                            {fileName ? t('contact.form.job.selected_file', { file: fileName }) : t('contact.form.job.file_placeholder')}
                                                         </span>
                                                     </label>
                                                 </div>
                                             </div>
 
                                             <button disabled={isSubmitting} type="submit" className="w-full bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 text-emerald-950 font-bold py-4 rounded-xl shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed">
-                                                {isSubmitting ? 'Šaljem prijavu...' : 'Pošalji Prijavu'}
+                                                {isSubmitting ? t('contact.form.job.sending') : t('contact.form.job.submit')}
                                             </button>
                                         </motion.form>
                                     )}

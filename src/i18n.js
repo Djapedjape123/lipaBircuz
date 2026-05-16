@@ -218,7 +218,51 @@ const resources = {
                 badge: "RADOVI U TOKU",
                 back_btn: "← Vrati se na početnu"
             },
-            location: {
+            contact: {
+                badge: "Otvoreni za sve",
+                title: "Kontaktirajte Nas",
+                seo_title: "Kontakt i Zaposlenje | Bircuz Lipa 1880 Novi Sad",
+                seo_description: "Otvoreni smo za saradnju i uvek tražimo pojačanje! Kontaktirajte kafanu Lipa u Novom Sadu. Adresa: Svetozara Miletića 9.",
+                info_title: "Informacije",
+                location_label: "Lokacija",
+                address_line1: "Svetozara Miletiće 9",
+                address_line2: "21000 Novi Sad, Srbija",
+                phone_label: "Telefon",
+                phone_number: "+381 64 2110102",
+                email_label: "Email",
+                email_value: "lipadzije@gmail.com",
+                tabs: {
+                    collab: "Želim Saradnju",
+                    job: "Tražim Posao"
+                },
+                status: {
+                    success: "Uspešno poslato! Javićemo se u najkraćem roku.",
+                    error: "Došlo je do greške pri slanju. Molimo pokušajte ponovo kasnije."
+                },
+                form: {
+                    collab: {
+                        name_label: "Ime Firme / Osobe",
+                        name_placeholder: "Unesite naziv firme",
+                        email_label: "Email Adresa",
+                        email_placeholder: "vas@email.com",
+                        message_label: "Vaš predlog / Poruka",
+                        message_placeholder: "Napišite nam vaš predlog...",
+                        submit: "Pošalji Upit",
+                        sending: "Šaljem..."
+                    },
+                    job: {
+                        name_label: "Ime i Prezime",
+                        name_placeholder: "Unesite vaše ime i prezime",
+                        message_label: "Motivaciona Poruka",
+                        message_placeholder: "Napišite zašto želite da radite sa nama...",
+                        file_label: "Zakačite Vaš CV (Nije obavezno)",
+                        file_placeholder: "Kliknite da izaberete CV fajl",
+                        selected_file: "Izabran fajl: {{file}}",
+                        submit: "Pošalji Prijavu",
+                        sending: "Šaljem prijavu..."
+                    }
+                }
+            },            location: {
                 badge: "Kako do nas",
                 title: "Gde se nalazimo?",
                 desc: "Smešteni smo u strogom centru Novog Sada, u jednoj od najlepših starih ulica. Lako nas je naći, a još teže otići!",
@@ -451,7 +495,51 @@ const resources = {
                 badge: "WORK IN PROGRESS",
                 back_btn: "← Back to Home"
             },
-            location: {
+            contact: {
+                badge: "Open to all",
+                title: "Contact Us",
+                seo_title: "Contact & Jobs | Bircuz Lipa 1880 Novi Sad",
+                seo_description: "We are open for collaboration and always looking for new team members! Contact Kafana Lipa in Novi Sad. Address: Svetozara Miletića 9.",
+                info_title: "Information",
+                location_label: "Location",
+                address_line1: "Svetozara Miletića 9",
+                address_line2: "21000 Novi Sad, Serbia",
+                phone_label: "Phone",
+                phone_number: "+381 64 2110102",
+                email_label: "Email",
+                email_value: "lipadzije@gmail.com",
+                tabs: {
+                    collab: "I Want Collaboration",
+                    job: "I'm Looking For Job"
+                },
+                status: {
+                    success: "Sent successfully! We'll get back to you shortly.",
+                    error: "An error occurred while sending. Please try again later."
+                },
+                form: {
+                    collab: {
+                        name_label: "Company / Person Name",
+                        name_placeholder: "Enter company name",
+                        email_label: "Email Address",
+                        email_placeholder: "you@email.com",
+                        message_label: "Your proposal / Message",
+                        message_placeholder: "Write your proposal...",
+                        submit: "Send Inquiry",
+                        sending: "Sending..."
+                    },
+                    job: {
+                        name_label: "Full Name",
+                        name_placeholder: "Enter your full name",
+                        message_label: "Motivation Letter",
+                        message_placeholder: "Write why you want to work with us...",
+                        file_label: "Attach your CV (optional)",
+                        file_placeholder: "Click to choose CV file",
+                        selected_file: "Selected file: {{file}}",
+                        submit: "Send Application",
+                        sending: "Sending application..."
+                    }
+                }
+            },            location: {
                 badge: "How to find us",
                 title: "Where are we located?",
                 desc: "We are located in the very heart of Novi Sad, in one of its most beautiful old streets. Easy to find, even harder to leave!",
