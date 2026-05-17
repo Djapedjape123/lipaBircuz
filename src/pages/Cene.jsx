@@ -9,8 +9,8 @@ import SEO from '../components/SEO'
 
 const CATEGORIES = [
     "draft_beer", "wines", "bottled_beer",
-    "house_special", "brandy", "hard_liquor",
-    "water", "soft_drinks", "hot_drinks", "liqueurs", "snacks"
+    "house_special", "brandy","liqueurs", "hard_liquor",
+    "water", "soft_drinks", "hot_drinks",  "snacks"
 ];
 
 const MENU_ITEMS = [
