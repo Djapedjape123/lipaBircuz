@@ -60,7 +60,7 @@ const MENU_ITEMS = [
     { category: "brandy", name: "Šurlan kruska 0.05", price: "270" },
     { category: "brandy", name: "Pevac dunja 0.05", price: "270" },
     { category: "brandy", name: "Pevac kajsija 0.05", price: "270" },
-    { category: "brandy", name: "Pevac šljiva 0.05", price: "170" },
+    { category: "brandy", name: "Pevac šljiva 0.05", price: "190" },
     { category: "brandy", name: "Pevac medovača 0.05", price: "270" },
     { category: "brandy", name: "Stomakljija 0.05", price: "190" },
     { category: "brandy", name: "Vesić malina 0.05", price: "250" },
