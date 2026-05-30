@@ -2,5 +2,5 @@
 User-agent: *
 Allow: /
 
-# Putanja do tvoje mape sajta (ZAMENI SA SVOJIM DOMENOM!)
-Sitemap: https://tvojdomen.r/sitemap.xml
+
+Sitemap: https://bircuzlipa1880.com/sitemap.xml
