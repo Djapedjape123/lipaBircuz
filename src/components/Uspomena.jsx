@@ -78,9 +78,7 @@ function Uspomena() {
                         </p>
                     </div>
 
-                    <p style={{ fontFamily: "'Caveat', cursive" }} className="text-xl md:text-3xl text-gray-400 mt-8">
-                        Tvoj Dejan
-                    </p>
+                    
                 </motion.div>
 
             </div>
