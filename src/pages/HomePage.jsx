@@ -21,10 +21,10 @@ function HomePage() {
     if (nextSection) {
       // 1. Nalazimo gde se tačno nalazi sekcija na stranici
       const elementPosition = nextSection.getBoundingClientRect().top + window.scrollY;
-      
+
       // 2. Definišemo "offset" (koliko piksela iznad sekcije želimo da se zaustavimo)
-      
-      const offset = 100; 
+
+      const offset = 100;
 
       // 3. Skrolujemo na tu izračunatu poziciju
       window.scrollTo({
@@ -49,14 +49,15 @@ function HomePage() {
 
         {/* Pozadinska slika sa Parallax efektom */}
         <div
-          className='absolute inset-0 z-0'
+          // md:bg-fixed uključuje 'fixed' samo na ekranima većim od tableta/računara
+          // Na mobilnima će biti obično 'scroll' i slika će izgledati savršeno oštro
+          className='absolute inset-0 z-0 bg-cover bg-center md:bg-fixed'
           role="img"
           aria-label="Enterijer Bircuza Lipa"
           style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-            backgroundAttachment: 'fixed'
+            backgroundImage: `url(${bgImage})`
+            // Obrisali smo backgroundSize, Position i Attachment odavde
+            // jer smo ih prebacili u className iznad!
           }}
         >
           {/* Crni overlay */}
