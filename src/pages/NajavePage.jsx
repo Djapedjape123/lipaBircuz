@@ -12,6 +12,8 @@ function NajavePage() {
     const { t } = useTranslation();
   
     const events = []; 
+
+    
     // Primer podataka je isti, ali kada ih budeš imao, tekst unutar 'events' niza 
     // ćeš verovatno želeti da vučeš iz baze ili prevoda ako su statični.
     //   const events = [
