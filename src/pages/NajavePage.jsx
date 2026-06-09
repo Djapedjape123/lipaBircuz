@@ -11,21 +11,21 @@ import bgImage from '../assets/lipa33.webp'
 function NajavePage() {
     const { t } = useTranslation();
   
-    const events = []; 
+    // const events = []; 
 
-    
+
     // Primer podataka je isti, ali kada ih budeš imao, tekst unutar 'events' niza 
     // ćeš verovatno želeti da vučeš iz baze ili prevoda ako su statični.
-    //   const events = [
-//       {
-//           id: 1,
-//           date: "14. FEB",
-//           day: "PETAK",
-//           title: "Zvezda-Partizan",
-//           desc: "Veciti derbi uz najbolje navijanje i atmosferu.",
-//           image: "putanja/do/slike.jpg" // Slika za samu karticu događaja
-//       }
-//     ]
+      const events = [
+      {
+          id: 1,
+          date: "11. Jun",
+          day: "Četvrtak",
+          title: "Počinje svetsko prvenstvo u fudbalu",
+          desc: "Pratite sve utakmice uživo u našem bircu, uz fantastičnu atmosferu i specijalne ponude na piće!",
+          image: "https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931555/lipa3_dsnmkx.webp" // Slika za samu karticu događaja
+      }
+    ]
 
     return (
         <>
@@ -135,7 +135,7 @@ function NajavePage() {
                                 >
                                     {/* Slika Događaja */}
                                     <div className="h-56 bg-gray-900 relative overflow-hidden">
-                                    {/* <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" /> */}
+                                     <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
                                         
                                         {/* Placeholder dok nema slike */}
                                         <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black"></div>
