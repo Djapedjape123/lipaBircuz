@@ -270,9 +270,9 @@ const resources = {
                 address_value: "Svetozara Miletića 9, Novi Sad",
                 phone_label: "Telefon za rezervacije",
                 hours_label: "Radno Vreme",
-                hours_week: "Pon - Čet: 08:00 - 23:00",
+                hours_week: "Pon - Čet: 08:00 - 00:00",
                 hours_weekend: "Pet - Sub: 08:00 - 01:00",
-                hours_weekend1: "Nedelja: 14:00 - 23:00",
+                hours_weekend1: "Nedelja: 14:00 - 00:00",
                 nav_button: "Pokreni Navigaciju",
                 pin_title: "Bircuz Lipa 1880",
                 pin_sub: "Miletićeva 9, 21000 Novi Sad"
@@ -547,9 +547,9 @@ const resources = {
                 address_value: "Svetozara Miletica 9, Novi Sad",
                 phone_label: "Reservation Phone",
                 hours_label: "Working Hours",
-                hours_week: "Mon - Thu: 08:00 - 23:00",
+                hours_week: "Mon - Thu: 08:00 - 00:00",
                 hours_weekend: "Fri - Sat: 08:00 - 01:00",
-                hours_weekend1: "Sun: 14:00 - 23:00",
+                hours_weekend1: "Sun: 14:00 - 00:00",
                 nav_button: "Start Navigation",
                 pin_title: "Bircuz Lipa 1880",
                 pin_sub: "Mileticeva 9, 21000 Novi Sad"
