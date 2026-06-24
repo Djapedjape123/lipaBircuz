@@ -104,6 +104,7 @@ const MENU_ITEMS = [
     { category: "liqueurs", name: "Gorki List 0.05", price: "270" },
     { category: "liqueurs", name: "Jagermeister 0.05", price: "370" },
     { category: "liqueurs", name: "Gorka tajna 0.05", price: "170" },
+     { category: "liqueurs", name: "Zlatni pelin 0.05", price: "220" },
     { category: "liqueurs", name: "Pelinkovac Rubin 0.05", price: "190" },
 ];
 
