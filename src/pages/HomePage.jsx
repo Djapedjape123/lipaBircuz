@@ -4,9 +4,7 @@ import { motion } from 'framer-motion'
 import { FaPhoneAlt, FaChevronDown } from 'react-icons/fa'
 import bgImage from '../assets/lipaPozadina.webp'
 
-// Uvozimo našeg SEO agenta
 import SEO from '../components/SEO'
-
 import KakoDoNas from '../components/KakoDoNas'
 import Najave from '../components/Najave'
 import Uspomena from '../components/Uspomena'
@@ -14,19 +12,12 @@ import Uspomena from '../components/Uspomena'
 function HomePage() {
   const { t } = useTranslation()
 
-  // Funkcija za glatki skrol do prve sekcije
-  // Funkcija za precizan glatki skrol sa odstojanjem
   const scrollToContent = () => {
     const nextSection = document.getElementById('najave-sekcija');
     if (nextSection) {
-      // 1. Nalazimo gde se tačno nalazi sekcija na stranici
       const elementPosition = nextSection.getBoundingClientRect().top + window.scrollY;
-
-      // 2. Definišemo "offset" (koliko piksela iznad sekcije želimo da se zaustavimo)
-
       const offset = 100;
 
-      // 3. Skrolujemo na tu izračunatu poziciju
       window.scrollTo({
         top: elementPosition - offset,
         behavior: 'smooth'
@@ -36,7 +27,6 @@ function HomePage() {
 
   return (
     <main>
-      {/* --- SEO SEKCIJA ZA POČETNU STRANU --- */}
       <SEO
         title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
         description="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića, sjajna atmosfera i uspomene koje traju. Posetite nas u Miletićevoj 9!"
@@ -44,37 +34,28 @@ function HomePage() {
         image='https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg'
       />
 
-      {/* --- HERO SEKCIJA --- */}
-      <section className='relative min-h-screen w-full flex items-center justify-center overflow-hidden'>
+      {/* --- PROMENJENO: min-h-screen je sada min-h-[100dvh] --- */}
+      <section className='relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden'>
 
-        {/* Pozadinska slika sa Parallax efektom */}
         <div
-          // md:bg-fixed uključuje 'fixed' samo na ekranima većim od tableta/računara
-          // Na mobilnima će biti obično 'scroll' i slika će izgledati savršeno oštro
           className='absolute inset-0 z-0 bg-cover bg-center md:bg-fixed'
           role="img"
           aria-label="Enterijer Bircuza Lipa"
           style={{
             backgroundImage: `url(${bgImage})`
-            // Obrisali smo backgroundSize, Position i Attachment odavde
-            // jer smo ih prebacili u className iznad!
           }}
         >
-          {/* Crni overlay */}
           <div className='absolute inset-0 bg-black/50'></div>
         </div>
 
-        {/* Glavni sadržaj Hero sekcije */}
         <div className='relative z-10 text-center px-4 max-w-4xl mx-auto'>
 
-          {/* Suptilan H2 za SEO pre glavnog H1 */}
-          {/* Suptilan H2 za SEO pre glavnog H1 */}
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="text-amber-400 font-bold uppercase tracking-[0.3em] text-xs md:text-sm mb-4 block"
           >
-            {t('home.tradition')} {/* OVDE SMO UBACILI PREVOD */}
+            {t('home.tradition')}
           </motion.span>
 
           <motion.h1
@@ -112,7 +93,6 @@ function HomePage() {
           </motion.div>
         </div>
 
-        {/* Animirana strelica - sada klikabilna */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, y: [0, 10, 0] }}
@@ -124,11 +104,7 @@ function HomePage() {
         </motion.div>
       </section>
 
-      {/* --- OSTATAK SAJTA --- */}
-      {/* Svaki deo je sada u svom <section> tagu sa ID-em za navigaciju */}
-
       <div className="relative z-20 shadow-2xl">
-
         <section id="najave-sekcija">
           <Najave />
         </section>
@@ -140,7 +116,6 @@ function HomePage() {
         <section id="uspomena-sekcija">
           <Uspomena />
         </section>
-
       </div>
     </main>
   )
