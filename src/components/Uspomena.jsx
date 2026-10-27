@@ -39,7 +39,7 @@ function Uspomena() {
                             <motion.img
                                 key={currentIndex}
                                 src={IMAGES[currentIndex]}
-                                alt="Uspomena"
+                                alt="Tetka Ljilja – uspomena"
                                 // Čisto, glatko pretapanje providnosti (opacity)
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}

@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { FaPhoneAlt, FaChevronDown } from 'react-icons/fa'
+import { Helmet } from 'react-helmet-async'
 import bgImage from '../assets/lipaPozadina.webp'
 
 import SEO from '../components/SEO'
@@ -29,10 +30,15 @@ function HomePage() {
     <main>
       <SEO
         title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
-        description="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića, sjajna atmosfera i uspomene koje traju. Posetite nas u Miletićevoj 9!"
+        description="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića i sjajna atmosfera. Posetite nas u Miletićevoj 9!"
         type="website"
         image='https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg'
       />
+
+      {/* Hero slika (pozadina) se učitava odmah, bez čekanja na CSS/JS */}
+      <Helmet>
+        <link rel="preload" as="image" href={bgImage} fetchPriority="high" />
+      </Helmet>
 
       {/* --- PROMENJENO: min-h-screen je sada min-h-[100dvh] --- */}
       <section className='relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden'>

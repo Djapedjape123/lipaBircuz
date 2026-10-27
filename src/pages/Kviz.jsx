@@ -49,7 +49,7 @@ function Kviz() {
             {/* --- SEO SEKCIJA ZA KVIZ STRANICU --- */}
             <SEO 
                 title="Pab Kviz Ekipa | Bircuz Lipa 1880 Novi Sad"
-                description="Pogledaj te našu ekipu koje je harala kvizovima po Novom Sadu."
+                description="Upoznajte pab kviz ekipu Lipadžije: preko pedeset odigranih kvizova po Novom Sadu, najviše članova u gradu i odlično društvo u Bircuz Lipa."
             />
 
             <div className="lg:col-span-6 order-2 pt-24 px-6 pb-24 lg:order-1 lg:self-start bg-[#fdfbf7] relative">
@@ -169,7 +169,7 @@ function Kviz() {
                                             <span className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 shadow-sm text-sm">
                                                 <FaBeer />
                                             </span>
-                                            <h3 className="font-bold text-emerald-950 text-base uppercase tracking-wider">{t('quiz.card_title')}</h3>
+                                            <h2 className="font-bold text-emerald-950 text-base uppercase tracking-wider">{t('quiz.card_title')}</h2>
                                         </div>
 
                                         <p className="mb-4 text-gray-700">
@@ -245,7 +245,7 @@ function Kviz() {
                                     exit={{ opacity: 0, x: -50 }}
                                     transition={{ duration: 0.3 }}
                                     src={IMAGES[currentIndex]}
-                                    alt="Full screen"
+                                    alt={t('quiz.image_alt')}
                                     // Dodate klase za kursor
                                     className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain select-none relative z-10 cursor-grab active:cursor-grabbing"
                                     onClick={(e) => e.stopPropagation()}

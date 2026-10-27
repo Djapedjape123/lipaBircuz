@@ -114,7 +114,7 @@ function Kontakt() {
                             animate={{ opacity: 1, x: 0 }}
                             className="lg:col-span-4 bg-white/5 backdrop-blur-xl border border-white/10 p-8 md:p-12 rounded-[2rem] shadow-2xl"
                         >
-                            <h3 className="text-2xl font-serif font-bold text-amber-400 mb-8">{t('contact.info_title')}</h3>
+                            <h2 className="text-2xl font-serif font-bold text-amber-400 mb-8">{t('contact.info_title')}</h2>
                             <div className="space-y-8">
                                 <div className="flex items-start gap-5 group">
                                     <div className="w-12 h-12 rounded-full bg-emerald-900/50 flex items-center justify-center text-emerald-400 text-xl">

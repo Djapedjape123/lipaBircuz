@@ -123,8 +123,9 @@ function Cene() {
         return {
             "@context": "https://schema.org",
             "@type": "Menu",
+            "@id": "https://www.bircuzlipa1880.com/cene#menu",
             "name": "Karta pića Bircuz Lipa 1880",
-            "mainEntityOfPage": "https://bircuzlipa1880.rs/cene",
+            "mainEntityOfPage": "https://www.bircuzlipa1880.com/cene",
             "hasMenuSection": CATEGORIES.map(cat => ({
                 "@type": "MenuSection",
                 "name": t(`menu.categories.${cat}`),
@@ -150,9 +151,10 @@ function Cene() {
             />
 
             {/* Ubacivanje JSON-LD skripte za Google u glavu dokumenta */}
-            <script type="application/ld+json">
-                {JSON.stringify(menuSchema)}
-            </script>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(menuSchema).replace(/</g, '\\u003c') }}
+            />
 
             <div className="min-h-screen bg-[#e5e7eb] pt-36 pb-20 px-4 md:px-10 relative">
 
@@ -248,6 +250,22 @@ function Cene() {
                             </div>
                         )}
                     </article>
+
+                    {/* Ostale kategorije su u HTML-u (skrivene), da cela karta pića bude indeksirana. Izgled se ne menja. */}
+                    <div className="hidden">
+                        {CATEGORIES.filter((cat) => cat !== selectedCategory).map((cat) => (
+                            <section key={cat}>
+                                <h2>{t(`menu.categories.${cat}`)}</h2>
+                                <ul>
+                                    {MENU_ITEMS.filter((item) => item.category === cat).map((item, index) => (
+                                        <li key={`${cat}-${index}`}>
+                                            {item.isTranslatable ? t(item.name) : item.name} – {item.price} {t('menu.currency')}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </section>
+                        ))}
+                    </div>
 
                     {/* Footer napomena */}
                     <footer className="text-center mt-12 text-sm text-gray-400 font-medium">

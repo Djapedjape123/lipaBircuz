@@ -7,7 +7,6 @@ const resources = {
     sr: {
         translation: {
             home: {
-                title: "Dobrodošli u Lipu",
                 subtitle_part1: "Mesto gde se tradicija sreće sa dobrim društvom.",
                 subtitle_part2: "Opustite se uz najbolja pića i autentičnu atmosferu.",
                 cta_button: "Rezerviši Sto",
@@ -178,10 +177,10 @@ const resources = {
                 desc: "Mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića i uspomene koje traju.",
                 explore: "Istraži",
                 visit: "Posetite Nas",
-                address: "Miletićeva 9",
+                address: "Svetozara Miletića 9",
                 city: "21000 Novi Sad, Srbija",
                 reservations: "Rezervacije:",
-                rights: "© 2026 Kafana Lipa. Sva prava zadržana.",
+                rights: "© 2026 Bircuz Lipa 1880. Sva prava zadržana.",
                 terms: "Uslovi korišćenja",
                 dev: "Development by",
                 links: {
@@ -218,14 +217,24 @@ const resources = {
                 badge: "RADOVI U TOKU",
                 back_btn: "← Vrati se na početnu"
             },
+            not_found: {
+                seo_title: "Stranica nije pronađena | Bircuz Lipa 1880 Novi Sad",
+                seo_description: "Stranica koju tražite ne postoji. Vratite se na početnu stranicu Bircuz Lipa 1880 u Novom Sadu, pogledajte kartu pića ili nas kontaktirajte.",
+                badge: "Greška 404",
+                title: "Stranica nije pronađena",
+                desc: "Izgleda da ste zalutali. Adresa koju ste uneli ne postoji, ali Lipa je i dalje na svom mestu u Miletićevoj ulici.",
+                home: "Početna",
+                menu: "Karta pića",
+                contact: "Kontakt"
+            },
             contact: {
                 badge: "Otvoreni za sve",
                 title: "Kontaktirajte Nas",
                 seo_title: "Kontakt i Zaposlenje | Bircuz Lipa 1880 Novi Sad",
-                seo_description: "Otvoreni smo za saradnju i uvek tražimo pojačanje! Kontaktirajte kafanu Lipa u Novom Sadu. Adresa: Svetozara Miletića 9.",
+                seo_description: "Otvoreni smo za saradnju i uvek tražimo pojačanje! Kontaktirajte Bircuz Lipa 1880 u Novom Sadu. Adresa: Svetozara Miletića 9.",
                 info_title: "Informacije",
                 location_label: "Lokacija",
-                address_line1: "Svetozara Miletiće 9",
+                address_line1: "Svetozara Miletića 9",
                 address_line2: "21000 Novi Sad, Srbija",
                 phone_label: "Telefon",
                 phone_number: "+381 64 2110102",
@@ -275,7 +284,7 @@ const resources = {
                 hours_weekend1: "Nedelja: 14:00 - 23:00",
                 nav_button: "Pokreni Navigaciju",
                 pin_title: "Bircuz Lipa 1880",
-                pin_sub: "Miletićeva 9, 21000 Novi Sad"
+                pin_sub: "Svetozara Miletića 9, 21000 Novi Sad"
             },
         }
     },
@@ -284,7 +293,6 @@ const resources = {
     en: {
         translation: {
             home: {
-                title: "Welcome to Lipa",
                 subtitle_part1: "A place where tradition meets good company.",
                 subtitle_part2: "Relax with the best drinks and authentic atmosphere.",
                 cta_button: "Book a Table",
@@ -458,7 +466,7 @@ const resources = {
                 address: "Svetozara Miletića 9",
                 city: "21000 Novi Sad, Serbia",
                 reservations: "Reservations:",
-                rights: "© 2026 Kafana Lipa. All rights reserved.",
+                rights: "© 2026 Bircuz Lipa 1880. All rights reserved.",
                 terms: "Terms of Use",
                 dev: "Development by",
                 links: {
@@ -495,11 +503,21 @@ const resources = {
                 badge: "WORK IN PROGRESS",
                 back_btn: "← Back to Home"
             },
+            not_found: {
+                seo_title: "Page not found | Bircuz Lipa 1880 Novi Sad",
+                seo_description: "The page you are looking for does not exist. Go back to the Bircuz Lipa 1880 home page in Novi Sad, see our drink menu or contact us.",
+                badge: "Error 404",
+                title: "Page not found",
+                desc: "Looks like you took a wrong turn. This address does not exist, but Lipa is still right where it always was, on Miletićeva Street.",
+                home: "Home",
+                menu: "Drink Menu",
+                contact: "Contact"
+            },
             contact: {
                 badge: "Open to all",
                 title: "Contact Us",
                 seo_title: "Contact & Jobs | Bircuz Lipa 1880 Novi Sad",
-                seo_description: "We are open for collaboration and always looking for new team members! Contact Kafana Lipa in Novi Sad. Address: Svetozara Miletića 9.",
+                seo_description: "We are open for collaboration and always looking for new team members! Contact Bircuz Lipa 1880 in Novi Sad. Address: Svetozara Miletića 9.",
                 info_title: "Information",
                 location_label: "Location",
                 address_line1: "Svetozara Miletića 9",
@@ -544,7 +562,7 @@ const resources = {
                 title: "Where are we located?",
                 desc: "We are located in the very heart of Novi Sad, in one of its most beautiful old streets. Easy to find, even harder to leave!",
                 address_label: "Address",
-                address_value: "Svetozara Miletica 9, Novi Sad",
+                address_value: "Svetozara Miletića 9, Novi Sad",
                 phone_label: "Reservation Phone",
                 hours_label: "Working Hours",
                 hours_week: "Mon - Thu: 08:00 - 23:00",
@@ -552,7 +570,7 @@ const resources = {
                 hours_weekend1: "Sun: 14:00 - 23:00",
                 nav_button: "Start Navigation",
                 pin_title: "Bircuz Lipa 1880",
-                pin_sub: "Mileticeva 9, 21000 Novi Sad"
+                pin_sub: "Svetozara Miletića 9, 21000 Novi Sad"
             },
         }
     }

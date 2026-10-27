@@ -1,51 +1,41 @@
-import { StrictMode, lazy } from 'react' 
-import { createRoot } from 'react-dom/client'
+import { StrictMode } from 'react'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
 import './i18n'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, matchRoutes, RouterProvider } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
+import routes from './routes.jsx'
 
+async function start() {
+  // Chunk stranice na kojoj se nalazimo učitavamo PRE prvog rendera, da hydration vidi
+  // isti markup kao prerenderovani HTML (bez praznine zbog Suspense-a i bez treptanja).
+  const lazyMatches = matchRoutes(routes, window.location)?.filter((m) => m.route.lazy) ?? []
+  await Promise.all(
+    lazyMatches.map(async (m) => {
+      const routeModule = await m.route.lazy()
+      Object.assign(m.route, { ...routeModule, lazy: undefined })
+    })
+  )
 
-const HomePage = lazy(() => import('./pages/HomePage'));
-const Prodaja = lazy(() => import('./pages/Prodaja.jsx'));
-const Cene = lazy(() => import('./pages/Cene.jsx'));
-const About = lazy(() => import('./pages/About.jsx'));
-const NajavePage = lazy(() => import('./pages/NajavePage.jsx'));
-const Fudbal = lazy(() => import('./pages/Fudbal.jsx'));
-const Kviz = lazy(() => import('./pages/Kviz.jsx'));
-const LipaSvuda = lazy(() => import('./pages/LipaSvuda.jsx'));
-const Saradnje = lazy(() => import('./pages/Saradnje.jsx'));
-const Kontakt = lazy(() => import('./pages/Kontakt.jsx'));
-const Dogadjaj = lazy(() => import('./pages/Dogadjaj.jsx'));
+  const router = createBrowserRouter(routes)
 
+  const app = (
+    <StrictMode>
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
+    </StrictMode>
+  )
 
+  const container = document.getElementById('root')
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      { path: '/', element: <HomePage /> },
-      { path: '/shop', element: <Prodaja /> },
-      { path: '/cene', element: <Cene /> },
-      { path: '/o-kafani', element: <About /> },
-      { path: '/najave', element: <NajavePage /> },
-      { path: '/mali-fudbal', element: <Fudbal /> },
-      { path: '/lipa-kviz', element: <Kviz /> },
-      { path: '/lipa-svuda', element: <LipaSvuda /> },
-      { path: '/saradnje', element: <Saradnje /> },
-      { path: '/kontakt', element: <Kontakt /> },
-      { path: '/dogadjaj', element: <Dogadjaj /> },
-    ]
+  // Build ubacuje prerenderovan HTML u #root (hydration); u dev režimu je #root prazan.
+  if (container.hasChildNodes()) {
+    hydrateRoot(container, app)
+  } else {
+    createRoot(container).render(app)
   }
-])
+}
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <HelmetProvider>
-      <RouterProvider router={router} />
-    </HelmetProvider>
-  </StrictMode>,
-)
+start()

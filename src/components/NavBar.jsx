@@ -65,7 +65,7 @@ function NavBar() {
                             }`}>
                             <img
                                 src='https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg'
-                                alt="Lipa Logo"
+                                alt="Bircuz Lipa 1880 logo"
                                 className="w-full h-full object-cover"
                             />
                         </div>

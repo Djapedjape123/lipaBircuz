@@ -104,7 +104,8 @@ function Dogadjaj() {
                                     {/* Slika */}
                                     <img 
                                         src={item.image} 
-                                        alt={title} 
+                                        alt={title}
+                                        loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
 
@@ -115,9 +116,9 @@ function Dogadjaj() {
                                             <span className="inline-block px-3 py-1 bg-amber-500 text-white text-xs font-bold uppercase tracking-widest rounded-full mb-3">
                                                 {category}
                                             </span>
-                                            <h3 className="text-white text-2xl font-serif font-bold mb-2">
+                                            <h2 className="text-white text-2xl font-serif font-bold mb-2">
                                                 {title}
-                                            </h3>
+                                            </h2>
                                             <p className="text-white/80 text-sm md:text-base font-light line-clamp-2">
                                                 {desc}
                                             </p>

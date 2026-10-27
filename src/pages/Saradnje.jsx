@@ -143,9 +143,9 @@ function Saradnje() {
 
                                 {/* IME I PREVOD */}
                                 <div className="relative z-10">
-                                    <h3 className="font-bold text-white text-xl mb-2 group-hover:text-amber-300 transition-colors duration-300">
+                                    <h2 className="font-bold text-white text-xl mb-2 group-hover:text-amber-300 transition-colors duration-300">
                                         {t(`partners_page.items.${partner.id}.name`)}
-                                    </h3>
+                                    </h2>
                                     <span className="text-emerald-400/80 text-xs font-bold uppercase tracking-widest">
                                         {t(`partners_page.items.${partner.id}.type`)}
                                     </span>

@@ -1,79 +1,117 @@
 <!doctype html>
-<html lang="sr"> 
+<html lang="sr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow" />
-    
-    <!-- Primarni SEO tagovi -->
-    <title>Bircuz Lipa 1880 | Autentična Kafana u Novom Sadu</title>
-    <meta name="description" content="Dobrodošli u Bircuz Lipa, najstariju dušu Novog Sada. Tradicija duga od 1880. godine, vrhunska domaća pića i boemska atmosfera. Posetite nas u Miletićevoj 9!" />
+
+    <!-- seo:start
+         Podrazumevani (početna) SEO tagovi. Canonical i og:url se NE upisuju ovde jer zavise od rute:
+         pri build-u (scripts/prerender.mjs) ceo ovaj blok se menja tagovima koje svaka stranica šalje kroz <SEO>.
+         data-rh="true" omogućava da ih react-helmet-async zameni umesto da pravi duplikate. -->
+    <title data-rh="true">Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada</title>
+    <meta data-rh="true" name="robots" content="index, follow" />
+    <meta data-rh="true" name="description" content="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića i sjajna atmosfera. Posetite nas u Miletićevoj 9!" />
+    <meta data-rh="true" property="og:type" content="website" />
+    <meta data-rh="true" property="og:title" content="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada" />
+    <meta data-rh="true" property="og:description" content="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića i sjajna atmosfera. Posetite nas u Miletićevoj 9!" />
+    <meta data-rh="true" property="og:image" content="https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg" />
+    <meta data-rh="true" property="og:locale" content="sr_RS" />
+    <meta data-rh="true" property="og:site_name" content="Bircuz Lipa 1880" />
+    <meta data-rh="true" name="twitter:card" content="summary_large_image" />
+    <meta data-rh="true" name="twitter:title" content="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada" />
+    <meta data-rh="true" name="twitter:description" content="Dobrodošli u Bircuz Lipa, mesto gde se tradicija Novog Sada susreće sa modernim duhom. Vrhunska pića i sjajna atmosfera. Posetite nas u Miletićevoj 9!" />
+    <meta data-rh="true" name="twitter:image" content="https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg" />
+    <!-- seo:end -->
+
     <meta name="keywords" content="kafana Novi Sad, bircuz lipa, najbolji pab novi sad, gde izaci novi sad, centar novi sad, mileticeva ulica, stara kafana, domaca rakija novi sad,vikend u novom sadu,druženje,ekipa za pivo" />
     <meta name="author" content="Bircuz Lipa 1880" />
 
-    <!-- Canonical (Sprečava dupli sadržaj) - Zameni TBD kad kupiš domen -->
-    <link rel="canonical" href="https://tvoj-buduci-domen.rs/" />
-
-    <!-- Open Graph / Facebook / Viber / WhatsApp -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://tvoj-buduci-domen.rs/" /> 
-    <meta property="og:title" content="Bircuz Lipa 1880 | Autentična Kafana Novi Sad" />
-    <meta property="og:description" content="Mesto gde se tradicija duga 140 godina susreće sa dobrim društvom. Vidimo se u Miletićevoj 9." />
-    <meta property="og:image" content="https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg" /> 
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Bircuz Lipa 1880 | Kafana Novi Sad" />
-    <meta name="twitter:description" content="Kultno mesto Novog Sada od 1880. godine. Autentičan boemski provod." />
-    <meta name="twitter:image" content="https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg" /> 
-
     <!-- Favicons i Branding -->
-    <meta name="theme-color" content="#064e3b" /> 
-    <link rel="icon" type="image/webp" href="/favia.webp" /> 
-    <link rel="apple-touch-icon" href="/iphone.webp" /> 
+    <meta name="theme-color" content="#064e3b" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/webp" href="/favia.webp" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Optimizacija Fontova (Preconnect ubrzava učitavanje) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Caveat se koristi samo u sekciji "Uspomena": učitava se bez blokiranja prikaza stranice -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap"></noscript>
+    <!-- Bez JavaScript-a splash ekran se ne bi sam uklonio, pa ga sakrivamo da sadržaj ostane vidljiv -->
+    <noscript><style>div[class*="z-[9999]"] { display: none !important; }</style></noscript>
 
     <!-- --- JSON-LD SCHEMA (Google obožava ovo) --- -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BarOrPub",
-        "name": "Bircuz Lipa 1880",
-        "image": "https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg",
-        "@id": "",
-        "url": "https://tvoj-buduci-domen.rs",
-        "telephone": "+381642110102",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Svetozara Miletića 9",
-          "addressLocality": "Novi Sad",
-          "postalCode": "21000",
-          "addressCountry": "RS"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 45.258, 
-          "longitude": 19.845
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
+      [
+        {
+          "@context": "https://schema.org",
+          "@type": "BarOrPub",
+          "@id": "https://www.bircuzlipa1880.com/#bar",
+          "name": "Bircuz Lipa 1880",
+          "alternateName": ["Bircuz Lipa", "Kafana Lipa", "Бирцуз Липа"],
+          "description": "Autentična kafana u srcu Novog Sada, u Miletićevoj ulici. Tradicija duga od 1880. godine, vrhunska pića i boemska atmosfera.",
+          "url": "https://www.bircuzlipa1880.com/",
+          "logo": "https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg",
+          "image": [
+            "https://www.bircuzlipa1880.com/lipa3.webp",
+            "https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg"
           ],
-          "opens": "08:00",
-          "closes": "00:00"
+          "telephone": "+381642110102",
+          "email": "lipadzije@gmail.com",
+          "foundingDate": "1880",
+          "priceRange": "RSD 200–1600",
+          "currenciesAccepted": "RSD",
+          "acceptsReservations": true,
+          "hasMenu": "https://www.bircuzlipa1880.com/cene",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Svetozara Miletića 9",
+            "addressLocality": "Novi Sad",
+            "postalCode": "21000",
+            "addressCountry": "RS"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 45.256662,
+            "longitude": 19.844149
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+              "opens": "08:00",
+              "closes": "23:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Friday", "Saturday"],
+              "opens": "08:00",
+              "closes": "01:00"
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": "Sunday",
+              "opens": "14:00",
+              "closes": "23:00"
+            }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/bircuzlipa/",
+            "https://www.facebook.com/BircuzLipa",
+            "https://www.tripadvisor.com/Attraction_Review-g295380-d33861629-Reviews-Bircuz_Lipa-Novi_Sad_Vojvodina.html"
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "@id": "https://www.bircuzlipa1880.com/#website",
+          "name": "Bircuz Lipa 1880",
+          "url": "https://www.bircuzlipa1880.com/",
+          "inLanguage": "sr",
+          "publisher": { "@id": "https://www.bircuzlipa1880.com/#bar" }
         }
-      }
+      ]
     </script>
   </head>
   <body>

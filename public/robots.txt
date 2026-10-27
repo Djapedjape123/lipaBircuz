@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 
-Sitemap: https://bircuzlipa1880.com/sitemap.xml
+Sitemap: https://www.bircuzlipa1880.com/sitemap.xml

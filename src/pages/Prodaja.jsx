@@ -16,6 +16,7 @@ function Prodaja() {
       <SEO 
         title="Lipa Prodavnica (Uskoro) | Bircuz Lipa 1880 Novi Sad"
         description="Online prodavnica Bircuz Lipa je u pripremi! Uskoro ćete moći da naručite naše unikatne majice, suvenire i omiljena pića. Ostanite uz nas."
+        noindex
       />
 
       {/* pt-32 je tu zbog fiksnog navbara! */}

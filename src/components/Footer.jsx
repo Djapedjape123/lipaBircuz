@@ -26,7 +26,7 @@ function Footer() {
                             {/* Slika Logoa */}
                             <img 
                                 src='https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931592/lipalogo_ha5sow.jpg' 
-                                alt="Lipa Logo" 
+                                alt="Bircuz Lipa 1880 logo"
                                 className="w-20 h-20 rounded-full object-contain group-hover:scale-105 transition-transform"
                                  
                             />

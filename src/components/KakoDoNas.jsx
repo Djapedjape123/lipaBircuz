@@ -41,7 +41,7 @@ function KakoDoNas() {
                                     <FaMapMarkerAlt size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-emerald-950">{t('location.address_label')}</h4>
+                                    <h3 className="font-bold text-emerald-950">{t('location.address_label')}</h3>
                                     <p className="text-gray-600">{t('location.address_value')}</p>
                                 </div>
                             </div>
@@ -52,8 +52,8 @@ function KakoDoNas() {
                                     <FaPhoneAlt size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-emerald-950">{t('location.phone_label')}</h4>
-                                    <p className="text-gray-600">065 46 13 359</p>
+                                    <h3 className="font-bold text-emerald-950">{t('location.phone_label')}</h3>
+                                    <p className="text-gray-600">065 461 3359</p>
                                 </div>
                             </a>
 
@@ -63,7 +63,7 @@ function KakoDoNas() {
                                     <FaClock size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-emerald-950">{t('location.hours_label')}</h4>
+                                    <h3 className="font-bold text-emerald-950">{t('location.hours_label')}</h3>
                                     <p className="text-gray-600">{t('location.hours_week')}</p>
                                     <p className="text-gray-600">{t('location.hours_weekend')}</p>
                                     <p className="text-gray-600">{t('location.hours_weekend1')}</p>

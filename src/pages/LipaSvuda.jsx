@@ -102,10 +102,10 @@ function LipaSvuda() {
                                     </div>
                                 </div>
                                 <div className="pt-4 px-2">
-                                    <h3 className="font-bold text-emerald-950 text-lg flex items-center gap-2">
+                                    <h2 className="font-bold text-emerald-950 text-lg flex items-center gap-2">
                                         <FaMapMarkerAlt className="text-amber-500 shrink-0" /> 
                                         <span className="truncate">{t(`everywhere.locations.${loc.id}.title`)}</span>
-                                    </h3>
+                                    </h2>
                                 </div>
                             </motion.div>
                         ))}

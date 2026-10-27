@@ -165,7 +165,7 @@ function Fudbal() {
                                             <span className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 shadow-sm text-sm">
                                                 <FaFutbol />
                                             </span>
-                                            <h3 className="font-bold text-emerald-950 text-base uppercase tracking-wider">{t('football.path_to_success')}</h3>
+                                            <h2 className="font-bold text-emerald-950 text-base uppercase tracking-wider">{t('football.path_to_success')}</h2>
                                         </div>
 
                                         <p className="mb-6 text-gray-700">
@@ -273,7 +273,7 @@ function Fudbal() {
                                     exit={{ opacity: 0, x: -50 }}
                                     transition={{ duration: 0.3 }}
                                     src={IMAGES[currentIndex]}
-                                    alt="Full screen"
+                                    alt={t('football.image_alt')}
                                     // Dodate klase za kursor prsta/hvatanja
                                     className="max-w-full max-h-[85vh] rounded shadow-2xl object-contain select-none relative z-10 cursor-grab active:cursor-grabbing"
                                     onClick={(e) => e.stopPropagation()}

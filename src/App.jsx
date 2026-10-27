@@ -4,7 +4,6 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import './App.css'
 import splashImage from "./assets/loder.png";
-import SEO from './components/SEO'
 import WhatsAppButton from './components/WhatsAppButton'
 
 function App() {
@@ -28,11 +27,6 @@ function App() {
 
   return (
     <>
-      <SEO 
-        title="Bircuz Lipa 1880 | Autentična kafana u srcu Novog Sada"
-        description="Dobrodošli u Bircuz Lipa, najstariju dušu Novog Sada. Tradicija duga od 1880. godine, vrhunska pića i boemska atmosfera. Posetite nas u Miletićevoj 9!"
-      />
-
       {loading && (
         <div
           className={`fixed inset-0 z-[9999] bg-white flex items-center justify-center transition-opacity duration-500 ${

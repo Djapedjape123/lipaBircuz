@@ -11,28 +11,17 @@ import bgImage from '../assets/lipa33.webp'
 function NajavePage() {
     const { t } = useTranslation();
   
-    // const events = []; 
-
-
-    // Primer podataka je isti, ali kada ih budeš imao, tekst unutar 'events' niza 
-    // ćeš verovatno želeti da vučeš iz baze ili prevoda ako su statični.
-      const events = [
-      {
-          id: 1,
-          date: "11. Jun",
-          day: "Četvrtak",
-          title: "Počinje svetsko prvenstvo u fudbalu",
-          desc: "Pratite sve utakmice uživo u našem bircu, uz fantastičnu atmosferu i specijalne ponude na piće!",
-          image: "https://res.cloudinary.com/duomot4hp/image/upload/q_auto/f_auto/v1777931555/lipa3_dsnmkx.webp" // Slika za samu karticu događaja
-      }
-    ]
+    // Trenutno nema najavljenih događaja, pa se prikazuje blok "Pripremamo nešto posebno".
+    // Kada budeš imao događaj, dodaj ga u niz ispod (obavezno i godinu, da stranica ne zastari):
+    // { id: 1, date: "11. Jun 2027", day: "Petak", title: "...", desc: "...", image: "https://..." }
+    const events = []
 
     return (
         <>
             {/* --- SEO SEKCIJA ZA NAJAVE --- */}
             <SEO 
-                title="Najave i Događaji | Svirke i Utakmice | Bircuz Lipa 1880 Novi Sad"
-                description="Pratite najnovije događaje, žive svirke, pozorište u kući i prenose utakmica u Bircuzu Lipa. Rezervišite svoje mesto na vreme i uživajte u najboljoj atmosferi u Novom Sadu!"
+                title="Najave i Događaji | Bircuz Lipa 1880 Novi Sad"
+                description="Pratite žive svirke, pozorište u kući i prenose utakmica u Bircuzu Lipa. Rezervišite sto na vreme i uživajte u najboljoj atmosferi u Novom Sadu!"
             />
 
             <div className="min-h-screen relative overflow-hidden flex flex-col items-center justify-center py-32 px-6">
@@ -41,7 +30,7 @@ function NajavePage() {
                 <div className="absolute inset-0 z-0">
                     <img 
                         src={bgImage} 
-                        alt={t('events_page.bg_alt') || "Pozadina"} 
+                        alt=""
                         className="w-full h-full object-cover"
                     />
                     {/* Crni overlay (zatamnjenje) da bi se tekst video */}
@@ -148,7 +137,7 @@ function NajavePage() {
 
                                     {/* Tekst Događaja */}
                                     <div className="p-8">
-                                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">{event.title}</h3>
+                                        <h2 className="text-2xl font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">{event.title}</h2>
                                         <p className="text-gray-300 text-sm mb-6 leading-relaxed">{event.desc}</p>
                                         
                                         <a href="tel:0654613359" className="inline-flex w-full items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/50">
