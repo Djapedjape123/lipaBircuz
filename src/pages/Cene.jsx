@@ -9,8 +9,8 @@ import SEO from '../components/SEO'
 
 const CATEGORIES = [
     "draft_beer", "wines", "bottled_beer",
-    "house_special", "brandy","liqueurs", "hard_liquor",
-    "water", "soft_drinks", "hot_drinks",  "snacks"
+    "house_special", "brandy", "liqueurs", "hard_liquor",
+    "water", "soft_drinks", "hot_drinks", "snacks"
 ];
 
 const MENU_ITEMS = [
@@ -19,14 +19,14 @@ const MENU_ITEMS = [
     { category: "draft_beer", name: "Nektar 0.50", price: "310" },
     { category: "draft_beer", name: "Nektar Radler 0.50", price: "300" },
     { category: "draft_beer", name: "Nektar 1L", price: "550" },
-     { category: "draft_beer", name: "Barentaler 0.30", price: "300" },
-     { category: "draft_beer", name: "Barentaler 0.50", price: "360" },
-     { category: "draft_beer", name: "Barentaler 1L", price: "600" },
+    { category: "draft_beer", name: "Barentaler 0.30", price: "300" },
+    { category: "draft_beer", name: "Barentaler 0.50", price: "360" },
+    { category: "draft_beer", name: "Barentaler 1L", price: "600" },
     { category: "wines", name: "Smederevka Tikveš 1L", price: "1700" },
     { category: "wines", name: "Smederevka Vitac 0.2", price: "340" },
-     { category: "wines", name: "Smederevka Tikveš 0.2", price: "340" },
+    { category: "wines", name: "Smederevka Tikveš 0.2", price: "340" },
     { category: "wines", name: "Vojnović graševina 1L", price: "1700" },
-     { category: "wines", name: "Vojnović Leja 0.75L", price: "1700" },
+    { category: "wines", name: "Vojnović Leja 0.75L", price: "1700" },
     { category: "wines", name: "Vojnović graševina 0.2", price: "340" },
     { category: "wines", name: "Vojnović Šardone 1L ", price: "1400" },
     { category: "wines", name: "Vojnović Roze 1L", price: "1700" },
@@ -35,7 +35,7 @@ const MENU_ITEMS = [
     { category: "wines", name: "Vojnović Cuvee 1L", price: "1700" },
     { category: "wines", name: "Vojnović Cuvee 0.2L", price: "340" },
     { category: "wines", name: "Tikveš Roze 1l", price: "1700" },
-     { category: "wines", name: "Shardonnay 1l", price: "1700" },
+    { category: "wines", name: "Shardonnay 1l", price: "1700" },
     { category: "wines", name: "Tikveš Roze 0.2L", price: "340" },
     { category: "wines", name: "Rubin Roze 1L", price: "1700" },
     { category: "wines", name: "Rubin Tamjanika 0.7L", price: "1700" },
@@ -60,7 +60,6 @@ const MENU_ITEMS = [
     { category: "bottled_beer", name: "Banjalučko 0.50", price: "250" },
     { category: "bottled_beer", name: "Amstel 0.4", price: "250" },
     { category: "bottled_beer", name: "Heineken 0.40", price: "320" },
-    { category: "bottled_beer", name: "Birra Morretti 0.40", price: "320" },
     { category: "bottled_beer", name: "Blanc 0.33", price: "330" },
     { category: "bottled_beer", name: "Tuborg 0%alc 0.33", price: "290" },
     { category: "bottled_beer", name: "Somersby 0.33", price: "390" },
@@ -69,10 +68,10 @@ const MENU_ITEMS = [
     { category: "house_special", name: "Green Gin 1L", price: "1800" },
     { category: "brandy", name: "Loza Rubin 0.05", price: "220" },
     { category: "brandy", name: "Loza 13. Jul 0.05", price: "300" },
-     { category: "brandy", name: "Domaća dunja 0.05", price: "300" },
-      { category: "brandy", name: "Domaća jabuka 0.05", price: "220" },
-       { category: "brandy", name: "Domaća kruska 0.05", price: "300" },
-        { category: "brandy", name: "Domaća šljiva 0.05", price: "210" },
+    { category: "brandy", name: "Domaća dunja 0.05", price: "300" },
+    { category: "brandy", name: "Domaća jabuka 0.05", price: "220" },
+    { category: "brandy", name: "Domaća kruska 0.05", price: "300" },
+    { category: "brandy", name: "Domaća šljiva 0.05", price: "210" },
     { category: "brandy", name: "Viljamovka Takovo 0.05", price: "370" },
     { category: "brandy", name: "Šurlan jabuka 0.05", price: "190" },
     { category: "brandy", name: "Šurlan kruska 0.05", price: "270" },
@@ -125,7 +124,7 @@ const MENU_ITEMS = [
     { category: "liqueurs", name: "Gorki List 0.05", price: "300" },
     { category: "liqueurs", name: "Jagermeister 0.05", price: "420" },
     { category: "liqueurs", name: "Gorka tajna 0.05", price: "170" },
-     { category: "liqueurs", name: "Zlatni pelin 0.05", price: "250" },
+    { category: "liqueurs", name: "Zlatni pelin 0.05", price: "250" },
     { category: "liqueurs", name: "Pelinkovac Rubin 0.05", price: "220" },
 ];
 
@@ -133,9 +132,9 @@ function Cene() {
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState(CATEGORIES[0]);
 
-    const filteredItems = useMemo(() => 
-        MENU_ITEMS.filter(item => item.category === selectedCategory), 
-    [selectedCategory]);
+    const filteredItems = useMemo(() =>
+        MENU_ITEMS.filter(item => item.category === selectedCategory),
+        [selectedCategory]);
 
     // --- GENERISANJE JSON-LD ZA GOOGLE (Sve kategorije odjednom) ---
     const menuSchema = useMemo(() => {
@@ -164,7 +163,7 @@ function Cene() {
     return (
         <main>
             {/* --- SEO SEKCIJA ZA KARTU PIĆA --- */}
-            <SEO 
+            <SEO
                 title="Karta Pića i Cene | Bircuz Lipa 1880 Novi Sad"
                 description="Pogledajte našu kartu pića i cene. Veliki izbor piva, vina, premium rakija i bezalkoholnih napitaka u centru Novog Sada. Živeli!"
             />
@@ -222,7 +221,7 @@ function Cene() {
 
                     {/* --- LISTA PIĆA --- */}
                     <article className="bg-white rounded-[2rem] shadow-2xl border border-emerald-900/5 p-8 md:p-12 min-h-100% relative overflow-hidden">
-                        
+
                         {/* Vizuelni naslov kategorije za SEO botove unutar stranice */}
                         <h2 className="sr-only">{t(`menu.categories.${selectedCategory}`)}</h2>
 
