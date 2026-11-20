@@ -17,7 +17,7 @@ const EVENTS = [
   {
     id: 1,
     date: '2026-11-23',
-    time: '10:00',
+    time: '11:00',
     title: 'Liljin dan',
     desc:
       'Ponedeljak ujutru, ali bez ponedeljak-raspoloženja! 🎸\n' +
